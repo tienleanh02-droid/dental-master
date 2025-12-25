@@ -125,7 +125,13 @@ class GoogleSheetsManager:
                 return [] # Chưa có data
                 
         except Exception as e:
-            st.error(f"Cloud Load Error: {e}")
+            # DEBUG INFO
+            err_msg = f"Cloud Load Error: {e} | Type: {type(e)}"
+            if hasattr(e, 'response'):
+                try:
+                    err_msg += f" | Response Body: {e.response.text[:200]}"
+                except: pass
+            st.error(err_msg)
             return []
 
     @staticmethod
@@ -191,7 +197,13 @@ class GoogleSheetsManager:
                 
             return True
         except Exception as e:
-            st.error(f"Cloud Save Error: {e}")
+            # DEBUG INFO
+            err_msg = f"Cloud Save Error: {e} | Type: {type(e)}"
+            if hasattr(e, 'response'):
+                try:
+                    err_msg += f" | Response Body: {e.response.text[:200]}"
+                except: pass
+            st.error(err_msg)
             return False
 
     @staticmethod
