@@ -88,11 +88,10 @@ class GoogleSheetsManager:
     @staticmethod
     def load_user_data_cloud(username):
         """Tải dữ liệu thẻ (Cards) của user từ Sheet"""
-        client = GoogleSheetsManager.get_client()
-        if not client: return []
+        sh, msg = GoogleSheetsManager.get_or_create_spreadsheet()
+        if not sh: return []
         
         try:
-            sh = client.open(GoogleSheetsManager.SPREADSHEET_NAME)
             ws_name = f"Data_{username}"
             
             try:
@@ -137,14 +136,10 @@ class GoogleSheetsManager:
     @staticmethod
     def save_user_data_cloud(username, data):
         """Lưu toàn bộ data user lên Sheet (Cơ chế Ghi đè an toàn)"""
-        # Lưu ý: Với lượng data lớn (>1000 cards), cách này sẽ chậm.
-        # Tuy nhiên với app cá nhân nhỏ, cách này an toàn và đơn giản nhất.
-        
-        client = GoogleSheetsManager.get_client()
-        if not client: return False # Offline mode
+        sh, msg = GoogleSheetsManager.get_or_create_spreadsheet()
+        if not sh: return False 
         
         try:
-            sh = client.open(GoogleSheetsManager.SPREADSHEET_NAME)
             ws_name = f"Data_{username}"
             
             # --- PRE-PROCESS DATA FOR SHEET ---
@@ -209,15 +204,10 @@ class GoogleSheetsManager:
     @staticmethod
     def load_progress_cloud(username):
         """Load progress SRS (Dictionary)"""
-        # Lưu vào 1 sheet riêng gọi là Progress_{username} hoặc chung sheet Data?
-        # Để gọn, lưu 1 sheet Progress_All, mỗi row là 1 user? -> Khó vì progress object to.
-        # Lưu vào 1 sheet Progress_{username}, chỉ có 2 cột: Key - Value (Json dump)
-        
-        client = GoogleSheetsManager.get_client()
-        if not client: return {}
+        sh, msg = GoogleSheetsManager.get_or_create_spreadsheet()
+        if not sh: return {}
         
         try:
-            sh = client.open(GoogleSheetsManager.SPREADSHEET_NAME)
             ws_name = f"Prog_{username}"
             
             try:
@@ -235,11 +225,10 @@ class GoogleSheetsManager:
 
     @staticmethod
     def save_progress_cloud(username, progress):
-        client = GoogleSheetsManager.get_client()
-        if not client: return False
+        sh, msg = GoogleSheetsManager.get_or_create_spreadsheet()
+        if not sh: return False
         
         try:
-            sh = client.open(GoogleSheetsManager.SPREADSHEET_NAME)
             ws_name = f"Prog_{username}"
             
             try:
