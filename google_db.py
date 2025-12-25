@@ -1,5 +1,6 @@
 import streamlit as st
 import gspread
+from gspread.exceptions import SpreadsheetNotFound
 # from oauth2client.service_account import ServiceAccountCredentials (Deprecate)
 import json
 import os
@@ -59,7 +60,7 @@ class GoogleSheetsManager:
             # Thử mở file
             sheet = client.open(GoogleSheetsManager.SPREADSHEET_NAME)
             return sheet, "OK"
-        except gspread.SpreadsheetNotFound:
+        except SpreadsheetNotFound:
             try:
                 # Tạo mới nếu chưa có
                 sheet = client.create(GoogleSheetsManager.SPREADSHEET_NAME)
@@ -124,13 +125,7 @@ class GoogleSheetsManager:
                 return [] # Chưa có data
                 
         except Exception as e:
-            # DEBUG INFO
-            err_msg = f"Cloud Load Error: {e} | Type: {type(e)}"
-            if hasattr(e, 'response'):
-                try:
-                    err_msg += f" | Response Body: {e.response.text[:200]}"
-                except: pass
-            st.error(err_msg)
+            # st.error(f"Cloud Load Error: {e}")
             return []
 
     @staticmethod
@@ -192,13 +187,7 @@ class GoogleSheetsManager:
                 
             return True
         except Exception as e:
-            # DEBUG INFO
-            err_msg = f"Cloud Save Error: {e} | Type: {type(e)}"
-            if hasattr(e, 'response'):
-                try:
-                    err_msg += f" | Response Body: {e.response.text[:200]}"
-                except: pass
-            st.error(err_msg)
+            # st.error(f"Cloud Save Error: {e}")
             return False
 
     @staticmethod
