@@ -25,17 +25,23 @@ class GoogleSheetsManager:
         creds = None
         
         # 1. Ưu tiên lấy từ Streamlit Secrets (Cloud)
-        if "gcp_service_account" in st.secrets:
-            try:
-                # Tạo dict credentials từ secrets (Lưu ý: st.secrets trả về AttrDict, cần convert)
-                key_dict = dict(st.secrets["gcp_service_account"])
-                creds = ServiceAccountCredentials.from_json_keyfile_dict(key_dict, GoogleSheetsManager.SCOPE)
-            except Exception as e:
-                st.error(f"Lỗi đọc Secrets GCP: {e}")
-                return None
+        try:
+            if "gcp_service_account" in st.secrets:
+                try:
+                    # Tạo dict credentials từ secrets (Lưu ý: st.secrets trả về AttrDict, cần convert)
+                    key_dict = dict(st.secrets["gcp_service_account"])
+                    creds = ServiceAccountCredentials.from_json_keyfile_dict(key_dict, GoogleSheetsManager.SCOPE)
+                except Exception as e:
+                    # st.error(f"Lỗi đọc Secrets GCP: {e}") 
+                    # Silent fail on local if malformed
+                    pass
+        except FileNotFoundError:
+            pass # Chạy Local không có secrets.toml -> Bỏ qua
+        except Exception:
+            pass
                 
         # 2. Nếu không có secrets, tìm file credentials.json (Local PC)
-        elif os.path.exists("credentials.json"):
+        if not creds and os.path.exists("credentials.json"):
             try:
                 creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", GoogleSheetsManager.SCOPE)
             except Exception as e:
