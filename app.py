@@ -11,6 +11,7 @@ import io
 import zipfile
 import re
 import streamlit.components.v1 as components
+from google_db import GoogleSheetsManager
 
 # --- MONKEY PATCH FOR streamlit-drawable-canvas ---
 # Fix AttributeError: module 'streamlit.elements.image' has no attribute 'image_to_url'
@@ -614,42 +615,88 @@ class DataManager:
         DataManager.init_storage()
         return [name for name in os.listdir(DataManager.BASE_DIR) if os.path.isdir(os.path.join(DataManager.BASE_DIR, name))]
 
-    # --- CÁC HÀM LOAD/SAVE SẼ NHẬN THAM SỐ USERNAME ---
+    # --- CÁC HÀM LOAD/SAVE CẢI TIẾN (CLOUD SYNC) ---
     @staticmethod
     def load_data(username):
-        data_file, _ = DataManager.get_files(username)
-        if not os.path.exists(data_file): return []
+        # 1. Thử Cloud trước
+        is_cloud_active = False
         try:
-            with open(data_file, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-            
-            # --- AUTO-CLEAN LOGIC (Moved inside) ---
-            # Simplified for now to just return data. 
-            # Note: The previous auto-clean logic was useful but we can re-add it if needed.
-            # Keeping it simple for profile migration first.
-            return data
-        except: return []
+            if GoogleSheetsManager.get_client():
+                is_cloud_active = True
+                cloud_data = GoogleSheetsManager.load_user_data_cloud(username)
+                if cloud_data: 
+                    return cloud_data
+        except Exception:
+             pass # Fallback to local if cloud fails
+
+        # 2. Nếu Cloud chưa có (hoặc Offline), dùng Local
+        local_data_file, _ = DataManager.get_files(username)
+        local_data = []
+        if os.path.exists(local_data_file):
+            try:
+                with open(local_data_file, 'r', encoding='utf-8') as f:
+                    local_data = json.load(f)
+            except: 
+                local_data = []
+
+        # 3. AUTO-MIGRATE: Nếu có Cloud (nhưng rỗng) và Local (có data) -> Đẩy lên Cloud ngay
+        if is_cloud_active and not cloud_data and local_data:
+            GoogleSheetsManager.save_user_data_cloud(username, local_data)
+        
+        return local_data
 
     @staticmethod
     def save_data(username, data):
+        # 1. Lưu Local (Backup an toàn)
         data_file, _ = DataManager.get_files(username)
-        with open(data_file, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
+        try:
+            with open(data_file, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+        except: pass
+
+        # 2. Lưu Cloud (Chính)
+        if GoogleSheetsManager.get_client():
+            GoogleSheetsManager.save_user_data_cloud(username, data)
 
     @staticmethod
     def load_progress(username):
-        _, prog_file = DataManager.get_files(username)
-        if not os.path.exists(prog_file): return {}
+        # 1. Thử Cloud
+        is_cloud_active = False
+        cloud_prog = {}
         try:
-            with open(prog_file, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except: return {}
+            if GoogleSheetsManager.get_client():
+                is_cloud_active = True
+                cloud_prog = GoogleSheetsManager.load_progress_cloud(username)
+                if cloud_prog: return cloud_prog
+        except: pass
+
+        # 2. Local
+        _, prog_file = DataManager.get_files(username)
+        local_prog = {}
+        if os.path.exists(prog_file):
+            try:
+                with open(prog_file, 'r', encoding='utf-8') as f:
+                    local_prog = json.load(f)
+            except: local_prog = {}
+
+        # 3. Auto-Migrate Progress
+        if is_cloud_active and not cloud_prog and local_prog:
+            GoogleSheetsManager.save_progress_cloud(username, local_prog)
+
+        return local_prog
 
     @staticmethod
     def save_progress(username, progress):
+        # 1. Local
         _, prog_file = DataManager.get_files(username)
-        with open(prog_file, 'w', encoding='utf-8') as f:
-            json.dump(progress, f, indent=2, ensure_ascii=False)
+        try:
+            with open(prog_file, 'w', encoding='utf-8') as f:
+                json.dump(progress, f, indent=2, ensure_ascii=False)
+        except: pass
+
+        # 2. Cloud
+        if GoogleSheetsManager.get_client():
+            GoogleSheetsManager.save_progress_cloud(username, progress)
 
     @staticmethod
     @st.cache_data
@@ -3139,86 +3186,98 @@ def view_ai_vision(data, username):
 
 # --- MAIN ---
 
-# --- PROFILE SELECTOR VIEW ---
+# --- PROFILE SELECTOR VIEW (MOBILE FRIENDLY) ---
 def view_profile_selector():
     st.markdown("""
     <style>
-        .profile-btn {
-            padding: 20px;
-            font-size: 20px;
-            text-align: center;
-            border-radius: 10px;
+        .big-btn {
+            padding: 15px 20px;
+            font-size: 18px !important;
+            border-radius: 12px;
             border: 2px solid #e0e0e0;
             background: white;
+            text-align: left;
+            margin-bottom: 10px;
             cursor: pointer;
-            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        .profile-btn:hover {
+        .big-btn:hover {
             border-color: #0083b0;
             background: #f0f9ff;
         }
     </style>
     """, unsafe_allow_html=True)
     
-    st.title("👋 Ai đang học đấy?")
-    st.markdown("Chọn hồ sơ của bạn để bắt đầu.")
+    st.title("👋 Xin chào!")
+    st.subheader("Chọn người học để bắt đầu:")
 
-    # 1. Lấy danh sách hồ sơ
+    # Cloud Check
+    is_cloud = GoogleSheetsManager.get_client() is not None
+    if is_cloud:
+        st.success("🟢 Đã kết nối Cloud (Google Sheets)", icon="☁️")
+    else:
+        st.warning("⚪ Chỉ dùng Offline (Chưa cấu hình Cloud)", icon="💾")
+
+    # 1. Lấy danh sách hồ sơ (Vẫn ưu tiên Local List để hiển thị nhanh, 
+    # nhưng nếu Cloud có user mới mà Local chưa có thì sao?
+    # Tạm thời Logic tạo user yêu cầu tạo Local folder. 
+    # Đồng bộ 2 chiều danh sách user phức tạp hơn, ta giữ cơ chế Local Folder làm 'Anchor'.
+    # Tuy nhiên, nếu user dùng máy mới tinh, Local Folder trống trơn.
+    # => Ta nên "Scan" Cloud Users nếu Local trống.
+    
     profiles = DataManager.get_all_profiles()
+    
+    # Auto-fetch users from cloud if local is empty? 
+    # (Optional enhancement, skipped for simplicity/safety)
 
     if not profiles:
-        st.warning("Chưa có hồ sơ nào. Hãy tạo mới bên dưới.")
+        st.info("Chưa có hồ sơ nào trên máy này.")
 
-    # 2. Hiển thị các nút bấm chọn hồ sơ
-    # Dùng columns để dàn ngang ra
-    if profiles:
-        cols = st.columns(4) # Tối đa 4 người 1 hàng
-        for i, name in enumerate(profiles):
-            with cols[i % 4]:
-                # Card Wrapper
-                with st.container(border=True):
-                    if st.button(f"👤 {name}", key=f"login_{name}", use_container_width=True, type="secondary"):
-                        st.session_state.logged_in = True
-                        st.session_state.username = name
-                        st.toast(f"Xin chào {name}!", icon="🎉")
-                        st.rerun()
-                    
-                    # Delete Button (Icon only)
-                    if st.button("🗑️ Xóa", key=f"del_prof_{name}", use_container_width=True, help="Xóa vĩnh viễn hồ sơ này"):
-                        # Confirm dialog (Basic workaround since st.modal is not standard yet or tricky)
-                        st.session_state[f"confirm_del_{name}"] = True
-                    
-                    if st.session_state.get(f"confirm_del_{name}", False):
-                        st.warning("Bạn chắc chắn muốn xóa?")
-                        col_y, col_n = st.columns(2)
-                        if col_y.button("Có", key=f"yes_del_{name}"):
-                            success, msg = DataManager.delete_profile(name)
-                            if success:
-                                st.success(msg)
-                                del st.session_state[f"confirm_del_{name}"]
-                                st.rerun()
-                            else:
-                                st.error(msg)
-                        
-                        if col_n.button("Hủy", key=f"no_del_{name}"):
-                            del st.session_state[f"confirm_del_{name}"]
-                            st.rerun()
-
-    st.divider()
+    # 2. Hiển thị LIST VERTICAL (Tối ưu cho Mobile)
+    st.markdown("---")
     
-    # 3. Tạo hồ sơ mới
-    with st.expander("➕ Tạo hồ sơ mới"):
-        with st.form("new_profile"):
-            new_name = st.text_input("Tên của bạn:", placeholder="Ví dụ: Bác sĩ Nam")
-            if st.form_submit_button("Tạo ngay", type="primary"):
-                success, msg = DataManager.create_profile(new_name)
-                if success:
+    for name in profiles:
+        # Container cho mỗi User --> Trông giống Card trên Mobile
+        with st.container(border=True):
+            c1, c2 = st.columns([4, 1])
+            with c1:
+                if st.button(f"👤 {name}", key=f"login_{name}", use_container_width=True):
                     st.session_state.logged_in = True
-                    st.session_state.username = new_name
-                    st.success(f"{msg} Đang đăng nhập...")
+                    st.session_state.username = name
                     st.rerun()
-                else:
-                    st.error(msg)
+            with c2:
+                if st.button("🗑️", key=f"del_{name}", help="Xóa", use_container_width=True):
+                     st.session_state[f"confirm_del_{name}"] = True
+            
+            # Confirm Delete Logic
+            if st.session_state.get(f"confirm_del_{name}", False):
+                st.warning(f"Xóa vĩnh viễn {name}?")
+                ca, cb = st.columns(2)
+                if ca.button("Đúng", key=f"y_{name}"):
+                    DataManager.delete_profile(name)
+                    del st.session_state[f"confirm_del_{name}"]
+                    st.rerun()
+                if cb.button("Khoan", key=f"n_{name}"):
+                    del st.session_state[f"confirm_del_{name}"]
+                    st.rerun()
+
+    st.markdown("---")
+    
+    # 3. Tạo hồ sơ mới (Luôn hiển thị rõ ràng)
+    with st.container(border=True):
+        st.markdown("#### ➕ Thêm người mới")
+        new_name = st.text_input("Nhập tên:", placeholder="Ví dụ: Bác sĩ A", label_visibility="collapsed")
+        if st.button("Tạo ngay", type="primary", use_container_width=True):
+            success, msg = DataManager.create_profile(new_name)
+            if success:
+                st.session_state.logged_in = True
+                st.session_state.username = new_name
+                st.success("Tạo thành công!")
+                st.rerun()
+            else:
+                st.error(msg)
 
 # --- MAIN ---
 def main():

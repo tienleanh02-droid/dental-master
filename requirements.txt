@@ -6,3 +6,5 @@ openpyxl
 streamlit-drawable-canvas
 pymupdf
 msal
+gspread
+oauth2client
