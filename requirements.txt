@@ -6,5 +6,5 @@ openpyxl
 streamlit-drawable-canvas
 pymupdf
 msal
-gspread
+gspread==5.12.4
 oauth2client
