@@ -1,6 +1,6 @@
 import streamlit as st
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+# from oauth2client.service_account import ServiceAccountCredentials (Deprecate)
 import json
 import os
 
@@ -21,37 +21,33 @@ class GoogleSheetsManager:
 
     @staticmethod
     def get_client():
-        """Xác thực và trả về gspread client."""
-        creds = None
+        """Xác thực và trả về gspread client (Sử dụng native gspread auth)."""
+        scopes = [
+            "https://www.googleapis.com/auth/spreadsheets",
+            "https://www.googleapis.com/auth/drive"
+        ]
         
-        # 1. Ưu tiên lấy từ Streamlit Secrets (Cloud)
+        # 1. Ưu tiên Local (credentials.json) để tránh lỗi secrets.toml thiếu trên PC
+        if os.path.exists("credentials.json"):
+            try:
+                return gspread.service_account(filename="credentials.json", scopes=scopes)
+            except Exception as e:
+                # st.error(f"Lỗi đọc file credentials.json: {e}")
+                pass
+
+        # 2. Sau đó mới thử Streamlit Secrets (Cloud)
         try:
             if "gcp_service_account" in st.secrets:
                 try:
-                    # Tạo dict credentials từ secrets (Lưu ý: st.secrets trả về AttrDict, cần convert)
+                    # Tạo dict credentials từ secrets
                     key_dict = dict(st.secrets["gcp_service_account"])
-                    creds = ServiceAccountCredentials.from_json_keyfile_dict(key_dict, GoogleSheetsManager.SCOPE)
-                except Exception as e:
-                    # st.error(f"Lỗi đọc Secrets GCP: {e}") 
-                    # Silent fail on local if malformed
+                    return gspread.service_account_from_dict(key_dict, scopes=scopes)
+                except Exception:
                     pass
-        except FileNotFoundError:
-            pass # Chạy Local không có secrets.toml -> Bỏ qua
-        except Exception:
-            pass
-                
-        # 2. Nếu không có secrets, tìm file credentials.json (Local PC)
-        if not creds and os.path.exists("credentials.json"):
-            try:
-                creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", GoogleSheetsManager.SCOPE)
-            except Exception as e:
-                st.error(f"Lỗi đọc file credentials.json: {e}")
-                return None
-        
-        if not creds:
-            return None # Không tìm thấy key nào
+        except:
+             pass
             
-        return gspread.authorize(creds)
+        return None
 
     @staticmethod
     def get_or_create_spreadsheet():
