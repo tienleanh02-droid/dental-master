@@ -1,0 +1,43 @@
+Đóng vai trò là Giáo sư Nha khoa. Dựa trên các tài liệu đã tải lên, hãy soạn cho tôi 15 câu hỏi trắc nghiệm về chủ đề: [Bệnh vùng miệng do virus].
+
+
+Yêu cầu định dạng đầu ra bắt buộc:
+Hãy tạo một Bảng (Table) với các cột có tên Chính xác tiếng Anh như sau (để phần mềm tự động đọc được):
+
+
+Subject 
+
+Topic 
+
+
+Question 
+
+
+Option A
+
+
+Option B
+
+
+Option C
+
+
+Option D
+
+
+Correct Answer 
+
+Explanation 
+
+
+Mnemonic 
+
+
+Source 
+Lưu ý:
+
+
+Nội dung câu hỏi phải chuyên sâu, phù hợp cho bác sĩ nha khoa, sinh viên chuẩn bị ôn thi tốt nghiệp, nội trú.
+
+
+Không nói chuyện rườm rà, chỉ xuất ra cái Bảng. 

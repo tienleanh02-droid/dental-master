@@ -1,0 +1,8 @@
+streamlit
+google-genai
+pandas
+pillow
+openpyxl
+streamlit-drawable-canvas
+pymupdf
+msal

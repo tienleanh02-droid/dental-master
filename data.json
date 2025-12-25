@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "question": "Trong mối liên hệ giữa Viêm nha chu (VNC) và Bệnh Xơ vữa Động mạch (XVĐM), sản phẩm nào từ Gan được kích thích bởi Cytokine?",
+    "options": {
+      "A": "Interleukin-1β (IL-1β) và TNF-α",
+      "B": "Prostaglandins (PGE2) và Matrix Metalloproteinases (MMPs)",
+      "C": "C-reactive protein (CRP) và Fibrinogen",
+      "D": "Kháng thể (Antibody) và Tế bào Lympho T"
+    },
+    "correct_answer": "C",
+    "explanation": "Vi khuẩn nha chu kích thích phóng thích cytokine (IL-1, IL-6...). Các cytokine này kích thích Gan sản xuất protein pha cấp tính như CRP và Fibrinogen.",
+    "mnemonic": "Viêm Nha Chu → Gan → CRP/Fibrinogen.",
+    "tags": [
+      "Tim mạch",
+      "Nha chu"
+    ],
+    "subject": "Chung",
+    "topic": "Tổng hợp",
+    "chat_history": []
+  },
+  {
+    "id": 2,
+    "question": "Vi khuẩn nào sau đây được xem là tác nhân chính gây sâu răng?",
+    "options": {
+      "A": "Streptococcus mutans",
+      "B": "Porphyromonas gingivalis",
+      "C": "Aggregatibacter actinomycetemcomitans",
+      "D": "Treponema denticola"
+    },
+    "correct_answer": "A",
+    "explanation": "S. mutans có khả năng chuyển hóa đường sucrose thành acid lactic, làm mất khoáng men răng.",
+    "mnemonic": "Mutans = Muốn ăn (đường) -> Sâu răng",
+    "tags": [
+      "Sâu răng",
+      "Vi sinh"
+    ],
+    "subject": "Chung",
+    "topic": "Tổng hợp"
+  }
+]

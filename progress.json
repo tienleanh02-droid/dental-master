@@ -1,0 +1,32 @@
+{
+  "1": {
+    "state": "review",
+    "step_index": 0,
+    "due": "2025-12-22T04:15:33.725514",
+    "interval": 1,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-21T04:15:33.725514"
+  },
+  "2": {
+    "state": "review",
+    "step_index": 0,
+    "due": "2025-12-22T04:15:55.675317",
+    "interval": 1,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-21T04:15:55.675317"
+  },
+  "6d20a6b7-4bb4-49d3-97d0-ec32e0fc21da": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-21T05:49:58.259491",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-21T05:48:58.259491"
+  }
+}
