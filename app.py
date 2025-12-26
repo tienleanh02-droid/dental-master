@@ -694,11 +694,11 @@ class DataManager:
                 json.dump(data, f, indent=2, ensure_ascii=False)
         except: pass
 
-        # 2. Lưu Cloud (Background Thread - KHÔNG BLOCK UI)
-        if GoogleSheetsManager.get_client():
-            # Chạy ngầm để user không phải đợi
-            t = threading.Thread(target=GoogleSheetsManager.save_user_data_cloud, args=(username, data))
-            t.start()
+        # 2. Lưu Cloud (KHÔNG DÙNG THREAD để tránh lỗi Cloud)
+        try:
+            if GoogleSheetsManager.get_client():
+                GoogleSheetsManager.save_user_data_cloud(username, data)
+        except: pass
             
             
     @staticmethod
@@ -730,11 +730,12 @@ class DataManager:
                         progress = json.load(f)
                 except: progress = {}
 
-        # Auto-Migrate (chạy ngầm)
+        # Auto-Migrate (không dùng thread)
         if is_cloud_active and not st.session_state.get(f"migrated_progress_{username}") and progress:
             st.session_state[f"migrated_progress_{username}"] = True
-            t = threading.Thread(target=GoogleSheetsManager.save_progress_cloud, args=(username, progress))
-            t.start()
+            try:
+                GoogleSheetsManager.save_progress_cloud(username, progress)
+            except: pass
         
         # LƯU VÀO SESSION STATE
         st.session_state[cache_key] = progress
@@ -753,10 +754,11 @@ class DataManager:
                 json.dump(progress, f, indent=2, ensure_ascii=False)
         except: pass
 
-        # 2. Cloud (Background Thread - QUAN TRỌNG ĐỂ KHÔNG LAG KHI HỌC)
-        if GoogleSheetsManager.get_client():
-            t = threading.Thread(target=GoogleSheetsManager.save_progress_cloud, args=(username, progress))
-            t.start()
+        # 2. Cloud (KHÔNG DÙNG THREAD để tránh lỗi Cloud)
+        try:
+            if GoogleSheetsManager.get_client():
+                GoogleSheetsManager.save_progress_cloud(username, progress)
+        except: pass
 
     @staticmethod
     @st.cache_data
