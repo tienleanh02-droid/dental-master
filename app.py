@@ -3212,7 +3212,7 @@ def view_profile_selector():
     """, unsafe_allow_html=True)
     
     st.title("👋 Xin chào!")
-    st.caption("Version: Cloud_Fix_v2 (Auto-Create DB & Cached Mode)")
+    st.caption("Version: Fixed_Lag_v3 (Smart Data Caching)")
     st.subheader("Chọn người học để bắt đầu:")
 
     # Cloud Check
