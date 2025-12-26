@@ -2702,10 +2702,13 @@ def view_learning(data, progress, username):
             st.session_state.answered = True
             st.session_state.selected_option = key
         
-        # Layout 2x2 với inline CSS đảm bảo đồng màu
+        # Layout 2x2 với CSS target theo key của button
         st.markdown('''
         <style>
-            .uniform-btn .stButton > button {
+            /* Target ALL answer option buttons by their key pattern */
+            button[kind="secondary"]:has(p),
+            div[data-testid="stHorizontalBlock"] button,
+            div[data-testid="column"] .stButton > button {
                 background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%) !important;
                 border: 2px solid #3b82f6 !important;
                 color: #93c5fd !important;
@@ -2715,8 +2718,9 @@ def view_learning(data, progress, username):
                 font-weight: 500 !important;
                 text-align: left !important;
                 justify-content: flex-start !important;
+                min-height: 55px !important;
             }
-            .uniform-btn .stButton > button:hover {
+            div[data-testid="column"] .stButton > button:hover {
                 background: linear-gradient(135deg, #2d5a87 0%, #3b82f6 100%) !important;
                 border-color: #60a5fa !important;
                 color: #ffffff !important;
@@ -2725,7 +2729,6 @@ def view_learning(data, progress, username):
         </style>
         ''', unsafe_allow_html=True)
         
-        st.markdown('<div class="uniform-btn">', unsafe_allow_html=True)
         col1, col2 = st.columns(2)
         with col1:
             if st.button(f"A. {opts.get('A', '')}", key="opt_a", use_container_width=True): 
@@ -2741,7 +2744,6 @@ def view_learning(data, progress, username):
             if st.button(f"D. {opts.get('D', '')}", key="opt_d", use_container_width=True): 
                 handle_choice("D")
                 st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
 
     else:
         # Result Mode
@@ -3273,7 +3275,7 @@ def view_profile_selector():
     """, unsafe_allow_html=True)
     
     st.title("👋 Xin chào!")
-    st.caption("Version: Blue_Buttons_v9")
+    st.caption("Version: Uniform_All_v10")
     st.subheader("Chọn người học để bắt đầu:")
 
     # Cloud Check
