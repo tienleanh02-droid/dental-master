@@ -1954,31 +1954,33 @@ NHIỆM VỤ:
                         DataManager.save_data(username, data)
                         st.toast("Đã xoá thẻ thành công!", icon="🗑️")
                         st.rerun()
-                    # Image Uploaders (Standalone)
-                    with st.expander("🖼️ Thay đổi / Upload ảnh mới"):
-                        up_q = st.file_uploader("Chọn ảnh câu hỏi mới:", key=f"up_q_{card['id']}", type=['png','jpg','jpeg'])
-                        if up_q:
-                            if st.button("Lưu ảnh câu hỏi", key=f"save_img_q_{card['id']}"):
-                                img_name = f"up_q_{uuid.uuid4()}.png"
-                                target_path = os.path.join("static", "images", img_name)
-                                process_and_save_image(up_q, target_path)
-                                
-                                card['image_q'] = img_name
-                                DataManager.save_data(username, data)
-                                st.success("Đã cập nhật ảnh câu hỏi!")
-                                st.rerun()
-                                
-                        up_a = st.file_uploader("Chọn ảnh giải thích mới:", key=f"up_a_{card['id']}", type=['png','jpg','jpeg'])
-                        if up_a:
-                            if st.button("Lưu ảnh giải thích", key=f"save_img_a_{card['id']}"):
-                                img_name = f"up_a_{uuid.uuid4()}.png"
-                                target_path = os.path.join("static", "images", img_name)
-                                process_and_save_image(up_a, target_path)
-                                
-                                card['image_a'] = img_name
-                                DataManager.save_data(username, data)
-                                st.success("Đã cập nhật ảnh giải thích!")
-                                st.rerun()
+                    # Image Uploaders (Standalone - NO EXPANDER to avoid nesting error)
+                    st.markdown("---")
+                    st.markdown("**🖼️ Thay đổi / Upload ảnh mới**")
+                    
+                    up_q = st.file_uploader("Chọn ảnh câu hỏi mới:", key=f"up_q_{card['id']}", type=['png','jpg','jpeg'])
+                    if up_q:
+                        if st.button("Lưu ảnh câu hỏi", key=f"save_img_q_{card['id']}"):
+                            img_name = f"up_q_{uuid.uuid4()}.png"
+                            target_path = os.path.join("static", "images", img_name)
+                            process_and_save_image(up_q, target_path)
+                            
+                            card['image_q'] = img_name
+                            DataManager.save_data(username, data)
+                            st.success("Đã cập nhật ảnh câu hỏi!")
+                            st.rerun()
+                            
+                    up_a = st.file_uploader("Chọn ảnh giải thích mới:", key=f"up_a_{card['id']}", type=['png','jpg','jpeg'])
+                    if up_a:
+                        if st.button("Lưu ảnh giải thích", key=f"save_img_a_{card['id']}"):
+                            img_name = f"up_a_{uuid.uuid4()}.png"
+                            target_path = os.path.join("static", "images", img_name)
+                            process_and_save_image(up_a, target_path)
+                            
+                            card['image_a'] = img_name
+                            DataManager.save_data(username, data)
+                            st.success("Đã cập nhật ảnh giải thích!")
+                            st.rerun()
 
 # --- HELPER: IMAGE PROCESSING ---
 def process_and_save_image(uploaded_file, target_path, max_dimension=1024):
@@ -3275,7 +3277,7 @@ def view_profile_selector():
     """, unsafe_allow_html=True)
     
     st.title("👋 Xin chào!")
-    st.caption("Version: Purple_v11")
+    st.caption("Version: Expander_Fix_v12")
     st.subheader("Chọn người học để bắt đầu:")
 
     # Cloud Check
