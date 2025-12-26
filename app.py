@@ -3191,7 +3191,7 @@ def view_profile_selector():
     """, unsafe_allow_html=True)
     
     st.title("👋 Xin chào!")
-    st.caption("Version: No_Lag_Final_v4 (Async Background Sync)")
+    st.caption("Version: Stable_Fix_v5 (Conn Cache + Async)")
     st.subheader("Chọn người học để bắt đầu:")
 
     # Cloud Check

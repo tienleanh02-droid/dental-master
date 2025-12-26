@@ -104,7 +104,6 @@ class GoogleSheetsManager:
         return username.strip()
 
     @staticmethod
-    @st.cache_data(ttl=600)
     def load_user_data_cloud(username):
         """Tải dữ liệu thẻ (Cards) của user từ Sheet"""
         sh, msg = GoogleSheetsManager.get_or_create_spreadsheet()
@@ -149,9 +148,6 @@ class GoogleSheetsManager:
     @staticmethod
     def save_user_data_cloud(username, data):
         """Lưu toàn bộ data user lên Sheet (Cơ chế Ghi đè an toàn)"""
-        # Invalidate Cache
-        GoogleSheetsManager.load_user_data_cloud.clear()
-        
         sh, msg = GoogleSheetsManager.get_or_create_spreadsheet()
         if not sh: return False 
         
@@ -212,7 +208,6 @@ class GoogleSheetsManager:
             return False
 
     @staticmethod
-    @st.cache_data(ttl=600)
     def load_progress_cloud(username):
         """Load progress SRS (Dictionary)"""
         sh, msg = GoogleSheetsManager.get_or_create_spreadsheet()
@@ -236,9 +231,6 @@ class GoogleSheetsManager:
 
     @staticmethod
     def save_progress_cloud(username, progress):
-        # Invalidate Cache
-        GoogleSheetsManager.load_progress_cloud.clear()
-        
         sh, msg = GoogleSheetsManager.get_or_create_spreadsheet()
         if not sh: return False
         
