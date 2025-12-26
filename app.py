@@ -304,150 +304,169 @@ if 'current_q_index' not in st.session_state: st.session_state.current_q_index =
 if 'answered' not in st.session_state: st.session_state.answered = False
 if 'session_history' not in st.session_state: st.session_state.session_history = []
 
-# --- CSS STYLING (MODERN UI) ---
+# --- CSS STYLING (PREMIUM GRADIENT UI) ---
 st.markdown("""
 <style>
-    /* 1. Tổng thể */
+    /* ========== 1. GLOBAL THEME - PURPLE GRADIENT ========== */
     .stApp {
-        /* Background được xử lý bởi config.toml */
-        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
     }
     
-    /* 2. Card đẹp (Dùng cho Dashboard & Câu hỏi) */
+    /* ========== 2. SIDEBAR - GLASS MORPHISM ========== */
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%) !important;
+        border-right: 1px solid rgba(139, 92, 246, 0.3) !important;
+    }
+    [data-testid="stSidebar"] .stRadio label {
+        color: #e9d5ff !important;
+        transition: all 0.3s ease;
+    }
+    [data-testid="stSidebar"] .stRadio label:hover {
+        color: #c084fc !important;
+        text-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
+    }
+    
+    /* ========== 3. CARDS - GLASSMORPHISM DARK ========== */
     .modern-card {
-        background-color: #262730; /* Dark Grey for Cards */
-        color: #FAFAFA;
-        padding: 25px;
+        background: linear-gradient(135deg, rgba(45, 27, 78, 0.8) 0%, rgba(76, 29, 149, 0.6) 100%) !important;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(168, 85, 247, 0.4) !important;
         border-radius: 16px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Bóng đậm hơn cho dark mode */
+        padding: 25px;
+        box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2);
+        color: #f3e8ff;
         margin-bottom: 20px;
-        transition: transform 0.2s, box-shadow 0.2s;
-        border: 1px solid #383b42;
+        transition: all 0.3s ease;
     }
     .modern-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-        border-color: #33E3FF; /* Cyan highlight */
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+        border-color: #c084fc !important;
     }
     
-    /* 3. Tiêu đề Dashboard */
+    /* ========== 4. HERO BOX - VIBRANT GRADIENT ========== */
     .hero-box {
-        background: linear-gradient(135deg, #023e8a 0%, #0077b6 100%); /* Deep Blue Gradient */
-        color: white;
-        padding: 30px;
-        border-radius: 16px;
+        background: linear-gradient(135deg, #2d1b4e 0%, #4c1d95 50%, #7c3aed 100%) !important;
+        border: 1px solid rgba(168, 85, 247, 0.5);
+        border-radius: 20px;
+        padding: 35px;
+        box-shadow: 0 10px 40px rgba(124, 58, 237, 0.3);
         margin-bottom: 30px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        border: 1px solid #0096c7;
     }
     .hero-title {
-        font-size: 2.2rem;
-        font-weight: 700;
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: linear-gradient(90deg, #c084fc, #e879f9, #f0abfc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: none;
         margin: 0;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
     .hero-subtitle {
-        font-size: 1.1rem;
+        color: #ddd6fe;
+        font-size: 1.15rem;
         opacity: 0.9;
         margin-top: 10px;
     }
 
-    /* 4. Nút bấm đẹp hơn */
+    /* ========== 5. BUTTONS - NEON GLOW ========== */
     .stButton > button {
-        border-radius: 10px;
+        border-radius: 12px;
         height: auto;
         min-height: 3em;
         font-weight: 600;
         transition: all 0.3s ease;
-        border: 2px solid #4a4d55 !important;
-        background-color: #262730 !important;
-        color: #FAFAFA !important;
+        background: linear-gradient(135deg, #2d1b4e 0%, #4c1d95 100%) !important;
+        border: 2px solid #7c3aed !important;
+        color: #e9d5ff !important;
     }
     .stButton > button:hover {
-        border-color: #33E3FF !important;
-        color: #33E3FF !important;
-        background-color: #30333d !important;
-    }
-    
-    /* Nút câu trả lời trắc nghiệm - Dark Mode Friendly */
-    .answer-option-container .stButton > button {
-        text-align: left !important;
-        justify-content: flex-start !important;
-        padding: 15px 20px !important;
-        background: linear-gradient(135deg, #1e2824 0%, #162b21 100%) !important;
-        border: 2px solid #2f855a !important; /* Green Border */
-        color: #9ae6b4 !important; /* Light Green Text */
-        border-radius: 12px !important;
-        margin-bottom: 10px !important;
-        font-size: 1em !important;
-    }
-    .answer-option-container .stButton > button:hover {
-        background: linear-gradient(135deg, #22543d 0%, #1c4532 100%) !important;
-        border-color: #48bb78 !important;
+        background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%) !important;
+        border-color: #a855f7 !important;
         color: #ffffff !important;
-        box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3) !important;
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
         transform: translateY(-2px);
     }
-
-    /* 5. SRS Buttons màu chuẩn với viền rõ ràng - Dark Mode */
-    .srs-btn-again button { 
-        background-color: #2a1215 !important; 
-        border: 2px solid #a61d24 !important; 
-        color: #ff7875 !important; 
-        font-weight: bold !important;
+    
+    /* Primary Button */
+    .stButton > button[kind="primary"] {
+        background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
+        border-color: #c084fc !important;
+        color: #ffffff !important;
     }
-    .srs-btn-again button:hover { background-color: #5c0011 !important; color: white !important;}
+    .stButton > button[kind="primary"]:hover {
+        background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%) !important;
+        box-shadow: 0 0 25px rgba(192, 132, 252, 0.6);
+    }
+
+    /* ========== 6. SRS BUTTONS - DISTINCT COLORS ========== */
+    .srs-btn-again button { 
+        background: linear-gradient(135deg, #450a0a 0%, #7f1d1d 100%) !important;
+        border: 2px solid #dc2626 !important; 
+        color: #fecaca !important; 
+    }
+    .srs-btn-again button:hover { 
+        background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%) !important;
+        box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
+    }
     
     .srs-btn-hard button { 
-        background-color: #2b2111 !important; 
-        border: 2px solid #d48806 !important; 
-        color: #ffc53d !important; 
-        font-weight: bold !important;
+        background: linear-gradient(135deg, #451a03 0%, #78350f 100%) !important;
+        border: 2px solid #f59e0b !important; 
+        color: #fde68a !important; 
     }
-    .srs-btn-hard button:hover { background-color: #613400 !important; color: white !important;}
+    .srs-btn-hard button:hover { 
+        background: linear-gradient(135deg, #78350f 0%, #f59e0b 100%) !important;
+        box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+    }
     
     .srs-btn-good button { 
-        background-color: #111d2c !important; 
-        border: 2px solid #096dd9 !important; 
-        color: #69c0ff !important; 
-        font-weight: bold !important;
+        background: linear-gradient(135deg, #0c4a6e 0%, #075985 100%) !important;
+        border: 2px solid #0ea5e9 !important; 
+        color: #bae6fd !important; 
     }
-    .srs-btn-good button:hover { background-color: #002766 !important; color: white !important;}
+    .srs-btn-good button:hover { 
+        background: linear-gradient(135deg, #075985 0%, #0ea5e9 100%) !important;
+        box-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
+    }
     
     .srs-btn-easy button { 
-        background-color: #162312 !important; 
-        border: 2px solid #389e0d !important; 
-        color: #95de64 !important; 
-        font-weight: bold !important;
+        background: linear-gradient(135deg, #052e16 0%, #166534 100%) !important;
+        border: 2px solid #22c55e !important; 
+        color: #bbf7d0 !important; 
     }
-    .srs-btn-easy button:hover { background-color: #092b00 !important; color: white !important;}
+    .srs-btn-easy button:hover { 
+        background: linear-gradient(135deg, #166534 0%, #22c55e 100%) !important;
+        box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+    }
 
-    /* 6. Topic Tags & Cloud */
+    /* ========== 7. TOPIC TAGS - GRADIENT PILLS ========== */
     .topic-tag {
         display: inline-block;
-        background-color: #162b3d;
-        color: #91d5ff;
-        padding: 4px 10px;
-        border-radius: 12px;
+        background: linear-gradient(135deg, #312e81 0%, #4338ca 100%);
+        color: #c7d2fe;
+        padding: 6px 14px;
+        border-radius: 20px;
         font-size: 0.85em;
         font-weight: 600;
-        margin-bottom: 10px;
-        border: 1px solid #096dd9;
+        margin: 4px;
+        border: 1px solid #6366f1;
+        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
     }
     .topic-cloud {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
         margin-bottom: 20px;
-        background: #262730;
-        padding: 15px;
-        border-radius: 10px;
-        border: 1px solid #383b42;
+        background: linear-gradient(135deg, rgba(30, 27, 75, 0.8) 0%, rgba(49, 46, 129, 0.6) 100%);
+        padding: 20px;
+        border-radius: 16px;
+        border: 1px solid rgba(99, 102, 241, 0.3);
     }
     .topic-pill {
-        background-color: #383b42;
-        color: #cfd6e0;
-        padding: 5px 12px;
+        background: linear-gradient(135deg, #3730a3 0%, #4f46e5 100%);
+        color: #e0e7ff;
+        padding: 6px 14px;
         border-radius: 16px;
         font-size: 0.9em;
         border: 1px solid #4a4d55;
@@ -3277,7 +3296,7 @@ def view_profile_selector():
     """, unsafe_allow_html=True)
     
     st.title("👋 Xin chào!")
-    st.caption("Version: All_Nested_Fix_v13")
+    st.caption("Version: Premium_UI_v14")
     st.subheader("Chọn người học để bắt đầu:")
 
     # Cloud Check
