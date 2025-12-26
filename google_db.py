@@ -52,13 +52,29 @@ class GoogleSheetsManager:
         return None
 
     @staticmethod
-    def get_or_create_spreadsheet():
-        """Tìm file Sheet DB, nếu chưa có thì tạo mới."""
+    @st.cache_resource(ttl=3600)
+    def _get_sheet_cached():
+        """Cache kết nối vào File Sheet để không phải tìm lại (TIẾT KIỆM 1-2s)"""
         client = GoogleSheetsManager.get_client()
-        if not client: return None, "Chưa cấu hình Google Service Account (Xem Hướng dẫn)."
-        
+        if not client: return None
         try:
-            # Thử mở file
+            return client.open(GoogleSheetsManager.SPREADSHEET_NAME)
+        except SpreadsheetNotFound:
+            return None
+            
+    @staticmethod
+    def get_or_create_spreadsheet():
+        """Tìm file Sheet DB (ưu tiên Cache), nếu chưa có thì tạo mới."""
+        client = GoogleSheetsManager.get_client()
+        if not client: return None, "Chưa cấu hình Google Service Account."
+        
+        # 1. Thử lấy từ Cache Resource
+        sheet = GoogleSheetsManager._get_sheet_cached()
+        if sheet: return sheet, "OK"
+        
+        # 2. Nếu Cache miss (lần đầu hoặc lỗi), thử mở thủ công & Tạo
+        try:
+            # Re-try open (để chắc chắn)
             sheet = client.open(GoogleSheetsManager.SPREADSHEET_NAME)
             return sheet, "OK"
         except SpreadsheetNotFound:

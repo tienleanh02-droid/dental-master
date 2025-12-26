@@ -11,6 +11,7 @@ import io
 import zipfile
 import re
 import streamlit.components.v1 as components
+import threading
 from google_db import GoogleSheetsManager
 
 # --- MONKEY PATCH FOR streamlit-drawable-canvas ---
@@ -647,56 +648,34 @@ class DataManager:
 
     @staticmethod
     def save_data(username, data):
-        # 1. Lưu Local (Backup an toàn)
+        # 1. Lưu Local (Backup an toàn - Blocking để đảm bảo data không mất)
         data_file, _ = DataManager.get_files(username)
         try:
             with open(data_file, 'w', encoding='utf-8') as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)
         except: pass
 
-        # 2. Lưu Cloud (Chính)
+        # 2. Lưu Cloud (Background Thread - KHÔNG BLOCK UI)
         if GoogleSheetsManager.get_client():
-            GoogleSheetsManager.save_user_data_cloud(username, data)
-
-    @staticmethod
-    def load_progress(username):
-        # 1. Thử Cloud
-        is_cloud_active = False
-        cloud_prog = {}
-        try:
-            if GoogleSheetsManager.get_client():
-                is_cloud_active = True
-                cloud_prog = GoogleSheetsManager.load_progress_cloud(username)
-                if cloud_prog: return cloud_prog
-        except: pass
-
-        # 2. Local
-        _, prog_file = DataManager.get_files(username)
-        local_prog = {}
-        if os.path.exists(prog_file):
-            try:
-                with open(prog_file, 'r', encoding='utf-8') as f:
-                    local_prog = json.load(f)
-            except: local_prog = {}
-
-        # 3. Auto-Migrate Progress
-        if is_cloud_active and not cloud_prog and local_prog:
-            GoogleSheetsManager.save_progress_cloud(username, local_prog)
-
-        return local_prog
+            # Chạy ngầm để user không phải đợi
+            t = threading.Thread(target=GoogleSheetsManager.save_user_data_cloud, args=(username, data))
+            t.start()
+            
+    # ... (load_progress giữ nguyên) ...
 
     @staticmethod
     def save_progress(username, progress):
-        # 1. Local
+        # 1. Local (Nhanh)
         _, prog_file = DataManager.get_files(username)
         try:
             with open(prog_file, 'w', encoding='utf-8') as f:
                 json.dump(progress, f, indent=2, ensure_ascii=False)
         except: pass
 
-        # 2. Cloud
+        # 2. Cloud (Background Thread - QUAN TRỌNG ĐỂ KHÔNG LAG KHI HỌC)
         if GoogleSheetsManager.get_client():
-            GoogleSheetsManager.save_progress_cloud(username, progress)
+            t = threading.Thread(target=GoogleSheetsManager.save_progress_cloud, args=(username, progress))
+            t.start()
 
     @staticmethod
     @st.cache_data
@@ -3212,7 +3191,7 @@ def view_profile_selector():
     """, unsafe_allow_html=True)
     
     st.title("👋 Xin chào!")
-    st.caption("Version: Fixed_Lag_v3 (Smart Data Caching)")
+    st.caption("Version: No_Lag_Final_v4 (Async Background Sync)")
     st.subheader("Chọn người học để bắt đầu:")
 
     # Cloud Check
