@@ -2702,21 +2702,45 @@ def view_learning(data, progress, username):
             st.session_state.answered = True
             st.session_state.selected_option = key
         
-        # Sử dụng container với class để CSS tác động
-        st.markdown('<div class="answer-option-container">', unsafe_allow_html=True)
-        # Layout dọc - Tất cả nút cùng màu, cùng style
-        if st.button(f"A. {opts.get('A', '')}", key="opt_a", use_container_width=True): 
-            handle_choice("A")
-            st.rerun()
-        if st.button(f"B. {opts.get('B', '')}", key="opt_b", use_container_width=True): 
-            handle_choice("B")
-            st.rerun()
-        if st.button(f"C. {opts.get('C', '')}", key="opt_c", use_container_width=True): 
-            handle_choice("C")
-            st.rerun()
-        if st.button(f"D. {opts.get('D', '')}", key="opt_d", use_container_width=True): 
-            handle_choice("D")
-            st.rerun()
+        # Layout 2x2 với inline CSS đảm bảo đồng màu
+        st.markdown('''
+        <style>
+            .uniform-btn .stButton > button {
+                background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%) !important;
+                border: 2px solid #3b82f6 !important;
+                color: #93c5fd !important;
+                border-radius: 12px !important;
+                padding: 16px 20px !important;
+                font-size: 1em !important;
+                font-weight: 500 !important;
+                text-align: left !important;
+                justify-content: flex-start !important;
+            }
+            .uniform-btn .stButton > button:hover {
+                background: linear-gradient(135deg, #2d5a87 0%, #3b82f6 100%) !important;
+                border-color: #60a5fa !important;
+                color: #ffffff !important;
+                transform: translateY(-2px);
+            }
+        </style>
+        ''', unsafe_allow_html=True)
+        
+        st.markdown('<div class="uniform-btn">', unsafe_allow_html=True)
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button(f"A. {opts.get('A', '')}", key="opt_a", use_container_width=True): 
+                handle_choice("A")
+                st.rerun()
+            if st.button(f"B. {opts.get('B', '')}", key="opt_b", use_container_width=True): 
+                handle_choice("B")
+                st.rerun()
+        with col2:
+            if st.button(f"C. {opts.get('C', '')}", key="opt_c", use_container_width=True): 
+                handle_choice("C")
+                st.rerun()
+            if st.button(f"D. {opts.get('D', '')}", key="opt_d", use_container_width=True): 
+                handle_choice("D")
+                st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
     else:
@@ -3249,7 +3273,7 @@ def view_profile_selector():
     """, unsafe_allow_html=True)
     
     st.title("👋 Xin chào!")
-    st.caption("Version: UI_Fix_v8 (Uniform Buttons)")
+    st.caption("Version: Blue_Buttons_v9")
     st.subheader("Chọn người học để bắt đầu:")
 
     # Cloud Check
