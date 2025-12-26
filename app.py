@@ -2175,6 +2175,7 @@ def view_library(data, username):
 
         # 3.2 MAIN STUDY AREA (Center, Big)
         st.markdown(f"<h1 style='text-align: center; color: #0083b0;'>{current_sub.split('/')[-1]}</h1>", unsafe_allow_html=True)
+        st.caption("Version: Cloud_Fix_v2 (Auto-Create DB & Cached Mode)")
         
         # Stats
         progress = DataManager.load_progress(username)

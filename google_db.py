@@ -21,6 +21,7 @@ class GoogleSheetsManager:
     SPREADSHEET_NAME = "Dental_Anki_Master_DB"
 
     @staticmethod
+    @st.cache_resource(ttl=3600)
     def get_client():
         """Xác thực và trả về gspread client (Sử dụng native gspread auth)."""
         scopes = [
