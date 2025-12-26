@@ -2702,16 +2702,14 @@ def view_learning(data, progress, username):
             st.session_state.answered = True
             st.session_state.selected_option = key
         
-        # Layout 2x2 với CSS target theo key của button
+        # Layout 2x2 với CSS màu tím/violet
         st.markdown('''
         <style>
-            /* Target ALL answer option buttons by their key pattern */
-            button[kind="secondary"]:has(p),
-            div[data-testid="stHorizontalBlock"] button,
+            /* Target ALL answer option buttons */
             div[data-testid="column"] .stButton > button {
-                background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%) !important;
-                border: 2px solid #3b82f6 !important;
-                color: #93c5fd !important;
+                background: linear-gradient(135deg, #2d1b4e 0%, #4c1d95 50%, #7c3aed 100%) !important;
+                border: 2px solid #a855f7 !important;
+                color: #e9d5ff !important;
                 border-radius: 12px !important;
                 padding: 16px 20px !important;
                 font-size: 1em !important;
@@ -2719,12 +2717,14 @@ def view_learning(data, progress, username):
                 text-align: left !important;
                 justify-content: flex-start !important;
                 min-height: 55px !important;
+                box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important;
             }
             div[data-testid="column"] .stButton > button:hover {
-                background: linear-gradient(135deg, #2d5a87 0%, #3b82f6 100%) !important;
-                border-color: #60a5fa !important;
+                background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #a855f7 100%) !important;
+                border-color: #c084fc !important;
                 color: #ffffff !important;
                 transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(167, 139, 250, 0.5) !important;
             }
         </style>
         ''', unsafe_allow_html=True)
@@ -3275,7 +3275,7 @@ def view_profile_selector():
     """, unsafe_allow_html=True)
     
     st.title("👋 Xin chào!")
-    st.caption("Version: Uniform_All_v10")
+    st.caption("Version: Purple_v11")
     st.subheader("Chọn người học để bắt đầu:")
 
     # Cloud Check
