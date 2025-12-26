@@ -2704,21 +2704,19 @@ def view_learning(data, progress, username):
         
         # Sử dụng container với class để CSS tác động
         st.markdown('<div class="answer-option-container">', unsafe_allow_html=True)
-        col1, col2 = st.columns(2)
-        with col1:
-            if st.button(f"A. {opts.get('A', '')}", key="opt_a", use_container_width=True): 
-                handle_choice("A")
-                st.rerun()
-            if st.button(f"B. {opts.get('B', '')}", key="opt_b", use_container_width=True): 
-                handle_choice("B")
-                st.rerun()
-        with col2:
-            if st.button(f"C. {opts.get('C', '')}", key="opt_c", use_container_width=True): 
-                handle_choice("C")
-                st.rerun()
-            if st.button(f"D. {opts.get('D', '')}", key="opt_d", use_container_width=True): 
-                handle_choice("D")
-                st.rerun()
+        # Layout dọc - Tất cả nút cùng màu, cùng style
+        if st.button(f"A. {opts.get('A', '')}", key="opt_a", use_container_width=True): 
+            handle_choice("A")
+            st.rerun()
+        if st.button(f"B. {opts.get('B', '')}", key="opt_b", use_container_width=True): 
+            handle_choice("B")
+            st.rerun()
+        if st.button(f"C. {opts.get('C', '')}", key="opt_c", use_container_width=True): 
+            handle_choice("C")
+            st.rerun()
+        if st.button(f"D. {opts.get('D', '')}", key="opt_d", use_container_width=True): 
+            handle_choice("D")
+            st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
     else:
@@ -3251,7 +3249,7 @@ def view_profile_selector():
     """, unsafe_allow_html=True)
     
     st.title("👋 Xin chào!")
-    st.caption("Version: Instant_v7 (Session Cache)")
+    st.caption("Version: UI_Fix_v8 (Uniform Buttons)")
     st.subheader("Chọn người học để bắt đầu:")
 
     # Cloud Check
