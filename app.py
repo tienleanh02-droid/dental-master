@@ -3277,7 +3277,7 @@ def view_profile_selector():
     """, unsafe_allow_html=True)
     
     st.title("👋 Xin chào!")
-    st.caption("Version: Expander_Fix_v12")
+    st.caption("Version: All_Nested_Fix_v13")
     st.subheader("Chọn người học để bắt đầu:")
 
     # Cloud Check
@@ -4086,7 +4086,7 @@ def view_slide_vision(data, current_user):
                                 asset = st.session_state.page_assets[k]
                                 with cols[idx]:
                                     st.image(asset['roi'], caption=f"Source: {k}", use_container_width=True)
-                                    with st.expander(f"Debug {k}"):
+                                    with st.popover(f"🔍 Debug {k}"):
                                          st.image(asset['full'], use_container_width=True)
                                     
                                     # INLINE EDIT CROP
@@ -4180,7 +4180,7 @@ def view_slide_vision(data, current_user):
                                     except Exception as ex:
                                         st.error(f"Err: {ex}")
 
-                             with st.expander("🛠️ Debug Assets"):
+                             with st.popover("🛠️ Debug Assets"):
                                  st.write(f"Source Type: **{asset['source'].upper()}**")
                                  st.image(asset['full'], caption="Full Context", use_container_width=True)
                                  st.image(asset['roi'], caption="ROI", use_container_width=True)
@@ -4200,7 +4200,7 @@ def view_slide_vision(data, current_user):
                      st.write(f"**❓ {g_card.get('question')}**")
                      st.json(g_card.get('options', {}), expanded=False)
                      st.write(f"✅: {g_card.get('correct_answer')}")
-                     with st.expander("💡 Giải thích"):
+                     with st.popover("💡 Giải thích"):
                         st.write(g_card.get('explanation'))
                         if g_card.get('mnemonic'):
                             st.write(f"**🧠 Mnemonic:** {g_card['mnemonic']}")
