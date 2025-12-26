@@ -616,38 +616,56 @@ class DataManager:
         DataManager.init_storage()
         return [name for name in os.listdir(DataManager.BASE_DIR) if os.path.isdir(os.path.join(DataManager.BASE_DIR, name))]
 
-    # --- CÁC HÀM LOAD/SAVE CẢI TIẾN (CLOUD SYNC) ---
+    # --- CÁC HÀM LOAD/SAVE CẢI TIẾN (SESSION STATE CACHE) ---
     @staticmethod
-    def load_data(username):
-        # 1. Thử Cloud trước
+    def load_data(username, force_refresh=False):
+        """Load data với Session State Cache - CHỈ GỌI API 1 LẦN DUY NHẤT"""
+        cache_key = f"cached_data_{username}"
+        
+        # Nếu đã có trong Session và không yêu cầu refresh -> Dùng cache (SIÊU NHANH)
+        if cache_key in st.session_state and not force_refresh:
+            return st.session_state[cache_key]
+        
+        # Nếu chưa có hoặc cần refresh -> Tải từ Cloud/Local
+        data = []
         is_cloud_active = False
         try:
             if GoogleSheetsManager.get_client():
                 is_cloud_active = True
                 cloud_data = GoogleSheetsManager.load_user_data_cloud(username)
                 if cloud_data: 
-                    return cloud_data
+                    data = cloud_data
         except Exception:
-             pass # Fallback to local if cloud fails
+            pass
 
-        # 2. Nếu Cloud chưa có (hoặc Offline), dùng Local
-        local_data_file, _ = DataManager.get_files(username)
-        local_data = []
-        if os.path.exists(local_data_file):
-            try:
-                with open(local_data_file, 'r', encoding='utf-8') as f:
-                    local_data = json.load(f)
-            except: 
-                local_data = []
+        # Fallback to Local
+        if not data:
+            local_data_file, _ = DataManager.get_files(username)
+            if os.path.exists(local_data_file):
+                try:
+                    with open(local_data_file, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                except: 
+                    data = []
 
-        # 3. AUTO-MIGRATE: Nếu có Cloud (nhưng rỗng) và Local (có data) -> Đẩy lên Cloud ngay
-        if is_cloud_active and not cloud_data and local_data:
-            GoogleSheetsManager.save_user_data_cloud(username, local_data)
+        # Auto-Migrate
+        if is_cloud_active and not st.session_state.get(f"migrated_data_{username}") and data:
+            # Đánh dấu đã migrate để không lặp lại
+            st.session_state[f"migrated_data_{username}"] = True
+            # Chạy ngầm
+            t = threading.Thread(target=GoogleSheetsManager.save_user_data_cloud, args=(username, data))
+            t.start()
         
-        return local_data
+        # LƯU VÀO SESSION STATE
+        st.session_state[cache_key] = data
+        return data
 
     @staticmethod
     def save_data(username, data):
+        # 0. CẬP NHẬT SESSION CACHE (Quan trọng để UI luôn hiện đúng)
+        cache_key = f"cached_data_{username}"
+        st.session_state[cache_key] = data
+        
         # 1. Lưu Local (Backup an toàn - Blocking để đảm bảo data không mất)
         data_file, _ = DataManager.get_files(username)
         try:
@@ -663,34 +681,50 @@ class DataManager:
             
             
     @staticmethod
-    def load_progress(username):
-        # 1. Thử Cloud
+    def load_progress(username, force_refresh=False):
+        """Load progress với Session State Cache - CHỈ GỌI API 1 LẦN DUY NHẤT"""
+        cache_key = f"cached_progress_{username}"
+        
+        # Nếu đã có trong Session và không yêu cầu refresh -> Dùng cache (SIÊU NHANH)
+        if cache_key in st.session_state and not force_refresh:
+            return st.session_state[cache_key]
+        
+        # Nếu chưa có hoặc cần refresh -> Tải từ Cloud/Local
+        progress = {}
         is_cloud_active = False
-        cloud_prog = {}
         try:
             if GoogleSheetsManager.get_client():
                 is_cloud_active = True
                 cloud_prog = GoogleSheetsManager.load_progress_cloud(username)
-                if cloud_prog: return cloud_prog
+                if cloud_prog: 
+                    progress = cloud_prog
         except: pass
 
-        # 2. Local
-        _, prog_file = DataManager.get_files(username)
-        local_prog = {}
-        if os.path.exists(prog_file):
-            try:
-                with open(prog_file, 'r', encoding='utf-8') as f:
-                    local_prog = json.load(f)
-            except: local_prog = {}
+        # Fallback to Local
+        if not progress:
+            _, prog_file = DataManager.get_files(username)
+            if os.path.exists(prog_file):
+                try:
+                    with open(prog_file, 'r', encoding='utf-8') as f:
+                        progress = json.load(f)
+                except: progress = {}
 
-        # 3. Auto-Migrate Progress
-        if is_cloud_active and not cloud_prog and local_prog:
-            GoogleSheetsManager.save_progress_cloud(username, local_prog)
-
-        return local_prog
+        # Auto-Migrate (chạy ngầm)
+        if is_cloud_active and not st.session_state.get(f"migrated_progress_{username}") and progress:
+            st.session_state[f"migrated_progress_{username}"] = True
+            t = threading.Thread(target=GoogleSheetsManager.save_progress_cloud, args=(username, progress))
+            t.start()
+        
+        # LƯU VÀO SESSION STATE
+        st.session_state[cache_key] = progress
+        return progress
 
     @staticmethod
     def save_progress(username, progress):
+        # 0. CẬP NHẬT SESSION CACHE
+        cache_key = f"cached_progress_{username}"
+        st.session_state[cache_key] = progress
+        
         # 1. Local (Nhanh)
         _, prog_file = DataManager.get_files(username)
         try:
@@ -3217,7 +3251,7 @@ def view_profile_selector():
     """, unsafe_allow_html=True)
     
     st.title("👋 Xin chào!")
-    st.caption("Version: Critical_Fix_v6 (Function Restored)")
+    st.caption("Version: Instant_v7 (Session Cache)")
     st.subheader("Chọn người học để bắt đầu:")
 
     # Cloud Check
