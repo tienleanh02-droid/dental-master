@@ -661,7 +661,33 @@ class DataManager:
             t = threading.Thread(target=GoogleSheetsManager.save_user_data_cloud, args=(username, data))
             t.start()
             
-    # ... (load_progress giữ nguyên) ...
+            
+    @staticmethod
+    def load_progress(username):
+        # 1. Thử Cloud
+        is_cloud_active = False
+        cloud_prog = {}
+        try:
+            if GoogleSheetsManager.get_client():
+                is_cloud_active = True
+                cloud_prog = GoogleSheetsManager.load_progress_cloud(username)
+                if cloud_prog: return cloud_prog
+        except: pass
+
+        # 2. Local
+        _, prog_file = DataManager.get_files(username)
+        local_prog = {}
+        if os.path.exists(prog_file):
+            try:
+                with open(prog_file, 'r', encoding='utf-8') as f:
+                    local_prog = json.load(f)
+            except: local_prog = {}
+
+        # 3. Auto-Migrate Progress
+        if is_cloud_active and not cloud_prog and local_prog:
+            GoogleSheetsManager.save_progress_cloud(username, local_prog)
+
+        return local_prog
 
     @staticmethod
     def save_progress(username, progress):
@@ -3191,7 +3217,7 @@ def view_profile_selector():
     """, unsafe_allow_html=True)
     
     st.title("👋 Xin chào!")
-    st.caption("Version: Stable_Fix_v5 (Conn Cache + Async)")
+    st.caption("Version: Critical_Fix_v6 (Function Restored)")
     st.subheader("Chọn người học để bắt đầu:")
 
     # Cloud Check
