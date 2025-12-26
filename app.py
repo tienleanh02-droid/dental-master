@@ -17,6 +17,7 @@ from google_db import GoogleSheetsManager
 # --- MONKEY PATCH FOR streamlit-drawable-canvas ---
 # Fix AttributeError: module 'streamlit.elements.image' has no attribute 'image_to_url'
 # Fix AttributeError: 'int' object has no attribute 'width'
+HAS_CANVAS = False
 try:
     import streamlit.elements.image
     from streamlit.elements.lib.image_utils import image_to_url as new_image_to_url
@@ -29,10 +30,11 @@ try:
         return new_image_to_url(image, MockWidth(width), clamp, channels, output_format, image_id)
 
     streamlit.elements.image.image_to_url = patched_image_to_url
-except ImportError:
-    pass # If specific paths change more, we might need another fix
-
-from streamlit_drawable_canvas import st_canvas
+    
+    from streamlit_drawable_canvas import st_canvas
+    HAS_CANVAS = True
+except Exception:
+    st_canvas = None  # Fallback if canvas not available
 
 # Try-Except block for safe import
 try:
