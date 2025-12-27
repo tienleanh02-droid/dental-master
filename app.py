@@ -3550,6 +3550,18 @@ def main():
                             st.success(msg)
                         else:
                             st.error(msg)
+                
+                st.markdown("---")
+                
+                # Reload from Cloud
+                if st.button("⬇️ Tải lại từ Cloud", use_container_width=True, help="Xóa cache, tải dữ liệu mới từ Cloud"):
+                    # Xóa cache session state
+                    if f"cached_data_{current_user}" in st.session_state:
+                        del st.session_state[f"cached_data_{current_user}"]
+                    if f"cached_progress_{current_user}" in st.session_state:
+                        del st.session_state[f"cached_progress_{current_user}"]
+                    st.success("Đã xóa cache! Đang tải lại...")
+                    st.rerun()
             else:
                 st.caption("⚠️ Cloud chưa kết nối")
         
