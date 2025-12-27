@@ -24,3 +24,7 @@ build/
 # user_profiles/
 # data.json
 # progress.json
+
+# Sensitive config files (API Keys)
+config.json
+credentials.json

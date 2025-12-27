@@ -3428,7 +3428,7 @@ def main():
             if st.button("Lưu Key"):
                 st.session_state.api_key = new_key
                 config['api_key'] = new_key
-                DataManager.save_config(config, current_user)
+                DataManager.save_config(config)
                 st.success("Đã lưu API Key!")
                 st.rerun()
         
