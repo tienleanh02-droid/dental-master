@@ -201,12 +201,12 @@
   },
   "c8c41a50-cb3f-4e9b-82e1-21c67c039328": {
     "state": "learning",
-    "step_index": 0,
-    "due": "2025-12-25T23:11:47.834360",
+    "step_index": 1,
+    "due": "2025-12-27T11:10:50.955017",
     "interval": 0,
     "ease": 2.3,
     "lapses": 0,
-    "repetitions": 2,
+    "repetitions": 3,
     "first_learned": "2025-12-25T19:23:19.303078"
   },
   "6d5025af-978c-465d-902d-ac220496f82e": {
@@ -232,11 +232,11 @@
   "a5ce362f-1b7d-4272-8fc5-535e6c9a6a3c": {
     "state": "learning",
     "step_index": 0,
-    "due": "2025-12-25T23:57:37.344030",
+    "due": "2025-12-27T10:34:45.349354",
     "interval": 0,
     "ease": 2.3,
     "lapses": 0,
-    "repetitions": 3,
+    "repetitions": 4,
     "first_learned": "2025-12-25T19:58:22.400870"
   },
   "42db2979-0c1f-4b56-b9a8-e56607a97732": {
@@ -318,5 +318,65 @@
     "lapses": 0,
     "repetitions": 1,
     "first_learned": "2025-12-25T23:47:18.867140"
+  },
+  "5fa819a7-7130-4039-96a1-38e5692f067c": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-27T10:40:11.076548",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-27T10:39:11.076548"
+  },
+  "2c61f388-a91d-4556-8f6f-0cc2e47565c2": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-27T10:55:47.010058",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-27T10:54:47.010058"
+  },
+  "8017b366-640e-450c-a72e-36535b388537": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-27T10:56:35.448061",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-27T10:55:35.448061"
+  },
+  "3da46093-fb11-423f-81c6-472628e4d9fc": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-27T11:01:12.193984",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-27T11:00:12.193984"
+  },
+  "579081b2-deed-49e1-94b6-4db480c7931a": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-27T23:21:10.835689",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-27T23:20:10.835689"
+  },
+  "4dfba961-8611-4071-8336-fd9f4f169a83": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-27T23:21:13.258191",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-27T23:20:13.258191"
   }
 }

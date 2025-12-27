@@ -148,8 +148,13 @@ class GoogleSheetsManager:
     @staticmethod
     def save_user_data_cloud(username, data):
         """Lưu toàn bộ data user lên Sheet (Cơ chế Ghi đè an toàn)"""
+        import streamlit as st
+        st.warning(f"[DEBUG] save_user_data_cloud called for user: {username}, data count: {len(data) if data else 0}")
+        
         sh, msg = GoogleSheetsManager.get_or_create_spreadsheet()
-        if not sh: return False 
+        if not sh: 
+            st.error(f"[DEBUG] get_or_create_spreadsheet FAILED: {msg}")
+            return False 
         
         try:
             ws_name = f"Data_{username}"
@@ -169,42 +174,84 @@ class GoogleSheetsManager:
             import copy
             data_copy = copy.deepcopy(data)
             
+            # --- UPLOAD IMAGES TO IMGBB (Thay thế Drive vì SA không có quota) ---
+            try:
+                from imgbb_manager import ImgBBManager
+                
+                image_fields = ['image_q', 'image_a']
+                images_uploaded = 0
+                
+                for item in data_copy:
+                    for field in image_fields:
+                        img_value = item.get(field, '')
+                        if img_value and not ImgBBManager.is_imgbb_url(img_value):
+                            # Đây là tên file local, cần upload
+                            local_path = os.path.join("static", "images", img_value)
+                            if os.path.exists(local_path):
+                                imgbb_url = ImgBBManager.upload_image(local_path, img_value)
+                                if imgbb_url:
+                                    item[field] = imgbb_url
+                                    images_uploaded += 1
+                
+                if images_uploaded > 0:
+                    st.info(f"[SYNC] Đã upload {images_uploaded} ảnh lên ImgBB")
+            except Exception as e:
+                st.warning(f"[SYNC] Lỗi upload ảnh (bỏ qua): {e}")
+            
+            # Helper function to recursively sanitize NaN/Infinity values
+            def sanitize_value(val):
+                if isinstance(val, float) and (val != val or val == float('inf') or val == float('-inf')):
+                    return None
+                elif isinstance(val, dict):
+                    return {k: sanitize_value(v) for k, v in val.items()}
+                elif isinstance(val, list):
+                    return [sanitize_value(item) for item in val]
+                return val
+            
             for item in data_copy:
                 # Stringify complex fields
                 for k, v in item.items():
+                    # Sanitize NaN/Infinity values (including nested)
+                    v = sanitize_value(v)
                     if isinstance(v, (dict, list)):
                         item[k] = json.dumps(v, ensure_ascii=False)
+                    else:
+                        item[k] = v
                 rows_to_save.append(item)
+            
+            import streamlit as st
+            st.info(f"[DEBUG] Preparing to save {len(rows_to_save)} rows to {ws_name}")
             
             # --- GHI DỮ LIỆU ---
             try:
                 ws = sh.worksheet(ws_name)
+                st.info(f"[DEBUG] Found existing worksheet: {ws_name}")
                 ws.clear() # Xóa cũ
             except gspread.WorksheetNotFound:
+                st.info(f"[DEBUG] Creating new worksheet: {ws_name}")
                 ws = sh.add_worksheet(title=ws_name, rows=1000, cols=20)
                 
             # Gspread update (dùng list of dicts thì cần set header)
             if rows_to_save:
                 # Lấy keys làm header
                 headers = list(rows_to_save[0].keys())
-                # Dùng thư viện gspread-dataframe hoặc update cell thủ công,
-                # hoặc đơn giản nhất: update([headers] + values)
-                
-                # Cách thủ công an toàn:
-                # 1. Update Header
-                # 2. Update Rows
                 
                 # Chuẩn bị matrix
                 matrix = [headers]
                 for row_dict in rows_to_save:
                     row_val = [row_dict.get(h, "") for h in headers]
                     matrix.append(row_val)
-                    
+                
+                st.info(f"[DEBUG] Matrix size: {len(matrix)} rows x {len(headers)} cols")
                 ws.update(matrix)
+                st.success(f"[DEBUG] Update successful!")
                 
             return True
         except Exception as e:
-            # st.error(f"Cloud Save Error: {e}")
+            import streamlit as st
+            import traceback
+            error_msg = f"Cloud Save Error: {e}\n{traceback.format_exc()}"
+            st.error(error_msg)
             return False
 
     @staticmethod

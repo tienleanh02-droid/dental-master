@@ -52,6 +52,44 @@ except ImportError:
 # --- CONFIGURATION ---
 MODEL_ID = "models/gemini-3-flash-preview"
 
+# --- HELPER: DISPLAY IMAGE FROM LOCAL OR URL ---
+def display_image_smart(image_value, width=None, caption=None, use_container_width=False):
+    """
+    Hiển thị ảnh từ local path hoặc URL (Google Drive).
+    - Nếu là URL (bắt đầu bằng http), hiển thị trực tiếp
+    - Nếu là tên file local, tìm trong static/images
+    - Trả về True nếu hiển thị thành công, False nếu không
+    """
+    if not image_value:
+        return False
+    
+    try:
+        # Kiểm tra nếu là URL
+        if image_value.startswith('http'):
+            if width:
+                st.image(image_value, width=width, caption=caption)
+            elif use_container_width:
+                st.image(image_value, use_container_width=True, caption=caption)
+            else:
+                st.image(image_value, caption=caption)
+            return True
+        
+        # Nếu là tên file local
+        local_path = os.path.join("static", "images", image_value)
+        if os.path.exists(local_path):
+            if width:
+                st.image(local_path, width=width, caption=caption)
+            elif use_container_width:
+                st.image(local_path, use_container_width=True, caption=caption)
+            else:
+                st.image(local_path, caption=caption)
+            return True
+        
+        return False
+    except Exception:
+        return False
+
+
 # --- HÀM PHÍM TẮT (KEYBOARD SHORTCUTS) ---
 def inject_keyboard_shortcuts():
     # JavaScript logic: Lắng nghe phím 1, 2, 3, 4 và tự động click vào nút tương ứng
@@ -790,12 +828,16 @@ class DataManager:
                 data = DataManager.load_data(username)
             
             if data:
-                GoogleSheetsManager.save_user_data_cloud(username, data)
-                return True, f"Đồng bộ thẻ thành công! ({len(data)} thẻ)"
+                result = GoogleSheetsManager.save_user_data_cloud(username, data)
+                if result:
+                    return True, f"Đồng bộ thẻ thành công! ({len(data)} thẻ)"
+                else:
+                    return False, "Cloud save trả về False - có thể lỗi API"
             else:
                 return False, "Không có thẻ để đồng bộ"
         except Exception as e:
-            return False, f"Lỗi: {e}"
+            import traceback
+            return False, f"Lỗi: {e}\n{traceback.format_exc()}"
     
     @staticmethod
     def sync_progress_only(username):
@@ -1345,13 +1387,11 @@ def view_mock_exam(data, username):
             
             # Xử lý hình ảnh nếu có
             if q.get('image_q'):
-                img_path = os.path.join("static", "images", q['image_q'])
-                if os.path.exists(img_path):
-                    # Default view: Moderate size
-                    st.image(img_path, width=350) 
+                # Default view: Moderate size (hỗ trợ cả local và Drive URL)
+                if display_image_smart(q['image_q'], width=350):
                     # Zoom feature
                     with st.expander("🔍 Phóng to ảnh (Zoom)"):
-                        st.image(img_path, width=700) # Moderate zoom, not full width
+                        display_image_smart(q['image_q'], width=700)
 
             options = ["A", "B", "C", "D"]
             opts = q.get('options', {})
@@ -1570,7 +1610,14 @@ NHIỆM VỤ:
             # CREATE NEW FOLDER
             with st.popover("➕ Tạo thư mục mới"):
                 new_folder_name = st.text_input("Tên thư mục:", key="new_folder_input", placeholder="VD: Nha khoa")
-                parent_options = ["(Root - Gốc)"] + all_subjects
+                # Build complete folder hierarchy (including intermediate folders)
+                all_folders = set()
+                for subject in all_subjects:
+                    parts = subject.split('/')
+                    for i in range(1, len(parts) + 1):
+                        all_folders.add('/'.join(parts[:i]))
+                parent_options = ["(Root - Gốc)"] + sorted(list(all_folders))
+                st.caption(f"DEBUG: {sorted(list(all_folders))[:5]}...")  # TEMP DEBUG
                 new_folder_parent = st.selectbox("Thư mục cha:", parent_options, key="new_folder_parent")
                 
                 if st.button("✅ Tạo", key="btn_create_folder", type="primary"):
@@ -2006,8 +2053,9 @@ NHIỆM VỤ:
                         col_img_q, col_img_a = st.columns(2)
                         with col_img_q:
                             st.caption("Ảnh Câu hỏi (Image Q)")
-                            if card.get('image_q') and os.path.exists(os.path.join("static", "images", card['image_q'])):
-                                st.image(os.path.join("static", "images", card['image_q']), width=150)
+                            img_q_val = card.get('image_q', '')
+                            if img_q_val and (img_q_val.startswith('http') or os.path.exists(os.path.join("static", "images", img_q_val))):
+                                display_image_smart(img_q_val, width=150)
                                 del_img_q = st.checkbox("🗑️ Xóa ảnh câu hỏi", key=f"del_q_{card['id']}")
                             else:
                                 del_img_q = False
@@ -2015,8 +2063,9 @@ NHIỆM VỤ:
                         
                         with col_img_a:
                             st.caption("Ảnh Giải thích (Image A)")
-                            if card.get('image_a') and os.path.exists(os.path.join("static", "images", card['image_a'])):
-                                st.image(os.path.join("static", "images", card['image_a']), width=150)
+                            img_a_val = card.get('image_a', '')
+                            if img_a_val and (img_a_val.startswith('http') or os.path.exists(os.path.join("static", "images", img_a_val))):
+                                display_image_smart(img_a_val, width=150)
                                 del_img_a = st.checkbox("🗑️ Xóa ảnh giải thích", key=f"del_a_{card['id']}")
                             else:
                                 del_img_a = False
@@ -2725,7 +2774,7 @@ def view_learning(data, progress, username):
             # Image Handler
             st.markdown("#### 🖼️ Hình ảnh")
             if q.get('image_q'):
-                 st.image(os.path.join("static", "images", q['image_q']), width=200, caption="Ảnh hiện tại")
+                 display_image_smart(q['image_q'], width=200, caption="Ảnh hiện tại")
                  if st.checkbox("Xóa ảnh hiện tại?"):
                      q['temp_delete_img'] = True
             
@@ -2787,13 +2836,14 @@ def view_learning(data, progress, username):
     
     # Image Q Display
     if 'image_q' in q and q['image_q']:
-        img_path = os.path.join("static", "images", q['image_q'])
-        if os.path.exists(img_path):
+        img_q_val = q['image_q']
+        # Check if URL or local file exists
+        if img_q_val.startswith('http') or os.path.exists(os.path.join("static", "images", img_q_val)):
             with st.expander("🖼️ Ảnh minh họa (Click để xem)", expanded=True):
                 # Optimize display: Don't stretch small images. Use fixed reasonable max width.
                 col_img_1, col_img_2, col_img_3 = st.columns([1, 4, 1])
                 with col_img_2:
-                    st.image(img_path, width=600)
+                    display_image_smart(img_q_val, width=600)
     
     # Câu trả lời - UI xanh lá thu hút
     st.markdown('''
@@ -3554,13 +3604,19 @@ def main():
                 st.markdown("---")
                 
                 # Reload from Cloud
-                if st.button("⬇️ Tải lại từ Cloud", use_container_width=True, help="Xóa cache, tải dữ liệu mới từ Cloud"):
+                if st.button("⬇️ Tải lại từ Cloud", use_container_width=True, help="Backup progress rồi tải dữ liệu mới từ Cloud"):
+                    # BACKUP progress trước khi xóa cache (tránh mất dữ liệu)
+                    try:
+                        DataManager.sync_progress_only(current_user)
+                        st.info("Đã backup progress lên Cloud!")
+                    except: pass
+                    
                     # Xóa cache session state
                     if f"cached_data_{current_user}" in st.session_state:
                         del st.session_state[f"cached_data_{current_user}"]
                     if f"cached_progress_{current_user}" in st.session_state:
                         del st.session_state[f"cached_progress_{current_user}"]
-                    st.success("Đã xóa cache! Đang tải lại...")
+                    st.success("Đang tải lại từ Cloud...")
                     st.rerun()
             else:
                 st.caption("⚠️ Cloud chưa kết nối")

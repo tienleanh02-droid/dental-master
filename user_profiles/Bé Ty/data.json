@@ -3029,26 +3029,6 @@
     "image_a": ""
   },
   {
-    "id": "7487d0a4-fe56-4bbd-8385-535a4ee696b2",
-    "question": "Thuốc kháng virus Acyclovir qua đường uống thường được chỉ định để điều trị hiệu quả nhất đối với nhóm virus nào sau đây?",
-    "options": {
-      "A": "HHV-1, HHV-2, HHV-3 (VZV)",
-      "B": "HHV-4 (EBV), HHV-5 (CMV)",
-      "C": "Virus gây bệnh Tay - Chân - Miệng",
-      "D": "Human Papillomavirus (HPV)"
-    },
-    "correct_answer": "A",
-    "explanation": "Acyclovir có tác dụng chọn lọc cao trên các virus nhóm Alphaherpesvirinae bao gồm HSV-1, HSV-2 và VZV (HHV-3).",
-    "source": "R19 - Nội khoa",
-    "mnemonic": "Acyclovir = 1, 2, 3",
-    "subject": "Nội khoa miệng",
-    "topic": "Antiviral Therapy",
-    "tags": [],
-    "chat_history": [],
-    "image_q": "",
-    "image_a": ""
-  },
-  {
     "id": "152672cc-e311-428b-a524-22634cd3f84d",
     "subject": "Bệnh học miệng",
     "topic": "_folder_placeholder",
@@ -3549,7 +3529,16 @@
     "subject": "Bệnh học miệng/Bệnh vùng miệng do virus",
     "topic": "Varicella Zoster Virus (VZV)",
     "tags": [],
-    "chat_history": [],
+    "chat_history": [
+      {
+        "role": "user",
+        "content": "hi"
+      },
+      {
+        "role": "assistant",
+        "content": "⚠️ Vui lòng nhập API Key ở thanh bên trái."
+      }
+    ],
     "image_q": "",
     "image_a": ""
   },
@@ -4827,5 +4816,2405 @@
       "interval": 0,
       "due_date": "2025-12-25T18:45:43.081306"
     }
+  },
+  {
+    "id": "71421988-d4a6-45af-a2df-605c5c60d615",
+    "question": "Theo thống kê, lối vào vùng chẽ của bao nhiêu % răng cối lớn có kích thước nhỏ hơn 0,75 mm?",
+    "options": {
+      "A": "0.4",
+      "B": "0.5",
+      "C": "0.6",
+      "D": "0.75"
+    },
+    "correct_answer": "C",
+    "explanation": "60% lối vào vùng chẽ nhỏ hơn 0,75 mm, khiến các dụng cụ thông thường (như nạo Gracey) khó tiếp cận,.",
+    "source": "Slide 32, 41",
+    "mnemonic": "Chẽ nhỏ = 60%",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Giải phẫu",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "802b123e-168a-4c94-b84d-865d36796c47",
+    "question": "Dụng cụ chuyên dụng nào được lựa chọn để thăm khám sang thương vùng chẽ theo chiều ngang?",
+    "options": {
+      "A": "Cây đo túi UNC-15",
+      "B": "Thám trâm số 23",
+      "C": "Thám trâm Nabers",
+      "D": "Cây nạo Gracey 11/12"
+    },
+    "correct_answer": "C",
+    "explanation": "Thám trâm Nabers có đầu cong đặc thù giúp lách vào lối vào vùng chẽ để đo mức độ phá hủy theo chiều ngang,.",
+    "source": "Slide 31, 341",
+    "mnemonic": "Nabers = Ngang",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Chẩn đoán",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "f8f1958d-042c-4ff5-8ff7-58f0bb76c0d3",
+    "question": "Một sang thương vùng chẽ thông suốt từ ngoài vào trong nhưng lỗ thông vẫn được nướu che phủ là:",
+    "options": {
+      "A": "Glickman Loại I",
+      "B": "Glickman Loại II",
+      "C": "Glickman Loại III",
+      "D": "Glickman Loại IV"
+    },
+    "correct_answer": "C",
+    "explanation": "Loại III là tiêu xương thông suốt (đường hầm) nhưng mô mềm vẫn che phủ vùng chẽ,.",
+    "source": "Slide 29, 338",
+    "mnemonic": "III = Kín nướu",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phân loại Glickman",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "dfacd2e3-b2d0-44c5-91b5-18de6d9fe9fa",
+    "question": "Điểm khác biệt cốt lõi giữa Glickman Loại III và Loại IV là gì?",
+    "options": {
+      "A": "Độ sâu túi nha chu",
+      "B": "Mức độ tiêu xương trên phim",
+      "C": "Sự hiện diện của lỗ thông trên lâm sàng",
+      "D": "Chiều dài chân răng"
+    },
+    "correct_answer": "C",
+    "explanation": "Loại IV là Loại III mức độ nặng, nướu đã tụt và có thể nhìn thấy rõ lỗ thông qua vùng chẽ,.",
+    "source": "Slide 29, 339",
+    "mnemonic": "IV = Viền (lộ)",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phân loại Glickman",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "0cf29926-3a5f-4b32-af3c-2b1a839254b0",
+    "question": "Theo Hamp (1975), sang thương vùng chẽ độ 1 được xác định khi mức độ phá hủy theo chiều ngang là:",
+    "options": {
+      "A": "< 1 mm",
+      "B": "< 2 mm",
+      "C": "< 3 mm",
+      "D": "> 3 mm"
+    },
+    "correct_answer": "C",
+    "explanation": "Hamp Độ 1: mất mô nâng đỡ theo chiều ngang ít hơn 3 mm,,.",
+    "source": "Slide 30, 172",
+    "mnemonic": "Hamp 1 = < 3mm",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phân loại Hamp",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "bcaaf5e4-591b-4671-8895-97fe73dd1f75",
+    "question": "Sang thương vùng chẽ xuyên qua toàn bộ chiều dày chân răng theo chiều ngoài - trong được Hamp xếp vào:",
+    "options": {
+      "A": "Loại 1",
+      "B": "Loại 2",
+      "C": "Loại 3",
+      "D": "Loại 4"
+    },
+    "correct_answer": "C",
+    "explanation": "Loại 3 là sang thương xuyên qua hoàn toàn theo chiều ngoài - trong,.",
+    "source": "Slide 30, 340",
+    "mnemonic": "Hamp 3 = Thông",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phân loại Hamp",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "1ecae4ab-6e72-4bee-aa6a-65b38643e75f",
+    "question": "Khi thăm khám sang thương vùng chẽ phía gần của răng cối lớn 1 hàm trên, lối vào nên được tiếp cận từ đâu?",
+    "options": {
+      "A": "Phía ngoài",
+      "B": "Phía trong (vòm miệng)",
+      "C": "Phía gần",
+      "D": "Phía xa"
+    },
+    "correct_answer": "B",
+    "explanation": "Vùng chẽ phía gần của RCL 1 hàm trên nằm lệch về phía trong (2/3 về phía trong), nên phải thăm dò từ phía trong.",
+    "source": "Slide 342",
+    "mnemonic": "Gần trên = Trong",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Giải phẫu ứng dụng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "6c9f3a7f-e207-4757-bf68-8d81806c97a7",
+    "question": "Phẫu thuật bổ đôi răng (Hemisection) thường được ưu tiên chỉ định cho răng nào?",
+    "options": {
+      "A": "Răng cối lớn hàm trên",
+      "B": "Răng cối lớn hàm dưới",
+      "C": "Răng cối nhỏ hàm trên",
+      "D": "Răng cửa hàm dưới"
+    },
+    "correct_answer": "B",
+    "explanation": "Hemisection thường áp dụng cho răng cối lớn hàm dưới có chân răng phân kỳ nhiều, chia đôi răng để giữ lại chân lành mạnh,.",
+    "source": "Slide 33, 349",
+    "mnemonic": "Hemi = Half = Hàm dưới",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Điều trị",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "d86e6ec6-266a-4eff-87ae-cbe30103efb5",
+    "question": "Phẫu thuật cắt chân răng (Root resection) được chỉ định cho răng nhiều chân gặp sang thương vùng chẽ loại mấy?",
+    "options": {
+      "A": "Loại 1",
+      "B": "Loại 1 - 2",
+      "C": "Loại 2 - 4",
+      "D": "Chỉ loại 4"
+    },
+    "correct_answer": "C",
+    "explanation": "Cắt chân răng được áp dụng trên răng nhiều chân có sang thương loại 2 đến 4,,.",
+    "source": "Slide 33, 349",
+    "mnemonic": "Resection = Loại 2-4",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Điều trị",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "8d03c65f-09fc-4751-830a-b1cca72d57a7",
+    "question": "Phẫu thuật đường hầm (Tunnelization) chỉ nên thực hiện trong điều kiện giải phẫu nào?",
+    "options": {
+      "A": "Chân răng hội tụ",
+      "B": "Phần chung chân răng dài",
+      "C": "Phần chung chân răng ngắn, chân răng phân kỳ nhiều",
+      "D": "Răng một chân"
+    },
+    "correct_answer": "C",
+    "explanation": "Chỉ định khi chân răng phân kỳ nhiều để tạo lỗ thông cho bệnh nhân tự vệ sinh răng miệng,.",
+    "source": "Slide 33, 42",
+    "mnemonic": "Đường hầm = Thông chân",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phẫu thuật",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "fe095a31-b749-4cc8-b043-332da4e06e15",
+    "question": "Một răng cối có mất bám dính 50% kèm sang thương vùng chẽ độ II, theo McGuire & Nunn (1996) xếp vào loại:",
+    "options": {
+      "A": "Khá",
+      "B": "Kém (Xấu)",
+      "C": "Nghi ngờ",
+      "D": "Vô vọng"
+    },
+    "correct_answer": "B",
+    "explanation": "Mất bám dính 50% và/hoặc vùng chẽ độ II làm việc KSMB khó khăn nên tiên lượng Xấu,,.",
+    "source": "Slide 190, 280",
+    "mnemonic": "Chẽ II = Xấu",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Tiên lượng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "7167c9cd-72db-4534-a199-7c664109e848",
+    "question": "Răng được xếp vào tiên lượng \"Vô vọng\" (Hopeless) khi nào?",
+    "options": {
+      "A": "Sang thương chẽ độ III",
+      "B": "Lung lay độ II",
+      "C": "Bám dính không đủ để duy trì chức năng và sự lành mạnh",
+      "D": "Mất bám dính 50%"
+    },
+    "correct_answer": "C",
+    "explanation": "Vô vọng là khi bám dính còn lại không đủ để thực hiện chức năng,,.",
+    "source": "Slide 190, 191",
+    "mnemonic": "Vô vọng = Vứt",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Tiên lượng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "e869347f-86b1-409f-a006-cf4f34616536",
+    "question": "Hình ảnh thấu quang hình tam giác tại vùng chia chân răng trên phim X-quang gợi ý điều gì?",
+    "options": {
+      "A": "Sâu răng cổ răng",
+      "B": "Sang thương vùng chẽ",
+      "C": "Viêm quanh chóp",
+      "D": "Răng mọc thụ động"
+    },
+    "correct_answer": "B",
+    "explanation": "Sự sụt giảm mật độ xương (thấu quang) ở vùng chia chân là dấu hiệu điển hình của sang thương chẽ trên phim,.",
+    "source": "Slide 253, 254",
+    "mnemonic": "Tam giác chẽ = FI",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "X-quang",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "3c66af01-9ba0-4c7d-91ab-0a2c806cfd46",
+    "question": "Mục tiêu quan trọng nhất của việc tạo hình chân răng (Odontoplasty) trong điều trị vùng chẽ là:",
+    "options": {
+      "A": "Làm đẹp răng",
+      "B": "Giảm độ nhạy cảm răng",
+      "C": "Loại bỏ yếu tố lưu giữ mảng bám và tạo thuận lợi vệ sinh",
+      "D": "Thay thế xương đã mất"
+    },
+    "correct_answer": "C",
+    "explanation": "Tạo dạng giải phẫu thuận lợi giúp bệnh nhân và bác sĩ dễ dàng kiểm soát mảng bám,.",
+    "source": "Slide 31, 347",
+    "mnemonic": "Tạo hình = Thuận vệ sinh",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Điều trị",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "ea5b68f0-8a6b-41d9-bc0d-99f1e89b415a",
+    "question": "Cấu trúc giải phẫu nào thường gặp ở RCL 2 hàm trên (1,1% - 9,7%) gây khó khăn cho việc xử lý mặt chân răng vùng chẽ?",
+    "options": {
+      "A": "Rãnh dọc",
+      "B": "Hạt trai men (Enamel pearl)",
+      "C": "Lồi men răng",
+      "D": "Túi trong xương"
+    },
+    "correct_answer": "B",
+    "explanation": "Hạt trai men thường hiện diện ở vùng chẽ, gây tích tụ mảng bám và cản trở việc làm sạch bề mặt chân răng,,.",
+    "source": "Slide 32, 41",
+    "mnemonic": "Hạt trai = RCL2 trên",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Giải phẫu",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "d0ca1189-2ba4-4d69-a2ed-be5f03d41f2a",
+    "question": "Theo Bower (1979), bao nhiêu % lối vào vùng chẽ của các răng cối lớn có kích thước nhỏ hơn 0.75mm?",
+    "options": {
+      "A": "0.4",
+      "B": "0.58",
+      "C": "0.75",
+      "D": "0.81"
+    },
+    "correct_answer": "B",
+    "explanation": "58% lối vào vùng chẽ nhỏ hơn 0.75mm, trong khi đầu tác dụng của cây nạo chuẩn thường lớn hơn kích thước này, gây khó khăn cho việc làm sạch,,.",
+    "source": "nan",
+    "mnemonic": "Chẽ nhỏ < 0.75 = 58%",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Giải phẫu",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "31461405-55f4-492c-9a96-2fa455f60e7b",
+    "question": "Khi thăm khám vùng chẽ phía gần của răng cối lớn 1 hàm trên, vị trí lối vào nằm ở đâu so với kích thước ngoài - trong?",
+    "options": {
+      "A": "Nằm chính giữa",
+      "B": "Lệch về phía ngoài 2/3",
+      "C": "Lệch về phía trong (vòm miệng) 2/3",
+      "D": "Sát phía xa"
+    },
+    "correct_answer": "C",
+    "explanation": "Lối vào vùng chẽ phía gần của RCL1 hàm trên mở ra ở khoảng 2/3 về phía trong, nên bắt buộc phải thăm dò từ phía vòm miệng,,.",
+    "source": ",,",
+    "mnemonic": "Gần trên = Trong",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Chẩn đoán",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "acc264b4-7fd5-46fa-97c6-b2dfa00f3bcb",
+    "question": "Theo Fedi (2000), sang thương Glickman cấp II độ II được xác định khi tiêu xương dọc tại vùng chẽ đạt mức nào?",
+    "options": {
+      "A": "< 1 mm",
+      "B": "1 - 3 mm",
+      "C": "> 3 mm",
+      "D": "Thông suốt ngoài - trong"
+    },
+    "correct_answer": "C",
+    "explanation": "Fedi bổ sung tiêu chí xương dọc vào Glickman II: Độ I là tiêu xương dọc 1-3mm; Độ II là tiêu xương dọc > 3mm nhưng chưa thông,.",
+    "source": ",",
+    "mnemonic": "Fedi II-II = Dọc > 3mm",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phân loại Fedi",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "7a8c57dc-90be-4b79-b588-e9a96ce7c410",
+    "question": "\"Root Trunk\" (Phần chung chân răng) ngắn là một yếu tố nguy cơ vì:",
+    "options": {
+      "A": "Dễ gây sâu răng",
+      "B": "Vùng chẽ sớm bị lộ hơn khi có mất bám dính",
+      "C": "Chân răng dễ bị gãy",
+      "D": "Khó điều trị nội nha"
+    },
+    "correct_answer": "B",
+    "explanation": "Phần chung chân răng càng ngắn thì khi có mất bám dính, tổn thương sẽ lan vào vùng chẽ nhanh hơn so với răng có phần chung dài,,.",
+    "source": ",",
+    "mnemonic": "Thân ngắn = Chẽ sớm",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Giải phẫu",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "a2fe5776-0477-4920-b19e-47b1c6902c3f",
+    "question": "Đặc điểm lâm sàng chủ chốt để phân biệt Glickman Loại III và Loại IV là gì?",
+    "options": {
+      "A": "Độ thấu quang trên phim X-quang",
+      "B": "Độ sâu túi nha chu",
+      "C": "Vùng chẽ có thể nhìn thấy trực tiếp (do tụt nướu)",
+      "D": "Sự hiện diện của mủ"
+    },
+    "correct_answer": "C",
+    "explanation": "Cả hai đều là tổn thương thông suốt, nhưng Loại III nướu vẫn che phủ lối vào, còn Loại IV nướu đã tụt và nhìn thấy lỗ thông trực tiếp,,.",
+    "source": ",",
+    "mnemonic": "Loại IV = Nhìn thấy",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Glickman III vs IV",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "3e78472c-7eca-4ff0-8238-8d7cf942cde9",
+    "question": "Tại sao thám trâm Nabers được coi là \"tiêu chuẩn vàng\" để chẩn đoán sang thương vùng chẽ?",
+    "options": {
+      "A": "Đầu dụng cụ rất nhọn",
+      "B": "Có vạch chia mm rõ ràng",
+      "C": "Có độ cong đặc thù để lách vào lối vào vùng chẽ",
+      "D": "Dùng được cho cả răng một chân"
+    },
+    "correct_answer": "C",
+    "explanation": "Nabers có thiết kế cong giúp bác sĩ cảm nhận và đo mức độ phá hủy xương theo chiều ngang giữa các chân răng một cách chính xác,,.",
+    "source": ",,",
+    "mnemonic": "Nabers = Ngang & Cong",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Dụng cụ",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "04f01ea5-e03a-4102-80ee-8407037716a4",
+    "question": "Theo Hamp (1975), sang thương vùng chẽ loại 2 (Degree 2) được xác định khi:",
+    "options": {
+      "A": "Tiêu xương dọc > 3mm",
+      "B": "Mất mô nâng đỡ < 3mm",
+      "C": "Mất mô nâng đỡ ≥ 3mm nhưng chưa thông suốt",
+      "D": "Thông suốt hoàn toàn"
+    },
+    "correct_answer": "C",
+    "explanation": "Hamp tập trung vào kích thước ngang: Loại 1 (<3mm), Loại 2 (≥ 3mm nhưng chưa thông), Loại 3 (thông suốt),,.",
+    "source": ",,",
+    "mnemonic": "Hamp 2 = Trên 3 (ngang)",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Hamp Class 2",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "05b75171-42a1-413a-9e47-012b1c2fc98f",
+    "question": "Phẫu thuật đường hầm (Tunnelization) CHỐNG CHỈ ĐỊNH trong trường hợp nào?",
+    "options": {
+      "A": "Phần chung chân răng ngắn",
+      "B": "Các chân răng hội tụ hoặc quá sát nhau",
+      "C": "Chân răng phân kỳ rộng",
+      "D": "Sang thương chẽ độ III"
+    },
+    "correct_answer": "B",
+    "explanation": "Nếu các chân răng hội tụ hoặc sát nhau, phẫu thuật tạo đường hầm sẽ không tạo đủ khoảng trống cho bệnh nhân vệ sinh, dẫn đến thất bại sớm,.",
+    "source": ",,",
+    "mnemonic": "Chân sát = Cấm hầm",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phẫu thuật",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "1951ea5a-e346-4db2-9b79-2440fa6b5e14",
+    "question": "Cấu trúc \"Enamel Pearl\" (Hạt trai men) thường được tìm thấy nhiều nhất ở răng nào gây cản trở XLMCR vùng chẽ?",
+    "options": {
+      "A": "Răng cửa hàm trên",
+      "B": "Răng cối nhỏ hàm dưới",
+      "C": "Răng cối lớn thứ hai hàm trên",
+      "D": "Răng nanh"
+    },
+    "correct_answer": "C",
+    "explanation": "Hạt trai men (Enamel pearl) thường xuất hiện ở vùng chẽ răng cối lớn (đặc biệt RCL2 trên), là nơi tích tụ mảng bám và gây khó khăn khi dùng dụng cụ cầm tay,.",
+    "source": ",",
+    "mnemonic": "Hạt trai = Cối lớn",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Yếu tố tại chỗ",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "bb2314d3-a7e2-435c-9033-798b3e79f085",
+    "question": "Phẫu thuật bổ đôi răng (Hemisection) thường được ưu tiên thực hiện nhất trên nhóm răng nào?",
+    "options": {
+      "A": "Răng cối lớn hàm trên",
+      "B": "Răng cối lớn hàm dưới",
+      "C": "Răng cối nhỏ hàm trên",
+      "D": "Răng cửa hàm dưới"
+    },
+    "correct_answer": "B",
+    "explanation": "Hemisection thường áp dụng cho răng cối lớn hàm dưới vì có 2 chân răng phân kỳ rõ rệt, dễ chia đôi và phục hồi sau phẫu thuật,,.",
+    "source": ",",
+    "mnemonic": "Hemi = Half = Hàm dưới",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Hemisection",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "64565911-4542-49c6-9c2e-29b2f3b93617",
+    "question": "Mục tiêu chính của kỹ thuật tạo hình chân răng (Odontoplasty) trong điều trị STVC độ I là:",
+    "options": {
+      "A": "Loại bỏ tủy răng",
+      "B": "Tăng thẩm mỹ",
+      "C": "Loại bỏ yếu tố lưu giữ mảng bám và làm rộng lối vào vùng chẽ",
+      "D": "Ghép xương vào vùng hổng"
+    },
+    "correct_answer": "C",
+    "explanation": "Odontoplasty giúp thay đổi hình thể chân răng để tạo thuận lợi cho bệnh nhân kiểm soát mảng bám tại lối vào vùng chẽ,.",
+    "source": ",",
+    "mnemonic": "Odonto = Tạo dạng sạch",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Tạo hình (Odonto)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "38e21750-ac49-4e2d-a04f-8570df19722f",
+    "question": "Theo McGuire & Nunn (1996), một răng có STVC độ II kèm mất bám dính 50% chiều dài chân răng được xếp vào tiên lượng:",
+    "options": {
+      "A": "Khá",
+      "B": "Kém (Xấu)",
+      "C": "Nghi ngờ",
+      "D": "Vô vọng"
+    },
+    "correct_answer": "B",
+    "explanation": "Mất bám dính 50% hoặc sang thương chẽ độ II làm cho việc duy trì trở nên khó khăn, thuộc nhóm tiên lượng Kém,.",
+    "source": ",,",
+    "mnemonic": "Chẽ II = Kém",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Tiên lượng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "43ff4744-38ac-4558-b125-c59a9601487a",
+    "question": "Dấu hiệu \"Triangle radiolucency\" (vùng thấu quang hình tam giác) tại vùng chia chân trên phim quanh chóp gợi ý:",
+    "options": {
+      "A": "Sâu răng cổ răng",
+      "B": "Viêm quanh chóp mạn",
+      "C": "Sang thương vùng chẽ tiến triển",
+      "D": "Răng mọc thụ động"
+    },
+    "correct_answer": "C",
+    "explanation": "Hình ảnh thấu quang tại vùng chia chân là dấu chứng điển hình của tiêu xương ổ răng vùng chẽ trên phim X-quang,.",
+    "source": ",",
+    "mnemonic": "Tam giác thấu = Chẽ",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Chẩn đoán X-quang",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "1207e74b-ea7a-41b2-bf44-6fb6c501d8ec",
+    "question": "Nhược điểm lớn nhất của dụng cụ siêu âm (H-series tips) trong điều trị vùng chẽ là gì?",
+    "options": {
+      "A": "Gây đau nhiều",
+      "B": "Không xử trí được sang thương loại 3, 4",
+      "C": "Giá thành rẻ",
+      "D": "Làm mòn chân răng"
+    },
+    "correct_answer": "B",
+    "explanation": "Dù có ưu điểm ít sang chấn, dụng cụ siêu âm vẫn không thể xử trí triệt để các sang thương vùng chẽ đã thông suốt hoàn toàn (loại 3, 4),.",
+    "source": ",",
+    "mnemonic": "Siêu âm = Ngại loại 3",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Dụng cụ siêu âm",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "9f3981da-4178-4cde-94e1-4a616a5809f8",
+    "question": "Trong sang thương nội nha nguyên phát tạo đường dò qua vùng chẽ (tủy hoại tử), hướng xử trí đầu tiên là:",
+    "options": {
+      "A": "Cắt chân răng ngay",
+      "B": "Ghép xương và màng",
+      "C": "Điều trị nội nha sớm",
+      "D": "Nhổ răng"
+    },
+    "correct_answer": "C",
+    "explanation": "Nếu tổn thương chẽ do nguồn gốc tủy (ống tủy phụ), điều trị nội nha sớm và đúng kỹ thuật có thể làm thương tổn vùng chẽ biến mất mà không cần can thiệp nha chu,,.",
+    "source": ",",
+    "mnemonic": "Tủy trước - Chẽ sau",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Nội nha",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "61663c3b-e019-491d-a711-fdab79a5168d",
+    "question": "Theo Bower (1979), bao nhiêu % lối vào vùng chẽ của các răng cối lớn có kích thước nhỏ hơn đầu tác dụng của cây nạo chuẩn (1mm)?",
+    "options": {
+      "A": "0.4",
+      "B": "0.58",
+      "C": "0.75",
+      "D": "0.81"
+    },
+    "correct_answer": "D",
+    "explanation": "81% lối vào vùng chẽ nhỏ hơn 1mm và 58% nhỏ hơn 0.75mm. Điều này giải thích tại sao XLMCR bằng dụng cụ cầm tay thường để sót cao răng tại đây,.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Giải phẫu ứng dụng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "2c2edd81-6b90-47a5-94a1-b5d63fd6ed12",
+    "question": "Ở răng cối lớn thứ nhất hàm trên, thành phần nào chiếm tỷ lệ diện tích bề mặt chân răng lớn nhất?",
+    "options": {
+      "A": "Phần chung chân răng (Root trunk)",
+      "B": "Chân ngoài gần",
+      "C": "Chân ngoài xa",
+      "D": "Chân trong (khẩu cái)"
+    },
+    "correct_answer": "A",
+    "explanation": "Phần chung chân răng chiếm 32%, chân ngoài gần 25%, chân trong 24% và chân ngoài xa 19%,.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Giải phẫu ứng dụng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "dd0e01f0-4fe0-4526-97b7-cd11bbf434f6",
+    "question": "Tại sao vùng chẽ phía gần của răng cối lớn 1 hàm trên phải được thăm dò từ phía vòm miệng?",
+    "options": {
+      "A": "Vì chân trong nhỏ hơn chân ngoài",
+      "B": "Vì lối vào nằm lệch về phía trong 2/3 bề dày ngoài-trong",
+      "C": "Vì vạt mặt ngoài thường dày hơn",
+      "D": "Vì phía ngoài có mào chéo ngoài cản trở"
+    },
+    "correct_answer": "B",
+    "explanation": "Lối vào vùng chẽ gần nằm ở 2/3 phía trong tính từ mặt ngoài, nên tiếp cận từ phía mạc khẩu cái là chính xác nhất,.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Chẩn đoán lâm sàng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "9c9e16a5-756e-42ea-b07c-8f168766e4be",
+    "question": "Theo Fedi (2000), sang thương Glickman cấp II độ I được xác định khi có tiêu xương dọc tại vùng chẽ trong khoảng:",
+    "options": {
+      "A": "< 1 mm",
+      "B": "1 - 3 mm",
+      "C": "> 3 mm",
+      "D": "Thông suốt hoàn toàn"
+    },
+    "correct_answer": "B",
+    "explanation": "Fedi bổ sung tiêu chí dọc: Độ I là tiêu xương dọc 1-3mm; Độ II là tiêu xương dọc > 3mm nhưng chưa thông suốt ngang,.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phân loại Fedi",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "8f687ac6-60a0-44b7-a9ea-8b6af979974c",
+    "question": "Phân loại của Tarnow và Fletcher (1985) dựa trên khoảng cách từ đỉnh vùng chẽ đến mào xương, theo đó Phân nhóm C là:",
+    "options": {
+      "A": "Tiêu xương dọc 0-3 mm",
+      "B": "Tiêu xương dọc 4-6 mm",
+      "C": "Tiêu xương dọc ≥ 7 mm",
+      "D": "Tiêu xương thông suốt"
+    },
+    "correct_answer": "C",
+    "explanation": "Tarnow & Fletcher chia phân nhóm dọc: A (0-3mm), B (4-6mm), C (≥ 7mm),.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phân loại Tarnow",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "d0a79fd2-b893-4d5c-a7b8-f772b113588b",
+    "question": "Tại sao phim quanh chóp thường khó chẩn đoán sang thương vùng chẽ ở răng cối lớn hàm trên hơn hàm dưới?",
+    "options": {
+      "A": "Do xoang hàm che khuất",
+      "B": "Do chân răng hàm trên ngắn hơn",
+      "C": "Do sự chồng lấp của chân trong (palatal root) lên vùng chẽ",
+      "D": "Do mật độ xương hàm trên thấp hơn"
+    },
+    "correct_answer": "C",
+    "explanation": "Sự chồng lấp hình ảnh chân trong lên phức hợp chân ngoài khiến việc quan sát tiêu xương vùng chẽ trên phim 2D bị hạn chế,.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Chẩn đoán X-quang",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "f45fbd6d-c60c-4fcb-8b32-b29aa4203a19",
+    "question": "Theo Masters và Hoskins (1964), lồi men răng (CEP) Loại III được xác định khi:",
+    "options": {
+      "A": "Men răng chớm về phía vùng chẽ",
+      "B": "Men răng tiến gần nhưng chưa chạm vùng chẽ",
+      "C": "Men răng tiến thẳng vào trong vùng chẽ",
+      "D": "Men răng phủ toàn bộ chân răng"
+    },
+    "correct_answer": "C",
+    "explanation": "Loại III là mỏ men răng kéo dài trực tiếp vào trong vùng chẽ proper, gây cản trở bám dính sợi và tích tụ mảng bám,.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Yếu tố thuận lợi",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "25cb8824-ca70-4d25-8cc7-99ca493d4be4",
+    "question": "Theo McGuire & Nunn (1996), một răng có sang thương vùng chẽ độ II kèm chân răng sát nhau (root proximity) được xếp vào tiên lượng:",
+    "options": {
+      "A": "Khá",
+      "B": "Kém (Xấu)",
+      "C": "Nghi ngờ (Questionable)",
+      "D": "Vô vọng"
+    },
+    "correct_answer": "C",
+    "explanation": "STVC độ II đơn thuần là Kém, nhưng nếu kết hợp thêm chân răng sát nhau hoặc STVC độ III thì tiên lượng là Nghi ngờ,.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Tiên lượng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "01c20d59-3e6b-4fab-bea4-10a8bd006d96",
+    "question": "Phẫu thuật đường hầm (Tunnelization) chỉ nên thực hiện khi có đủ điều kiện nào sau đây?",
+    "options": {
+      "A": "Chân răng hội tụ, phần chung dài",
+      "B": "Chân răng phân kỳ rộng, phần chung ngắn",
+      "C": "Răng đã bị lung lay độ III",
+      "D": "Chỉ thực hiện cho răng hàm trên"
+    },
+    "correct_answer": "B",
+    "explanation": "Cần chân răng phân kỳ để tạo không gian cho bàn chải kẽ đi qua và phần chung ngắn để lối vào đủ rộng cho vệ sinh,.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Điều trị - Phẫu thuật",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "1eaf2304-cecb-4a32-8552-ef77806ba400",
+    "question": "Trong phẫu thuật cắt chân răng (Root resection), trường hợp nào sau đây là một chống chỉ định?",
+    "options": {
+      "A": "Răng đã điều trị nội nha",
+      "B": "Tiêu xương và tụt nướu tiến triển",
+      "C": "Răng có tiêu ngót chân răng hoặc sâu chân răng nặng",
+      "D": "Bệnh lý nha chu khu trú"
+    },
+    "correct_answer": "C",
+    "explanation": "Nếu chân răng định giữ lại bị tiêu ngót, sâu hoặc thủng chân răng thì không thể thực hiện cắt chân răng bảo tồn,.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Điều trị - Phẫu thuật",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "5ac6df9a-2e96-4161-99b2-dfdf3d24517b",
+    "question": "Trong sang thương nội nha nguyên phát có đường dò qua vùng chẽ, tiên lượng sau khi điều trị tủy đơn thuần thường là:",
+    "options": {
+      "A": "Kém, cần nhổ răng ngay",
+      "B": "Tốt, tổn thương xương vùng chẽ có thể biến mất",
+      "C": "Cần phải cắt chân răng sau khi nội nha",
+      "D": "Chỉ lành thương nếu ghép xương"
+    },
+    "correct_answer": "B",
+    "explanation": "Nếu nguồn gốc thuần túy từ tủy, điều trị nội nha đúng sẽ làm lành thương vùng chẽ mà không cần can thiệp nha chu xâm lấn,,.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Nội nha - Nha chu",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "55714ee2-ebb5-4968-9581-028b957dd4c9",
+    "question": "Mục tiêu của kỹ thuật tạo hình chân răng (Odontoplasty) tại vị trí lối vào vùng chẽ là:",
+    "options": {
+      "A": "Làm dài thân răng lâm sàng",
+      "B": "Loại bỏ hạt trai men và mở rộng lối vào để dễ vệ sinh",
+      "C": "Thay đổi hướng mọc của răng",
+      "D": "Kích thích tái tạo xê-măng"
+    },
+    "correct_answer": "B",
+    "explanation": "Odontoplasty giúp loại bỏ các yếu tố lưu giữ mảng bám (như CEP) và tạo dạng thuận lợi cho việc kiểm soát vệ sinh tại chỗ,.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Điều trị - Tạo hình",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "12829657-642b-47b6-acde-94c119753bb7",
+    "question": "Một răng cối lớn hàm dưới có STVC xuyên thấu (thông suốt ngoài - trong) và lỗ thông đã lộ ra trên lâm sàng được phân loại là:",
+    "options": {
+      "A": "Glickman Loại II",
+      "B": "Glickman Loại III",
+      "C": "Glickman Loại IV",
+      "D": "Hamp Loại 2"
+    },
+    "correct_answer": "C",
+    "explanation": "Loại IV là tổn thương thông suốt (đường hầm) đã bị tụt nướu làm lộ rõ lỗ thông trên lâm sàng,,.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Tiên lượng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "eb4fb1f9-4c86-40f8-bde1-5b6213e68850",
+    "question": "Trong thang điểm tiên lượng của Miller (2014), yếu tố nào sau đây được tính 3 điểm (mức độ nặng nhất cho 1 tiêu chí)?",
+    "options": {
+      "A": "Tuổi ≥ 40",
+      "B": "Độ sâu túi 5-7 mm",
+      "C": "Sang thương vùng chẽ xuyên qua ở hàm dưới",
+      "D": "Hút thuốc lá"
+    },
+    "correct_answer": "C",
+    "explanation": "STVC xuyên qua hàm dưới được tính 3 điểm; trong khi hút thuốc lá tính 4 điểm (nặng nhất toàn bảng),.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phân loại Miller 2014",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "f603adf9-f986-45f0-84e9-28180affc18f",
+    "question": "Phẫu thuật bổ đôi răng (Hemisection) biến răng cối lớn nhiều chân thành:",
+    "options": {
+      "A": "Một răng một chân duy nhất",
+      "B": "Hai răng một chân riêng biệt để phục hình",
+      "C": "Một răng có túi nha chu nông hơn",
+      "D": "Răng dính khớp với xương"
+    },
+    "correct_answer": "B",
+    "explanation": "Hemisection chia đôi răng cối lớn hàm dưới thành 2 phần riêng biệt, mỗi phần được phục hồi như một răng một chân (thường là răng cối nhỏ),.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Điều trị phẫu thuật",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "887a06b2-06a2-4383-b373-ce4eaa2abb1d",
+    "question": "Theo Bower (1979), tại sao việc làm sạch vùng chẽ bằng dụng cụ cầm tay (nạo Gracey) thường thất bại?",
+    "options": {
+      "A": "Do vùng chẽ quá sâu",
+      "B": "81% lối vào vùng chẽ có kích thước < 1mm (nhỏ hơn đầu dụng cụ)",
+      "C": "Do nướu vùng chẽ quá dày",
+      "D": "Do bệnh nhân không hợp tác"
+    },
+    "correct_answer": "B",
+    "explanation": "81% lối vào vùng chẽ nhỏ hơn 1mm và 58% nhỏ hơn 0.75mm, khiến đầu tác dụng của cây nạo chuẩn khó tiếp cận.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Chẩn đoán lâm sàng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "a27fcc60-1d8a-40dc-a75b-71f67d1df93d",
+    "question": "Khi thăm khám vùng chẽ phía gần của răng cối lớn 1 hàm trên, vị trí lối vào chính xác nằm ở đâu?",
+    "options": {
+      "A": "Ngang mức CEJ mặt ngoài",
+      "B": "Lệch về phía trong 2/3 tính từ mặt ngoài",
+      "C": "Nằm chính giữa mặt bên",
+      "D": "Sát về phía xa"
+    },
+    "correct_answer": "B",
+    "explanation": "Vùng chẽ gần của RCL1 trên mở ra ở khoảng 2/3 về phía trong, nên phải thăm dò từ phía vòm miệng.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Kỹ thuật thăm khám",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "bce76c1a-8a3e-481c-91bb-a24e2e42989e",
+    "question": "Yếu tố giải phẫu \"Phần chung chân răng\" (Root trunk) ngắn có ý nghĩa lâm sàng gì?",
+    "options": {
+      "A": "Răng dễ bị lung lay hơn",
+      "B": "Sang thương sớm lan vào vùng chẽ khi có mất bám dính",
+      "C": "Thuận lợi cho việc nội nha",
+      "D": "Dễ gây sâu men cổ răng"
+    },
+    "correct_answer": "B",
+    "explanation": "Phần chung chân răng càng ngắn thì khoảng cách từ CEJ đến vùng chẽ càng ít, tổn thương sẽ lan vào vùng chẽ nhanh hơn.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Giải phẫu ứng dụng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "a77334b2-2be7-4062-b4cb-cf46182958d6",
+    "question": "Điểm khác biệt duy nhất để chẩn đoán Glickman Loại IV thay vì Loại III là gì?",
+    "options": {
+      "A": "Có tiêu xương theo chiều dọc",
+      "B": "Có thấu quang rõ trên phim",
+      "C": "Lỗ thông vùng chẽ có thể nhìn thấy trực tiếp bằng mắt thường",
+      "D": "Răng có lung lay độ III"
+    },
+    "correct_answer": "C",
+    "explanation": "Loại IV là tổn thương thông suốt ngoài-trong (như loại III) nhưng nướu đã tụt, làm lộ rõ lỗ thông trên lâm sàng.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phân loại Glickman",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "47e51537-c9b4-4894-a03b-05fb24934570",
+    "question": "Theo Hamp (1975), sang thương vùng chẽ Loại 2 được xác định khi:",
+    "options": {
+      "A": "Tiêu xương dọc > 3mm",
+      "B": "Mất mô nâng đỡ theo chiều ngang < 3mm",
+      "C": "Mất mô nâng đỡ theo chiều ngang ≥ 3mm nhưng chưa thông suốt",
+      "D": "Thông suốt hoàn toàn"
+    },
+    "correct_answer": "C",
+    "explanation": "Hamp chia theo kích thước ngang: Loại 1 (<3mm), Loại 2 (≥ 3mm nhưng không thông), Loại 3 (thông suốt).",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phân loại Hamp",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "df1f0bc9-adcc-4b26-b232-639d9d31ee0f",
+    "question": "Cấu trúc \"Hạt trai men\" (Enamel pearl) thường gặp nhất ở răng nào và gây trở ngại gì?",
+    "options": {
+      "A": "Răng cối nhỏ - gây sâu răng",
+      "B": "RCL 2 hàm trên - cản trở làm sạch vùng chẽ",
+      "C": "Răng cửa - gây thâm mỹ",
+      "D": "RCL hàm dưới - gây lung lay"
+    },
+    "correct_answer": "B",
+    "explanation": "Hạt trai men (Enamel pearl) thường gặp ở vùng chia chân răng cối lớn, là nơi tích tụ mảng bám và khó xử lý bằng dụng cụ.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Yếu tố tại chỗ",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "93946961-d365-449c-b5ff-f43978136301",
+    "question": "Kỹ thuật Tạo hình chân răng (Odontoplasty) thường được chỉ định ưu tiên cho:",
+    "options": {
+      "A": "STVC độ III",
+      "B": "STVC độ I hoặc để mở rộng lối vào vùng chẽ",
+      "C": "Răng có tiêu xương đến chóp",
+      "D": "Răng đã có chỉ định nhổ"
+    },
+    "correct_answer": "B",
+    "explanation": "Odontoplasty giúp loại bỏ các rãnh, hạt trai men và tạo hình thuận lợi cho việc kiểm soát mảng bám tại lối vào vùng chẽ.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Điều trị bảo tồn",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "08dd9038-cc90-4e2b-a3a0-a8313a0a8308",
+    "question": "Một chống chỉ định quan trọng của phẫu thuật cắt chân răng (Root resection) là:",
+    "options": {
+      "A": "Răng còn tủy sống",
+      "B": "Răng đã điều trị nội nha",
+      "C": "Các chân răng hội tụ hoặc dính nhau (fused roots)",
+      "D": "Tiêu xương mặt ngoài"
+    },
+    "correct_answer": "C",
+    "explanation": "Nếu các chân răng hội tụ hoặc dính nhau, việc cắt bỏ một chân sẽ không tạo được khoảng trống để vệ sinh, gây thất bại.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phẫu thuật cắt chân",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "d0ee35f1-d09c-4ee6-b209-126bc4cc117c",
+    "question": "Phẫu thuật Bổ đôi răng (Hemisection) thường được áp dụng cho nhóm răng nào?",
+    "options": {
+      "A": "Răng cối lớn hàm trên",
+      "B": "Răng cối lớn hàm dưới có chân phân kỳ rộng",
+      "C": "Răng một chân",
+      "D": "Răng cối nhỏ hàm trên"
+    },
+    "correct_answer": "B",
+    "explanation": "Hemisection thường áp dụng cho răng cối lớn hàm dưới vì có 2 chân phân kỳ rõ rệt, biến nó thành 2 răng một chân riêng biệt.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Bổ đôi răng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "a893da76-e1e2-43ef-8781-29c4ed081384",
+    "question": "Điều kiện giải phẫu lý tưởng để thực hiện Phẫu thuật đường hầm (Tunnelization) là:",
+    "options": {
+      "A": "Phần chung chân răng dài",
+      "B": "Chân răng hội tụ",
+      "C": "Phần chung chân răng ngắn và các chân răng phân kỳ nhiều",
+      "D": "Răng có túi dưới xương"
+    },
+    "correct_answer": "C",
+    "explanation": "Chỉ định này nhằm tạo một lỗ thông lớn để bệnh nhân có thể đưa bàn chải kẽ qua vệ sinh vùng chẽ thông suốt.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phẫu thuật đường hầm",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "ee6000f5-d324-4dc5-a67f-240686b35fba",
+    "question": "Theo McGuire & Nunn (1996), răng có STVC độ II được xếp vào tiên lượng nào?",
+    "options": {
+      "A": "Tốt",
+      "B": "Khá",
+      "C": "Kém (Xấu)",
+      "D": "Vô vọng"
+    },
+    "correct_answer": "C",
+    "explanation": "Mất bám dính 50% hoặc có STVC độ II khiến việc duy trì mô nha chu trở nên khó khăn, thuộc nhóm tiên lượng Kém.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Tiên lượng răng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "bd2f03a0-91bc-4c00-a4ec-17f3e2740e94",
+    "question": "Hình ảnh X-quang nào điển hình cho sang thương vùng chẽ ở răng cối lớn hàm dưới?",
+    "options": {
+      "A": "Thấu quang vùng quanh chóp",
+      "B": "Vùng thấu quang hình tam giác giữa hai chân răng",
+      "C": "Răng bị lún vào xương",
+      "D": "Dây chằng nha chu mỏng"
+    },
+    "correct_answer": "B",
+    "explanation": "Sự sụt giảm mật độ xương (thấu quang) ở vùng chia chân tạo thành hình tam giác là dấu hiệu đặc thù trên phim quanh chóp.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Chẩn đoán X-quang",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "5b014093-8cb8-4f57-b415-a41f4eba1502",
+    "question": "Tại sao bệnh lý tủy có thể gây ra sang thương vùng chẽ sớm hơn cả bệnh nha chu?",
+    "options": {
+      "A": "Do tủy răng lớn hơn",
+      "B": "Do có sự hiện diện của các ống tủy phụ ở sàn vùng chẽ",
+      "C": "Do vi khuẩn tủy độc hơn",
+      "D": "Do mô chóp răng mỏng"
+    },
+    "correct_answer": "B",
+    "explanation": "Các ống tủy phụ mở trực tiếp vào vùng chẽ cho phép nhiễm trùng tủy lan sang vùng này và ngược lại.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Nội nha - Nha chu",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "3e4375fd-7452-486c-b654-1c292fa55dbf",
+    "question": "Sau phẫu thuật cắt chân răng, đường viền của mão răng phục hồi cần lưu ý điều gì?",
+    "options": {
+      "A": "Phải làm thật dày",
+      "B": "Phải phẳng, nhẵn để tiếp cận làm sạch mảng bám hiệu quả",
+      "C": "Phải nằm sâu dưới nướu 3mm",
+      "D": "Không cần dùng chỉ nha khoa"
+    },
+    "correct_answer": "B",
+    "explanation": "Đường viền phục hình phải phẳng và không có các phần khắc/nhô ra để tránh tích tụ mảng bám tại vùng mới phẫu thuật.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Điều trị phục hồi",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "6359f5db-807f-4c15-84ef-e870c7f44076",
+    "question": "Một răng có sang thương vùng chẽ độ 2 hoặc 3 sẽ trực tiếp đưa ca bệnh đó vào Giai đoạn (Stage) mấy?",
+    "options": {
+      "A": "Giai đoạn I",
+      "B": "Giai đoạn II",
+      "C": "Giai đoạn III",
+      "D": "Giai đoạn IV"
+    },
+    "correct_answer": "C",
+    "explanation": "Theo tiêu chuẩn độ phức tạp của AAP 2017, sự hiện diện của STVC loại 2 hoặc 3 là chỉ báo của Giai đoạn III.",
+    "source": "nan",
+    "mnemonic": "",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phân loại AAP 2017",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "faef84d6-6e70-4fd3-8d8a-758670299340",
+    "question": "Theo nghiên cứu của Bower (1979), tại sao việc xử lý mặt chân răng (XLMCR) vùng chẽ bằng dụng cụ cầm tay thường không triệt để?",
+    "options": {
+      "A": "Do túi nha chu vùng chẽ quá sâu (> 6mm)",
+      "B": "58% lối vào vùng chẽ có kích thước < 0.75mm (nhỏ hơn đầu dụng cụ nạo chuẩn)",
+      "C": "Do nướu ở vùng chẽ thường bị triển dưỡng che khuất",
+      "D": "Do mật độ vôi răng ở vùng chẽ cứng hơn các vùng khác"
+    },
+    "correct_answer": "B",
+    "explanation": "Đầu tác dụng của cây nạo Gracey chuẩn có kích thước lớn hơn 0.75mm, trong khi 58% lối vào vùng chẽ nhỏ hơn con số này.",
+    "source": ",,",
+    "mnemonic": "Chẽ nhỏ < 0.75",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Giải phẫu & Dụng cụ",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "98b7a4b3-f0e6-49e1-8f8f-53cad89d5a9a",
+    "question": "Khi sử dụng thám trâm Nabers để thăm khám vùng chẽ phía MIESIAL (Gần) của răng cối lớn 1 hàm trên, vị trí tiếp cận chính xác nhất là:",
+    "options": {
+      "A": "Từ phía mặt ngoài, sát đường nối men - xê măng",
+      "B": "Từ phía mặt ngoài, lệch về phía xa",
+      "C": "Từ phía vòm miệng, do lối vào nằm lệch về phía trong 2/3 bề dày ngoài - trong",
+      "D": "Từ phía mặt nhai, đặt thám trâm song song trục răng"
+    },
+    "correct_answer": "C",
+    "explanation": "Lối vào vùng chẽ gần của RCL1 trên nằm ở 2/3 phía trong (vòm miệng), nên phải thăm dò từ phía vòm miệng mới chính xác.",
+    "source": ",,",
+    "mnemonic": "Gần trên = Trong",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Kỹ thuật thăm khám",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "e4cfc96e-ff7c-459c-a713-3ced90805768",
+    "question": "Điểm khác biệt lâm sàng cốt lõi để chẩn đoán Glickman Độ IV so với Độ III là gì?",
+    "options": {
+      "A": "Có hình ảnh thấu quang rõ rệt trên phim tia X",
+      "B": "Thám trâm Nabers đi xuyên suốt từ ngoài sang trong",
+      "C": "Lỗ thông vùng chẽ có thể nhìn thấy trực tiếp bằng mắt thường do tụt nướu",
+      "D": "Răng có biểu hiện lung lay Miller độ III"
+    },
+    "correct_answer": "C",
+    "explanation": "Cả Độ III và IV đều là tổn thương thông suốt, nhưng Độ IV nướu đã tụt làm lộ rõ lỗ thông trên lâm sàng.",
+    "source": ",,,",
+    "mnemonic": "Độ IV = Visible (Lộ)",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phân loại Glickman",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "c4cd5250-9586-4801-9a2d-10f897a65f34",
+    "question": "Theo Hamp (1975), một sang thương vùng chẽ được xếp vào Độ 2 (Degree II) khi mức độ mất mô nâng đỡ theo chiều ngang đo được là:",
+    "options": {
+      "A": "< 3 mm",
+      "B": "≥ 3 mm nhưng chưa thông suốt sang phía đối diện",
+      "C": "Thông suốt toàn bộ chiều dày chân răng",
+      "D": "≥ 5 mm"
+    },
+    "correct_answer": "B",
+    "explanation": "Hamp phân loại dựa trên kích thước ngang: Độ I (< 3mm), Độ II (≥ 3mm nhưng không thông), Độ III (thông suốt).",
+    "source": ",,,,",
+    "mnemonic": "Hamp 2: ≥ 3 but No",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phân loại Hamp",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "6c254b2d-54a5-4185-a857-a8194e77d916",
+    "question": "Đặc điểm \"Root Trunk\" (Phần chung chân răng) NGẮN có ý nghĩa gì trong tiến triển bệnh nha chu?",
+    "options": {
+      "A": "Răng có xu hướng cứng khớp hơn",
+      "B": "Vùng chẽ sớm bị lộ và tổn thương hơn khi có mất bám dính",
+      "C": "Thuận lợi cho việc làm sạch bằng bàn chải kẽ",
+      "D": "Giảm nguy cơ mắc bệnh nha chu hoại tử"
+    },
+    "correct_answer": "B",
+    "explanation": "Phần chung chân răng ngắn khiến khoảng cách từ CEJ đến vùng chẽ ít, dẫn đến việc vùng chẽ bị xâm nhập nhanh hơn khi có viêm nhiễm.",
+    "source": ",,",
+    "mnemonic": "Trunk ngắn = Chẽ sớm",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Giải phẫu ứng dụng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "047e9745-ec45-49b1-a4a9-98b61c54c739",
+    "question": "Theo Masters và Hoskins, lồi men răng (CEP) Loại III có đặc điểm gì ảnh hưởng đến vùng chẽ?",
+    "options": {
+      "A": "Men răng chớm về phía vùng chẽ",
+      "B": "Men răng tiến sát nhưng chưa chạm vùng chẽ",
+      "C": "Men răng kéo dài trực tiếp vào bên trong vùng chẽ",
+      "D": "Men răng bao phủ toàn bộ các chân răng"
+    },
+    "correct_answer": "C",
+    "explanation": "CEP Loại III là mỏ men kéo dài vào trong vùng chẽ proper, ngăn cản bám dính sợi và tạo ổ chứa mảng bám.",
+    "source": ",,,",
+    "mnemonic": "CEP 3 = Vào trong",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Yếu tố tại chỗ",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "dc74cca2-38a6-4110-844b-024d59fbb705",
+    "question": "Trong trường hợp răng 36 có đường dò tại vùng chẽ nhưng thử tủy (-) và các răng khác nha chu khỏe mạnh, hướng xử trí ban đầu là:",
+    "options": {
+      "A": "Phẫu thuật cắt chân răng ngay lập tức",
+      "B": "Điều trị nội nha sớm và đúng kỹ thuật",
+      "C": "Phẫu thuật nạo túi và ghép xương",
+      "D": "Nhổ răng và cắm Implant"
+    },
+    "correct_answer": "B",
+    "explanation": "Nếu tổn thương chẽ do nguồn gốc tủy (ống tủy phụ), điều trị nội nha đúng có thể giúp hổng xương vùng chẽ tự lành thương.",
+    "source": ",,",
+    "mnemonic": "Tủy trước - Chẽ sau",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Liên quan Nội nha",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "d1422e39-23b0-49c0-886b-4139043dc30f",
+    "question": "Theo McGuire & Nunn (1996), một răng có sang thương vùng chẽ Độ II kết hợp với tình trạng các chân răng sát nhau (Root proximity) được xếp vào tiên lượng:",
+    "options": {
+      "A": "Tốt",
+      "B": "Khá",
+      "C": "Kém",
+      "D": "Nghi ngờ (Questionable)"
+    },
+    "correct_answer": "D",
+    "explanation": "STVC Độ II đơn thuần là Kém, nhưng nếu có thêm yếu tố giải phẫu bất lợi (chân sát nhau) sẽ chuyển sang Nghi ngờ.",
+    "source": ",,",
+    "mnemonic": "Chẽ II + Sát = Nghi ngờ",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Tiên lượng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "156891bf-e94c-4eb9-bed1-6fe92dad274a",
+    "question": "Phẫu thuật bổ đôi răng (Hemisection) thường được ưu tiên chỉ định cho nhóm răng nào sau đây?",
+    "options": {
+      "A": "Răng cối lớn hàm trên",
+      "B": "Răng cối nhỏ hàm dưới",
+      "C": "Răng cối lớn hàm dưới có các chân phân kỳ rộng",
+      "D": "Răng một chân có tiêu xương dọc"
+    },
+    "correct_answer": "C",
+    "explanation": "Hemisection là cắt đôi răng và giữ lại các chân đơn lẻ, thường áp dụng cho RCL hàm dưới vì có 2 chân phân kỳ rõ rệt.",
+    "source": ",,,",
+    "mnemonic": "Hemi = Half = Hàm dưới",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Điều trị Phẫu thuật",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "54185a1b-e610-4766-8fe4-131d6431ee81",
+    "question": "Trong phân loại của Tarnow và Fletcher (1985), sang thương Phân nhóm B (Subclass B) được xác định dựa trên tiêu chí nào?",
+    "options": {
+      "A": "Mất bám dính ngang > 3mm",
+      "B": "Tiêu xương dọc từ đỉnh vùng chẽ xuống phía chóp đạt 4 - 6 mm",
+      "C": "Tiêu xương thông suốt từ ngoài vào trong",
+      "D": "Tiêu xương ngang < 3mm"
+    },
+    "correct_answer": "B",
+    "explanation": "Tarnow & Fletcher phân loại theo chiều dọc: A (0-3mm), B (4-6mm), C (≥ 7mm).",
+    "source": ",,,",
+    "mnemonic": "Tarnow B = 4-6 Vertical",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phân loại Tarnow",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "af5c8b73-6a44-43f6-9d29-e2bddd15753f",
+    "question": "Hình ảnh \"Furcation arrow\" (Mũi tên vùng chẽ) trên phim quanh chóp của răng cối lớn hàm trên gợi ý điều gì?",
+    "options": {
+      "A": "Răng có túi dưới xương ở phía gần",
+      "B": "Có sự hiện diện của sang thương vùng chẽ độ II hoặc III",
+      "C": "Có tình trạng dính khớp răng",
+      "D": "Răng đang trong giai đoạn mọc thụ động"
+    },
+    "correct_answer": "B",
+    "explanation": "Furcation arrow là vùng thấu quang hình tam giác gợi ý tiêu xương vùng chẽ ở RCL hàm trên.",
+    "source": ",,,",
+    "mnemonic": "Arrow = FI",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Chẩn đoán X-quang",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "e4a269fc-7c30-423c-80da-a26923332a8a",
+    "question": "Mục tiêu chính của kỹ thuật tạo hình răng (Odontoplasty) trong điều trị sang thương vùng chẽ Độ I là:",
+    "options": {
+      "A": "Tăng bám dính mô liên kết",
+      "B": "Loại bỏ các yếu tố lưu giữ mảng bám và làm nông lối vào vùng chẽ",
+      "C": "Kích thích tạo xê-măng mới",
+      "D": "Giảm lung lay răng"
+    },
+    "correct_answer": "B",
+    "explanation": "Odontoplasty giúp thay đổi hình thể để bệnh nhân dễ vệ sinh và loại bỏ các gờ men, hạt trai men.",
+    "source": ",,,",
+    "mnemonic": "Odonto = Tạo dạng sạch",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Điều trị - Tạo hình",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "b36d3ed7-2186-4cc1-8308-7cc4aa3e624d",
+    "question": "Phẫu thuật đường hầm (Tunnelization) CHỐNG CHỈ ĐỊNH trong trường hợp nào sau đây?",
+    "options": {
+      "A": "Phần chung chân răng ngắn",
+      "B": "Chân răng phân kỳ rộng",
+      "C": "Các chân răng hội tụ hoặc quá sát nhau",
+      "D": "Bệnh nhân vệ sinh răng miệng tốt"
+    },
+    "correct_answer": "C",
+    "explanation": "Nếu chân răng hội tụ, việc tạo đường hầm không mang lại không gian đủ rộng để vệ sinh, dễ gây sâu răng và thất bại.",
+    "source": ",",
+    "mnemonic": "Chân sát = No Tunnel",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phẫu thuật",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "e36761de-32e5-4039-9e6d-8f3f5a997a98",
+    "question": "Theo Caffesse (1986), ở các túi nha chu > 6mm liên quan vùng chẽ, tỷ lệ mặt chân răng sạch hoàn toàn sau XLMCR không phẫu thuật chỉ đạt:",
+    "options": {
+      "A": "0.1",
+      "B": "0.32",
+      "C": "0.43",
+      "D": "0.5"
+    },
+    "correct_answer": "B",
+    "explanation": "Túi càng sâu và cấu trúc vùng chẽ phức tạp khiến hiệu quả làm sạch cơ học giảm mạnh, chỉ đạt 32% ở túi > 6mm.",
+    "source": ",",
+    "mnemonic": "Túi > 6 = 32% sạch",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Chẩn đoán lâm sàng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "6b54f616-95f6-4bb3-8f72-fd1fe81d3458",
+    "question": "Sự hiện diện của sang thương vùng chẽ (FI) Độ II hoặc III là tiêu chuẩn để xếp ca bệnh vào Giai đoạn (Stage) nào?",
+    "options": {
+      "A": "Stage I",
+      "B": "Stage II",
+      "C": "Stage III",
+      "D": "Stage IV"
+    },
+    "correct_answer": "C",
+    "explanation": "Theo tiêu chuẩn mức độ phức tạp của AAP 2017, FI độ 2 hoặc 3 là chỉ báo của Stage III.",
+    "source": ",,",
+    "mnemonic": "FI 2/3 = Stage III",
+    "subject": "Nha chu/Sang thương vùng chẽ",
+    "topic": "Phân loại AAP 2017",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "c219039f-8c35-4ead-84ce-7333b1c1e90d",
+    "question": "Theo Hội thảo Thế giới 2017, một bệnh nhân được xác định là ca viêm nha chu (VNC) khi có tiêu chuẩn lâm sàng nào sau đây?",
+    "options": {
+      "A": "Có túi nha chu > 3mm ở mọi vị trí",
+      "B": "Có mất bám dính lâm sàng (CAL) mặt bên ở ít nhất 2 răng không kế cận nhau",
+      "C": "Có chảy máu khi thăm khám (BOP) trên 10%",
+      "D": "Có hình ảnh tiêu xương trên phim toàn cảnh"
+    },
+    "correct_answer": "B",
+    "explanation": "Theo AAP 2017, ca VNC được xác định khi có CAL mặt bên ở ≥2 răng không kế cận hoặc CAL mặt ngoài/trong ≥3mm kèm PD >3mm ở ít nhất 2 răng.",
+    "source": ",",
+    "mnemonic": "VNC = 2 răng rời",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Tiêu chuẩn xác định ca VNC",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "522fe77b-0888-4aba-a231-77ae2c0a9bfd",
+    "question": "Yếu tố nào sau đây là tiêu chí \"mức độ phức tạp\" để trực tiếp xếp bệnh nhân vào Giai đoạn III (Stage III) thay vì Giai đoạn II?",
+    "options": {
+      "A": "Mất bám dính lâm sàng (CAL) từ 3-4 mm",
+      "B": "Tiêu xương theo chiều dọc ≥3 mm và có sang thương vùng chẽ độ II/III",
+      "C": "Chảy máu khi thăm khám > 30%",
+      "D": "Không có răng nào bị lung lay"
+    },
+    "correct_answer": "B",
+    "explanation": "Giai đoạn III được xác định dựa trên các yếu tố phức tạp như tiêu xương dọc ≥3mm, tổn thương chẽ độ II/III hoặc mất ≤4 răng do nha chu.",
+    "source": ",,",
+    "mnemonic": "Stage 3 = Chẽ & Dọc",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Phân loại Giai đoạn (Staging)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "8b840fc7-07d2-460b-a16a-5d25103bdd5d",
+    "question": "Một bệnh nhân 40 tuổi có mức độ tiêu xương lớn nhất trên phim X-quang là 40% chiều dài chân răng. Cấp độ (Grade) của bệnh nhân này là:",
+    "options": {
+      "A": "Cấp độ A",
+      "B": "Cấp độ B",
+      "C": "Cấp độ C",
+      "D": "Cấp độ D"
+    },
+    "correct_answer": "B",
+    "explanation": "Chỉ số tiêu xương/tuổi = 40/40=1.0. Theo phân loại 2017, chỉ số từ 0.25 đến 1.0 thuộc Cấp độ B (tiến triển trung bình).",
+    "source": ",",
+    "mnemonic": "Grade B = 0.25 - 1.0",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Phân loại Cấp độ (Grading)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "4bdd5a36-81cc-4cdd-9880-cb84bd196fac",
+    "question": "Nếu bệnh nhân viêm nha chu đang hút thuốc lá 15 điếu/ngày, cấp độ bệnh (Grade) sẽ được điều chỉnh như thế nào?",
+    "options": {
+      "A": "Không thay đổi cấp độ",
+      "B": "Cấp độ A",
+      "C": "Cấp độ B",
+      "D": "Cấp độ C"
+    },
+    "correct_answer": "D",
+    "explanation": "Hút thuốc lá ≥10 điếu/ngày là yếu tố nguy cơ trực tiếp đưa bệnh nhân vào Cấp độ C (tiến triển nhanh).",
+    "source": ",",
+    "mnemonic": "Smoking ≥10=C",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Yếu tố nguy cơ trong Grading",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "a08def44-d65e-468e-9e7a-843edd7f4211",
+    "question": "Đặc điểm lâm sàng để chẩn đoán \"Sức khỏe nướu lâm sàng trên mô nha chu suy giảm\" ở bệnh nhân không có tiền sử VNC là:",
+    "options": {
+      "A": "CAL > 0, BOP < 10%, PD ≤3mm",
+      "B": "CAL = 0, BOP < 10%",
+      "C": "CAL > 0, BOP > 10%",
+      "D": "CAL > 0, BOP < 10%, PD > 4mm"
+    },
+    "correct_answer": "A",
+    "explanation": "Với người không có tiền sử VNC nhưng bị tụt nướu do chấn thương/phẫu thuật, sức khỏe nướu được xác định khi BOP < 10% và PD ≤3mm trên nền CAL > 0.",
+    "source": ",",
+    "mnemonic": "Lành mạnh = BOP < 10%",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Phân biệt sức khỏe nha chu",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "1c60ccd3-3c47-421a-a27f-a4b09ce28caa",
+    "question": "Một bệnh nhân có tiền sử điều trị VNC, hiện tại thăm khám thấy CAL > 3mm, PD ≤4mm và BOP < 10%. Chẩn đoán phù hợp là:",
+    "options": {
+      "A": "Sức khỏe nha chu lâm sàng",
+      "B": "Viêm nha chu ổn định",
+      "C": "Viêm nha chu thuyên giảm",
+      "D": "Viêm nha chu không ổn định"
+    },
+    "correct_answer": "B",
+    "explanation": "Ở bệnh nhân có tiền sử VNC, trạng thái \"ổn định\" được xác định khi BOP < 10%, PD ≤4mm và không có vị trí nào PD = 4mm kèm BOP(+).",
+    "source": ",",
+    "mnemonic": "Ổn định = BOP < 10% + PD ≤4",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Phân biệt VNC ổn định",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "4237d08d-4414-40fa-bbca-d495a6631258",
+    "question": "Theo phân loại 2017, viêm nha chu được gọi là \"Toàn thể\" (Generalized) khi số lượng răng bị ảnh hưởng đạt tỷ lệ:",
+    "options": {
+      "A": ">20%",
+      "B": "≥30%",
+      "C": ">50%",
+      "D": "1"
+    },
+    "correct_answer": "B",
+    "explanation": "Mức độ lan rộng toàn thể được xác định khi có ≥30% số răng trong miệng bị ảnh hưởng bởi tình trạng mất bám dính và tiêu xương.",
+    "source": ",,",
+    "mnemonic": "Toàn thể ≥30%",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Độ lan rộng (Extent)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "20e70655-aa6f-441d-beab-45e82911098a",
+    "question": "Trong phân loại 1999, \"Viêm nha chu tấn công\" (Aggressive Periodontitis) khác biệt chính với \"Viêm nha chu mạn\" ở điểm nào?",
+    "options": {
+      "A": "Do vi khuẩn S. mutans gây ra",
+      "B": "Tốc độ phá hủy mô nhanh và có tính chất gia đình",
+      "C": "Chỉ xảy ra ở người già",
+      "D": "Luôn đi kèm với bệnh đái tháo đường"
+    },
+    "correct_answer": "B",
+    "explanation": "Viêm nha chu tấn công (1999) đặc trưng bởi sự mất bám dính nhanh chóng, thường ở người trẻ và có xu hướng di truyền trong gia đình.",
+    "source": ",,",
+    "mnemonic": "Tấn công = Nhanh + Gia đình",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Phân loại AAP 1999",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "5a7ad64e-ec24-4c36-8898-c669288f3744",
+    "question": "Sang thương Nội nha - Nha chu (Endo-Perio) theo phân loại 2017 được chia dựa trên tiêu chí cốt lõi nào?",
+    "options": {
+      "A": "Theo tuổi của bệnh nhân",
+      "B": "Theo loại vi khuẩn trong túi nha chu",
+      "C": "Có hay không có tổn thương bề mặt chân răng (nứt, thủng, ngoại tiêu)",
+      "D": "Theo vị trí răng trên cung hàm"
+    },
+    "correct_answer": "C",
+    "explanation": "Phân loại 2017 chia làm 2 nhóm chính: Sang thương có tổn thương chân răng (thủng, nứt) và sang thương không có tổn thương chân răng.",
+    "source": ",",
+    "mnemonic": "Endo-Perio = Chân răng",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Liên quan Nội nha - Nha chu",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "15725e4b-25f6-4d54-b64a-fad0b0ab5dec",
+    "question": "Sự hiện diện của \"Phiến cứng\" (Lamina dura) liên tục trên phim X-quang quanh chóp có ý nghĩa gì trong chẩn đoán?",
+    "options": {
+      "A": "Chỉ thị bệnh đang tiến triển cấp tính",
+      "B": "Chỉ thị tình trạng nha chu đang ổn định",
+      "C": "Là dấu hiệu của chấn thương khớp cắn",
+      "D": "Là dấu hiệu của túi dưới xương"
+    },
+    "correct_answer": "B",
+    "explanation": "Phiến cứng (Lamina dura) nguyên vẹn và liên tục là chỉ báo tích cực cho thấy mào xương ổ và hệ thống nha chu đang ở trạng thái ổn định.",
+    "source": ",",
+    "mnemonic": "Phiến cứng = Ổn định",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Chẩn đoán X-quang",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "00d12fbc-60e1-4d15-8077-4ba648bd2a8c",
+    "question": "Đặc điểm quan trọng nhất để phân biệt Áp xe nha chu và Áp xe quanh chóp cấp là:",
+    "options": {
+      "A": "Mức độ sưng nề mô mềm",
+      "B": "Thử tủy răng (Vitality test) và sự hiện diện của túi nha chu",
+      "C": "Màu sắc của nướu vùng bị ảnh hưởng",
+      "D": "BN có bị sốt hay không"
+    },
+    "correct_answer": "B",
+    "explanation": "Áp xe nha chu thường đi kèm túi nha chu sâu và răng còn sống (tủy dương tính), trong khi áp xe quanh chóp thường do tủy chết (tủy âm tính).",
+    "source": ",,",
+    "mnemonic": "Nha chu = Tủy sống + Túi",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Chẩn đoán phân biệt",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "cc306e4f-185f-4a66-9f98-0d473974963a",
+    "question": "Khi đo độ sâu túi (PD), tại sao túi lâm sàng thường sâu hơn túi mô học (túi sinh học) ở vùng nướu đang viêm?",
+    "options": {
+      "A": "Do đầu cây đo túi quá nhọn",
+      "B": "Do lực thăm khám >0.25 N",
+      "C": "Do biểu mô kết nối bị viêm, bở nát khiến đầu probe xuyên sâu xuống mô liên kết",
+      "D": "Do cao răng dưới nướu đẩy probe đi sâu hơn"
+    },
+    "correct_answer": "C",
+    "explanation": "Khi mô bị viêm, đầu probe sẽ xuyên qua biểu mô kết nối bị tổn thương và dừng lại ở vùng mô liên kết còn nguyên vẹn, khiến trị số đo được lớn hơn thực tế.",
+    "source": ",",
+    "mnemonic": "Viêm = Probe đi lố",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Kỹ thuật thăm khám",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "c0878828-9ed8-4ac7-ac55-45964dc5593e",
+    "question": "Một trường hợp tụt nướu mặt ngoài vượt quá ranh giới MGJ, kèm theo mất xương/nướu ở vùng kẽ răng. Theo Miller, đây là:",
+    "options": {
+      "A": "Miller Loại I",
+      "B": "Miller Loại II",
+      "C": "Miller Loại III",
+      "D": "Miller Loại IV"
+    },
+    "correct_answer": "C",
+    "explanation": "Miller Loại III là tụt nướu đến hoặc quá MGJ kèm theo mất mô cứng/mềm ở vùng kẽ răng hoặc răng bị lệch lạc.",
+    "source": ",,",
+    "mnemonic": "Miller 3 = Mất kẽ",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Phân loại Miller (Tụt nướu)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "e60a0070-d219-4236-a176-84be4f4a82b0",
+    "question": "Trường hợp nào sau đây KHÔNG được chẩn đoán là ca viêm nha chu mặc dù có mất bám dính?",
+    "options": {
+      "A": "Mất bám dính mặt bên ở răng 16 và 26",
+      "B": "Tụt nướu mặt ngoài do chấn thương bàn chải răng",
+      "C": "Mất bám dính mặt xa răng 38 do răng 37 mọc kẹt",
+      "D": "Mất bám dính do phẫu thuật làm dài thân răng"
+    },
+    "correct_answer": "B",
+    "explanation": "CAL do các nguyên nhân không phải viêm nha chu (chấn thương bàn chải, răng khôn mọc kẹt, phẫu thuật) không được tính là ca VNC.",
+    "source": ",",
+    "mnemonic": "CAL chấn thương = VNC",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Định nghĩa Ca VNC (AAP 2017)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "6a78b6a0-429d-4133-bac4-9ef89627e15f",
+    "question": "Theo McGuire và Nunn (1996), một răng có \"Tiên lượng Kém\" (Poor prognosis) khi:",
+    "options": {
+      "A": "CAL mất <25%",
+      "B": "Mất bám dính gần 50% và có sang thương vùng chẽ Độ II",
+      "C": "Lung lay độ III và mất xương >75%",
+      "D": "Mảng bám tích tụ quá nhiều"
+    },
+    "correct_answer": "B",
+    "explanation": "Tiên lượng Kém được xác định khi CAL mất khoảng 50% hoặc có tổn thương vùng chẽ độ II làm cho việc duy trì khó khăn.",
+    "source": ",,",
+    "mnemonic": "Kém = 50% CAL / Chẽ II",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Tiên lượng (Prognosis)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "675b9af7-9076-4bbb-ab3e-596b263b0fe9",
+    "question": "Yếu tố nào sau đây là tiêu chuẩn đặc trưng nhất để phân biệt Viêm nha chu Giai đoạn IV so với Giai đoạn III?",
+    "options": {
+      "A": "Mất bám dính lâm sàng (CAL) ≥5 mm",
+      "B": "Có sang thương vùng chẽ độ II hoặc III",
+      "C": "Mất răng do nha chu ≥5 răng hoặc có rối loạn chức năng hệ thống nhai",
+      "D": "Có tiêu xương theo chiều dọc ≥3 mm"
+    },
+    "correct_answer": "C",
+    "explanation": "Giai đoạn IV không chỉ dựa vào độ nặng mà còn dựa vào sự phức tạp của việc phục hồi chức năng: mất ≥5 răng, khớp cắn hỏng, lung lay răng độ III,.",
+    "source": ",",
+    "mnemonic": "Stage 4 = Mất cả bộ răng",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Phân loại Giai đoạn (Stage IV)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "4ce6320b-563e-4080-a96b-3e91cda04e9f",
+    "question": "Một bệnh nhân viêm nha chu có mức độ kiểm soát đường huyết với chỉ số HbA1c là 8%. Cấp độ (Grade) của bệnh nhân này là:",
+    "options": {
+      "A": "Cấp độ A",
+      "B": "Cấp độ B",
+      "C": "Cấp độ C",
+      "D": "Cấp độ D"
+    },
+    "correct_answer": "C",
+    "explanation": "HbA1c ≥7.0% ở bệnh nhân đái tháo đường là yếu tố nguy cơ (modifier) trực tiếp đưa bệnh nhân vào Cấp độ C - Tiến triển nhanh,.",
+    "source": ",",
+    "mnemonic": "HbA1c ≥7=GradeC",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Phân loại Cấp độ (Grading)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "33ee314d-da12-4b34-aa3e-be9ff66a823a",
+    "question": "Theo phân loại 2017, mức độ tiêu xương ổ răng trên phim X-quang được xác định là Giai đoạn I (Stage I) khi:",
+    "options": {
+      "A": "Tiêu xương đến 1/2 chiều dài chân răng",
+      "B": "Tiêu xương <15% chiều dài chân răng (vùng 1/3 cổ)",
+      "C": "Tiêu xương từ 15% - 33% chiều dài chân răng",
+      "D": "Tiêu xương vượt quá 1/3 chóp"
+    },
+    "correct_answer": "B",
+    "explanation": "Giai đoạn I đặc trưng bởi tiêu xương khởi phát, giới hạn ở 1/3 cổ chân răng và <15% chiều dài chân,.",
+    "source": ",",
+    "mnemonic": "Stage 1 = < 15%",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Tiêu xương ổ răng (RBL)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "789c914f-672d-46c7-8b17-4c030640440c",
+    "question": "Bệnh nhân nữ 33 tuổi, mảng bám nhiều, CAL (-), BOP toàn miệng 64%, PPD 1-3mm, X-quang không tiêu xương. Chẩn đoán là:",
+    "options": {
+      "A": "Viêm nướu khu trú do mảng bám",
+      "B": "Viêm nướu toàn thể do mảng bám trên mô nha chu nguyên vẹn",
+      "C": "Viêm nha chu giai đoạn I",
+      "D": "Sức khỏe nướu lâm sàng"
+    },
+    "correct_answer": "B",
+    "explanation": "Vì CAL (-), không tiêu xương và BOP >10% (ở đây là 64%) nên chẩn đoán là viêm nướu toàn thể,.",
+    "source": ",",
+    "mnemonic": "BOP > 10% = Viêm nướu",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Chẩn đoán phân biệt nướu",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "4fa9b546-5260-485b-9f3b-4ef74daa3aeb",
+    "question": "Một răng có túi nha chu sâu 10mm khu trú duy nhất tại mặt ngoài vùng chẽ, thử tủy (-), X-quang có thấu quang quanh chóp. Gợi ý chẩn đoán:",
+    "options": {
+      "A": "Viêm nha chu giai đoạn IV",
+      "B": "Sang thương nội nha - nha chu có tổn thương chân răng",
+      "C": "Sang thương nội nha - nha chu không có tổn thương chân răng",
+      "D": "Áp xe nha chu cấp"
+    },
+    "correct_answer": "C",
+    "explanation": "Túi sâu khu trú một mặt răng kèm tủy chết và thấu quang quanh chóp thường là sang thương phối hợp; nếu không có nứt/thủng chân răng thì xếp vào nhóm \"không tổn thương chân răng\",.",
+    "source": ",",
+    "mnemonic": "Túi đơn độc + Tủy chết = Endo-Perio",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Sang thương Nội nha - Nha chu",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "4ac971b1-1e25-4cd4-a6ba-de45553a1dd4",
+    "question": "Đặc điểm hình ảnh X-quang điển hình của \"Molar-Incisor Pattern\" (trước đây là VNC tấn công khu trú) là:",
+    "options": {
+      "A": "Tiêu xương ngang toàn bộ các răng",
+      "B": "Tiêu xương dọc hình \"vòng cung\" (arc-shaped) ở răng cối lớn 1 và răng cửa",
+      "C": "Tiêu xương chỉ tập trung ở răng khôn",
+      "D": "Không có tiêu xương trên phim"
+    },
+    "correct_answer": "B",
+    "explanation": "Tiêu xương dọc hình cung đối xứng ở răng cối 1 và răng cửa là dấu hiệu kinh điển của thể bệnh tiến triển nhanh này,.",
+    "source": ",",
+    "mnemonic": "MIP = Cung răng cối",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "VNC \"Tấn công\" (cũ)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "a394efc6-d945-4d19-8b2e-1aa280bd782d",
+    "question": "Tam chứng lâm sàng (Clinical triad) để chẩn đoán Viêm nướu hoại tử lở loét (NUG) bao gồm:",
+    "options": {
+      "A": "Túi sâu, lung lay, mủ",
+      "B": "Papilla hoại tử hình \"cái đục\", đau, chảy máu",
+      "C": "Tụt nướu, hôi miệng, mất bám dính",
+      "D": "Sưng nướu, màu đỏ rực, không đau"
+    },
+    "correct_answer": "B",
+    "explanation": "NUG đặc trưng bởi nhú lợi bị \"đấm thủng\" (punched-out), đau dữ dội và chảy máu tự phát hoặc sau kích thích nhẹ,.",
+    "source": ",",
+    "mnemonic": "NUG = Đau + Thủng + Máu",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Bệnh nha chu hoại tử",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "6ea1c012-75e3-4f9e-a5eb-ba660c6e4e5d",
+    "question": "Theo McGuire và Nunn (1996), một răng có \"Tiên lượng Vô vọng\" (Hopeless) được xác định khi nào?",
+    "options": {
+      "A": "Mất bám dính lâm sàng >25%",
+      "B": "Sang thương vùng chẽ độ II",
+      "C": "Bám dính còn lại không đủ để duy trì răng trong trạng thái sức khỏe, chức năng và thoải mái",
+      "D": "Lung lay độ I"
+    },
+    "correct_answer": "C",
+    "explanation": "Tiên lượng Vô vọng thường đi kèm mất xương >75%, lung lay độ III và không thể kiểm soát nhiễm khuẩn, chỉ định nhổ bỏ,.",
+    "source": ",",
+    "mnemonic": "Hopeless = Nhổ (Extraction)",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Tiên lượng McGuire",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "531dcf74-4f81-43ce-90b7-540be0584dd5",
+    "question": "Một bệnh nhân có 12 răng bị mất bám dính trên tổng số 28 răng hiện có. Mức độ lan rộng được xếp vào loại:",
+    "options": {
+      "A": "Khu trú (Localized)",
+      "B": "Toàn thể (Generalized)",
+      "C": "Phân bố răng cửa - răng cối",
+      "D": "Không phân loại được"
+    },
+    "correct_answer": "B",
+    "explanation": "Tỷ lệ răng bị ảnh hưởng = 12/28≈43%. Vì >30% nên được xếp vào dạng Toàn thể (Generalized),.",
+    "source": ",",
+    "mnemonic": "Generalized > 30%",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Độ lan rộng (Extent)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "3d6be1d4-7d8a-4f1b-b5a2-1005455fa3e0",
+    "question": "Sự hiện diện của mủ (Suppuration) khi thăm khám túi nha chu là chỉ chỉ báo lâm sàng cho điều gì?",
+    "options": {
+      "A": "Bệnh nhân vệ sinh răng miệng tốt",
+      "B": "Có sự hiện diện của vi khuẩn Gram (+) hiếu khí",
+      "C": "Tình trạng nhiễm trùng đang hoạt động và có sự phá hủy mô cấp tính",
+      "D": "Nướu đang lành thương"
+    },
+    "correct_answer": "C",
+    "explanation": "Mủ (tương ứng với sự tích tụ bạch cầu đa nhân trung tính hoại tử) chứng tỏ sang thương đang tiến triển mạnh,.",
+    "source": ",",
+    "mnemonic": "Mủ = Đang phá hủy (Active)",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Triệu chứng mủ (Suppuration)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "f8ea4e94-d85a-4094-98bb-874ebfb81ad4",
+    "question": "Trong quy trình khám sàng lọc PSR, mã số (Code) 3 được ghi nhận khi:",
+    "options": {
+      "A": "Dải màu của cây đo túi vẫn còn nhìn thấy hoàn toàn",
+      "B": "Dải màu của cây đo túi biến mất một phần trong túi nha chu",
+      "C": "Dải màu của cây đo túi biến mất hoàn toàn",
+      "D": "Có sang thương vùng chẽ độ II"
+    },
+    "correct_answer": "B",
+    "explanation": "Code 3 nghĩa là túi sâu từ 3.5 - 5.5 mm (dải màu bị che một phần), cần thực hiện khám nha chu toàn diện cho phân đoạn đó,.",
+    "source": ",",
+    "mnemonic": "Code 3 = Che một phần",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "PSR (Screening)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "7170cb30-9f2d-4914-85ea-d06d718e3ce9",
+    "question": "Theo nghiên cứu của Löe et al. (1986), tốc độ tiêu xương trung bình hàng năm ở nhóm \"tiến triển nhanh\" (Rapid progression) là khoảng:",
+    "options": {
+      "A": "0.05 mm",
+      "B": "0.1 mm - 1.0 mm",
+      "C": "2.0 mm",
+      "D": "5.0 mm"
+    },
+    "correct_answer": "B",
+    "explanation": "Nhóm tiến triển nhanh có tốc độ mất bám dính từ 0.1 đến 1.0 mm/năm, dẫn đến mất toàn bộ bộ răng sớm,.",
+    "source": ",",
+    "mnemonic": "Rapid = 0.1 - 1.0 mm/year",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Tốc độ phá hủy xương",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "d8c073a5-e928-4ea3-8eea-38853ff12713",
+    "question": "Khái niệm \"Gingival Phenotype\" (Kiểu hình nướu) bao gồm các thành phần nào?",
+    "options": {
+      "A": "Màu sắc nướu và độ săn chắc",
+      "B": "Độ dày nướu (GT) và chiều rộng nướu sừng hóa (KTW)",
+      "C": "Hình dạng răng và vị trí răng",
+      "D": "Độ dày xương ổ răng"
+    },
+    "correct_answer": "B",
+    "explanation": "Kiểu hình nướu là sự kết hợp của độ dày (Thickness) và chiều rộng (Width) của dải nướu sừng hóa,.",
+    "source": ",",
+    "mnemonic": "Phenotype = Thick + Wide",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Kiểu hình nha chu",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "51b8b366-2952-405a-9d59-808fe2804e3e",
+    "question": "Điểm khác biệt lớn nhất về mục tiêu (Endpoint) giữa hệ thống tiên lượng của McGuire và Kwok & Caton là:",
+    "options": {
+      "A": "Một bên dựa vào tuổi, một bên không",
+      "B": "McGuire dựa vào mất răng, Kwok & Caton dựa vào khả năng đạt được sự ổn định nha chu",
+      "C": "Kwok & Caton chỉ dùng cho răng cối",
+      "D": "Không có sự khác biệt"
+    },
+    "correct_answer": "B",
+    "explanation": "McGuire tập trung vào việc \"dự đoán mất răng\", trong khi Kwok & Caton tập trung vào \"khả năng duy trì sự ổn định\" của răng,.",
+    "source": ",",
+    "mnemonic": "McGuire = Mất / Kwok = Giữ",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "So sánh hệ thống tiên lượng",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "e9ab45ee-436b-40b2-aec8-eacd75fbf297",
+    "question": "Theo phân loại Coslet (1977), loại 1B (Type 1B) có đặc điểm mào xương ổ răng như thế nào?",
+    "options": {
+      "A": "Cách CEJ 1.5 - 2 mm",
+      "B": "Nằm ngay mức CEJ (vi phạm khoảng sinh học)",
+      "C": "Nằm ở phía thân răng so với CEJ",
+      "D": "Tiêu xương quá 1/2 chân răng"
+    },
+    "correct_answer": "B",
+    "explanation": "Nhóm B trong phân loại Coslet mô tả tình trạng mào xương ổ nằm sát CEJ, cần phải mài chỉnh xương khi thực hiện phẫu thuật làm dài thân răng,.",
+    "source": ",",
+    "mnemonic": "Type B = Bone at CEJ",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Mọc răng thụ động",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "08fd5837-5bd6-404a-863e-aa254b535dd3",
+    "question": "Bệnh nhân nam 40 tuổi, thăm khám có CAL mặt bên ở răng 16 và răng 26 (hai răng không kế cận), độ sâu túi (PPD) là 4mm. Chẩn đoán nào sau đây là phù hợp?",
+    "options": {
+      "A": "Viêm nướu trên mô nha chu suy giảm",
+      "B": "Viêm nha chu",
+      "C": "Sức khỏe nha chu lâm sàng",
+      "D": "Viêm nướu toàn thể"
+    },
+    "correct_answer": "B",
+    "explanation": "Theo AAP 2017, một ca VNC được xác định khi có CAL mặt bên ở ít nhất 2 răng không kế cận nhau,.",
+    "source": ",",
+    "mnemonic": "VNC = 2 răng rời",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Xác định ca VNC",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "678a9f45-4baf-4551-82fe-cd72e8a6c131",
+    "question": "Bệnh nhân có CAL kẽ răng cao nhất là 4mm, tiêu xương trên phim (RBL) từ 15-33% chiều dài chân răng, không mất răng do nha chu. Giai đoạn (Stage) của bệnh nhân là:",
+    "options": {
+      "A": "Giai đoạn I",
+      "B": "Giai đoạn II",
+      "C": "Giai đoạn III",
+      "D": "Giai đoạn IV"
+    },
+    "correct_answer": "B",
+    "explanation": "Giai đoạn II (Viêm nha chu trung bình) được xác định khi CAL từ 3-4mm và mức tiêu xương từ 15-33%,.",
+    "source": ",",
+    "mnemonic": "Stage 2 = 3-4mm",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Phân loại Giai đoạn (Staging)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "c3c0525f-acfa-45fb-b253-532bd1b73b40",
+    "question": "Bệnh nhân 50 tuổi, có sang thương vùng chẽ răng 46 độ II. Dữ kiện này trực tiếp đưa ca bệnh vào Giai đoạn mấy?",
+    "options": {
+      "A": "Giai đoạn I",
+      "B": "Giai đoạn II",
+      "C": "Giai đoạn III",
+      "D": "Giai đoạn IV"
+    },
+    "correct_answer": "C",
+    "explanation": "Sự hiện diện của sang thương vùng chẽ (FI) loại II hoặc III là yếu tố phức tạp để chẩn đoán Giai đoạn III,.",
+    "source": ",",
+    "mnemonic": "FI 2/3 = Stage III",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Phân loại Giai đoạn (Staging)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "323aa051-994a-4118-bae2-391708acb9e5",
+    "question": "Điểm khác biệt cốt lõi để phân loại Giai đoạn IV thay vì Giai đoạn III là gì?",
+    "options": {
+      "A": "Mất bám dính lâm sàng > 5mm",
+      "B": "Có tiêu xương dọc > 3mm",
+      "C": "Rối loạn chức năng hệ thống nhai hoặc còn < 20 răng ổn định",
+      "D": "Có sang thương vùng chẽ độ III"
+    },
+    "correct_answer": "C",
+    "explanation": "Giai đoạn IV được xác định khi có thêm các yếu tố phức tạp như rối loạn chức năng nhai, khớp cắn hỏng, hoặc còn dưới 20 răng (10 cặp răng đối diện),,.",
+    "source": ",,",
+    "mnemonic": "Stage 4 = Hỏng khớp cắn",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Phân loại Giai đoạn (Staging)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "2246d377-7e59-4158-9904-f840dbef5fe7",
+    "question": "Bệnh nhân 40 tuổi, mức tiêu xương (RBL) lớn nhất là 40% chiều dài chân răng. Tỷ lệ % tiêu xương/tuổi là bao nhiêu và thuộc Cấp độ nào?",
+    "options": {
+      "A": "0.5 - Cấp độ B",
+      "B": "1.0 - Cấp độ B",
+      "C": "1.0 - Cấp độ C",
+      "D": "1.5 - Cấp độ C"
+    },
+    "correct_answer": "B",
+    "explanation": "Tỷ lệ % RBL/Tuổi = 40/40 = 1.0. Theo phân loại 2017, chỉ số từ 0.25 đến 1.0 thuộc Cấp độ B (Tiến triển trung bình),.",
+    "source": ",",
+    "mnemonic": "B = 0.25 - 1.0",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Phân loại Cấp độ (Grading)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "acd0af80-e1eb-418b-9626-73d5d0f064e9",
+    "question": "Bệnh nhân đang bị viêm nha chu và hút thuốc lá 15 điếu/ngày. Cấp độ (Grade) của bệnh nhân này được xếp vào:",
+    "options": {
+      "A": "Cấp độ A",
+      "B": "Cấp độ B",
+      "C": "Cấp độ C",
+      "D": "Cấp độ D"
+    },
+    "correct_answer": "C",
+    "explanation": "Hút thuốc lá >= 10 điếu/ngày là yếu tố điều chỉnh trực tiếp đưa bệnh nhân vào Cấp độ C (Tiến triển nhanh),.",
+    "source": ",",
+    "mnemonic": "Smoking >= 10 = C",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Yếu tố nguy cơ (Modifier)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "34118962-9c05-4bc9-9230-707210a54adc",
+    "question": "Bệnh nhân đái tháo đường có chỉ số HbA1c là 8.5%. Cấp độ (Grade) tương ứng theo phân loại 2017 là:",
+    "options": {
+      "A": "Cấp độ A",
+      "B": "Cấp độ B",
+      "C": "Cấp độ C",
+      "D": "Không xếp loại được"
+    },
+    "correct_answer": "C",
+    "explanation": "Chỉ số HbA1c >= 7.0% ở bệnh nhân đái tháo đường là tiêu chí cho Cấp độ C,,.",
+    "source": ",,",
+    "mnemonic": "HbA1c >= 7 = C",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Yếu tố nguy cơ (Modifier)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "a79bf576-14ef-4b59-a9ee-cbd31711a8a6",
+    "question": "Một bệnh nhân có 8 răng bị ảnh hưởng bởi viêm nha chu trên tổng số 28 răng hiện có. Mức độ lan rộng là:",
+    "options": {
+      "A": "Khu trú (Localized)",
+      "B": "Toàn thể (Generalized)",
+      "C": "Dạng răng cửa - răng cối",
+      "D": "Toàn bộ"
+    },
+    "correct_answer": "A",
+    "explanation": "Tỷ lệ răng bị ảnh hưởng = 8/28 = 28.5%. Vì < 30% nên được xếp vào dạng Khu trú,.",
+    "source": ",",
+    "mnemonic": "Khu trú < 30%",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Độ lan rộng (Extent)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "c36ab7b6-53d1-4766-aa97-632200ccb6c4",
+    "question": "Bệnh nhân nữ 20 tuổi, CAL = 0, PPD 1-3mm, không tiêu xương, nhưng có BOP 60%. Chẩn đoán phù hợp là:",
+    "options": {
+      "A": "Sức khỏe nha chu lâm sàng",
+      "B": "Viêm nướu do mảng bám trên mô nha chu nguyên vẹn",
+      "C": "Viêm nha chu Giai đoạn I",
+      "D": "Viêm nướu trên mô nha chu suy giảm"
+    },
+    "correct_answer": "B",
+    "explanation": "CAL = 0 và không tiêu xương loại trừ VNC; BOP > 10% xác định tình trạng viêm nướu do mảng bám,.",
+    "source": ",",
+    "mnemonic": "BOP > 10%, CAL 0 = Viêm nướu",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Phân biệt sức khỏe nướu",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "68da2a27-9ce1-48eb-a768-92a4df564c1b",
+    "question": "Một bệnh nhân có tiền sử VNC đã điều trị, hiện tại CAL > 3mm, PPD <= 4mm ở mọi vị trí, BOP = 5%. Chẩn đoán là:",
+    "options": {
+      "A": "Sức khỏe nha chu lâm sàng",
+      "B": "Viêm nha chu ổn định",
+      "C": "Viêm nha chu thuyên giảm",
+      "D": "Sức khỏe nướu trên mô nha chu suy giảm"
+    },
+    "correct_answer": "B",
+    "explanation": "Ở bệnh nhân có tiền sử VNC, trạng thái \"Ổn định\" đạt được khi BOP < 10% và PPD <= 4mm (không có túi 4mm nào bị BOP+),,.",
+    "source": ",,",
+    "mnemonic": "Ổn định = BOP < 10% + PD <= 4",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "VNC ổn định",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "13a3d6b8-dbcb-4aa7-b729-f1a113c709d3",
+    "question": "Răng 46 có túi nha chu sâu 8mm khu trú mặt ngoài, thử tủy âm tính, có hình ảnh tiêu xương vùng chẽ. Chẩn đoán theo AAP 2017 là:",
+    "options": {
+      "A": "Viêm nha chu Giai đoạn III",
+      "B": "Sang thương nội nha - nha chu không có tổn thương chân răng",
+      "C": "Sang thương nội nha - nha chu có tổn thương chân răng",
+      "D": "Áp xe nha chu cấp"
+    },
+    "correct_answer": "B",
+    "explanation": "Sang thương Endo-Perio được phân loại dựa trên việc có hay không có tổn thương chân răng (như nứt, thủng, ngoại tiêu),.",
+    "source": ",",
+    "mnemonic": "Endo-Perio = Chân răng",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Sang thương Nội nha - Nha chu",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "0b5fa53f-8200-498f-a974-46c5c292a80a",
+    "question": "Bệnh nhân Giai đoạn II có thêm tình trạng tiêu xương theo chiều dọc (Vertical bone loss) >= 3mm. Khi đó, Giai đoạn bệnh được nâng lên mức:",
+    "options": {
+      "A": "Không thay đổi",
+      "B": "Giai đoạn III",
+      "C": "Giai đoạn IV",
+      "D": "Cấp độ C"
+    },
+    "correct_answer": "B",
+    "explanation": "Tiêu xương dọc >= 3mm là yếu tố làm tăng độ phức tạp, thuộc tiêu chuẩn của Giai đoạn III,.",
+    "source": ",",
+    "mnemonic": "Tiêu dọc >= 3mm = Stage 3",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Tiêu xương dọc",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "4b0bbc8d-d025-4f21-a451-b9a3211c8e3f",
+    "question": "Răng 31 có độ lung lay theo chiều ngoài - trong là 1.5mm nhưng không lung lay theo chiều dọc. Theo Miller, đây là:",
+    "options": {
+      "A": "Độ I",
+      "B": "Độ II",
+      "C": "Độ III",
+      "D": "Độ IV"
+    },
+    "correct_answer": "B",
+    "explanation": "Độ II theo Miller là lung lay theo chiều ngang từ 1mm trở lên nhưng chưa có lung lay theo chiều dọc,.",
+    "source": ",",
+    "mnemonic": "Miller II = Ngang >= 1mm",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Độ lung lay (Miller)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "779fa479-9b39-4e63-9bcb-204f5220757c",
+    "question": "Một răng có CAL mất gần 50% và có sang thương vùng chẽ độ II. Tiên lượng tồn tại của răng này là:",
+    "options": {
+      "A": "Khá",
+      "B": "Kém (Xấu)",
+      "C": "Nghi ngờ",
+      "D": "Vô vọng"
+    },
+    "correct_answer": "B",
+    "explanation": "Theo McGuire và Nunn (1996), mất bám dính 50% hoặc có FI độ II được xếp vào tiên lượng Kém (Xấu),.",
+    "source": ",",
+    "mnemonic": "Kém = 50% CAL / Chẽ II",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Tiên lượng (McGuire)",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
+  },
+  {
+    "id": "5fbd6a9a-38c1-44ae-928b-74fa3baa2a8b",
+    "question": "Điểm thay đổi lớn nhất trong phân loại viêm nha chu năm 2017 so với 1999 là:",
+    "options": {
+      "A": "Thêm tiêu chuẩn về vi khuẩn Aa",
+      "B": "Gộp viêm nha chu mạn và tấn công thành một bệnh duy nhất",
+      "C": "Chia theo tuổi khởi phát bệnh",
+      "D": "Loại bỏ hoàn toàn chẩn đoán viêm nha chu hoại tử"
+    },
+    "correct_answer": "B",
+    "explanation": "Phân loại 2017 đã gộp \"VNC mạn\" và \"VNC tấn công\" thành một dạng chung là \"Viêm nha chu\" và phân loại theo hệ thống đa chiều Stage/Grade,.",
+    "source": ",",
+    "mnemonic": "2017 = Gộp Mạn + Tấn công",
+    "subject": "Nha chu/Chẩn đoán bệnh nha chu",
+    "topic": "Phân loại 1999 vs 2017",
+    "tags": [],
+    "chat_history": [],
+    "image_q": "",
+    "image_a": ""
   }
 ]
