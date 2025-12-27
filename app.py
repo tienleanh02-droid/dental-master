@@ -3,6 +3,7 @@ st.set_page_config(page_title="Dental Anki Master", layout="wide", initial_sideb
 import json
 import os
 import datetime
+import time
 from datetime import timedelta
 import pandas as pd
 import uuid
@@ -2022,6 +2023,45 @@ NHIỆM VỤ:
                     
                 # Use Expander for each card
                 with st.expander(f"📌 {card.get('question', 'N/A')[:80]}...", expanded=False):
+                    
+                    # === PREVIEW BUTTON ===
+                    with st.popover("👁️ Xem trước (Preview)", use_container_width=True):
+                        st.markdown(f"""
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                                    color: white; padding: 20px; border-radius: 15px; margin-bottom: 15px;">
+                            <div style="font-size: 0.8em; opacity: 0.8;">{card.get('subject', '')} / {card.get('topic', '')}</div>
+                            <div style="font-size: 1.2em; font-weight: 600; margin-top: 10px;">{card.get('question', '')}</div>
+                        </div>
+                        """, unsafe_allow_html=True)
+                        
+                        # Image Q
+                        img_q = card.get('image_q', '')
+                        if img_q and (img_q.startswith('http') or os.path.exists(os.path.join("static", "images", img_q))):
+                            display_image_smart(img_q, width=400)
+                        
+                        # Options
+                        st.markdown("**Đáp án:**")
+                        opts = card.get('options', {})
+                        for key in ['A', 'B', 'C', 'D']:
+                            is_correct = card.get('correct_answer', '') == key
+                            icon = "✅" if is_correct else "⬜"
+                            color = "green" if is_correct else "inherit"
+                            st.markdown(f"<span style='color:{color}'>{icon} **{key}.** {opts.get(key, '')}</span>", unsafe_allow_html=True)
+                        
+                        # Explanation
+                        with st.expander("💡 Giải thích"):
+                            st.write(card.get('explanation', ''))
+                            if card.get('mnemonic'):
+                                st.info(f"🧠 **Mẹo nhớ:** {card.get('mnemonic')}")
+                        
+                        # Image A
+                        img_a = card.get('image_a', '')
+                        if img_a and (img_a.startswith('http') or os.path.exists(os.path.join("static", "images", img_a))):
+                            with st.expander("🖼️ Ảnh giải thích"):
+                                display_image_smart(img_a, width=400)
+                    
+                    st.divider()
+                    
                     with st.form(key=f"edit_form_{card['id']}"):
                         # Text Fields
                         new_q = st.text_area("Câu hỏi:", value=card.get('question', ''))
@@ -3777,6 +3817,93 @@ QUAN TRỌNG:
 3. Nếu không chắc chắn ảnh nào, dùng key của ảnh đầu tiên.
 """
 
+# DDx Focus Mode - Prompt riêng cho chế độ chẩn đoán phân biệt
+VISION_DDX_FOCUS_PROMPT = """
+[DDx FOCUS MODE — DIFFERENTIAL DIAGNOSIS ACROSS SLIDES]
+
+BẠN ĐANG Ở CHẾ ĐỘ DDx FOCUS. Người dùng đã chọn nhiều slide với các tổn thương KHÁC NHAU.
+Mục tiêu chính: TẠO CÂU HỎI SO SÁNH VÀ PHÂN BIỆT giữa các tổn thương.
+
+=== YÊU CẦU BẮT BUỘC ===
+
+1) PHÂN BỔ CÂU HỎI (BẮT BUỘC):
+   - 50% CÂU SO SÁNH TRỰC TIẾP (ví dụ: "Điểm khác biệt CHÍNH giữa A và B là gì?")
+   - 30% CÂU "NẾU...THÌ" PHÂN BIỆT (ví dụ: "Nếu tổn thương có đặc điểm X, nghĩ tới bệnh nào hơn?")
+   - 20% CÂU TỔNG HỢP (ví dụ: "Trong các loại nang, loại nào có tiềm năng tái phát cao nhất?")
+
+2) MỖI CÂU SO SÁNH PHẢI:
+   - Tham chiếu >=2 PAGE_KEY trong ref_page_keys
+   - Nêu rõ đang so sánh tổn thương nào với tổn thương nào
+   - Các đáp án sai phải là các chẩn đoán phân biệt từ các slide khác
+
+3) TRÁNH LẶP:
+   - KHÔNG tạo >2 câu hỏi về cùng 1 tổn thương
+   - Mỗi tổn thương chỉ xuất hiện trong 1-2 câu spot, nhưng có thể xuất hiện trong nhiều câu so sánh
+   - Ưu tiên tạo câu hỏi liên kết nhiều slide
+
+4) CÂU HỎI MẪU:
+   - "Điểm khác biệt CHÍNH trên X-quang giữa Nang quanh chóp và U hạt quanh chóp là gì?"
+   - "Nếu tổn thương thấu quang có đường viền cản quang rõ, kích thước >1.5cm, nghĩ tới chẩn đoán nào?"
+   - "Trong các tổn thương sau, tổn thương nào có nguồn gốc từ biểu mô sót Malassez?"
+   - "Yếu tố nào giúp PHÂN BIỆT nang sừng (OKC) với nang thân răng?"
+
+BẮT BUỘC tạo đúng {num_q} câu MCQ tiếng Việt.
+
+OUTPUT JSON (CHỈ JSON, ĐÚNG FORMAT NÀY):
+[
+  {{
+    "question_type": "comparison|if_then|synthesis",
+    "question_category": "text_based|visual_based",
+    "clinical_scenario": "Mô tả ngữ cảnh so sánh...",
+    "image_findings": ["Dấu hiệu A","Dấu hiệu B","..."],
+    "question": "Câu hỏi đầy đủ, rõ ràng...",
+    "options": {{"A":"...","B":"...","C":"...","D":"..."}},
+    "correct_answer": "A|B|C|D",
+    "explanation": "A) So sánh các dấu hiệu...\\nB) Lập luận chọn đáp án...\\nC) Bẫy và phân biệt...",
+    "mnemonic": "... (optional)",
+    "ref_page_keys": ["P39","P45"],
+    "primary_ref_page_key": "P39",
+    "comparison_entities": ["Nang quanh chóp", "U hạt quanh chóp"],
+    "confidence": 0.0-1.0
+  }}
+]
+
+QUAN TRỌNG: Các field question, options, correct_answer, explanation là BẮT BUỘC.
+"""
+
+# Pass 1 Analysis Prompt - Phân tích các tổn thương trước khi tạo câu hỏi
+DDX_ANALYSIS_PROMPT = """
+[PASS 1: PHÂN TÍCH TỔN THƯƠNG/CHỦ ĐỀ]
+
+Bạn nhận được nhiều slide bài giảng. Hãy PHÂN TÍCH và LIỆT KÊ tất cả các TỔN THƯƠNG/BỆNH LÝ/CHỦ ĐỀ RIÊNG BIỆT có trong các slide này.
+
+YÊU CẦU:
+1) Scan qua TẤT CẢ slides được cung cấp
+2) Xác định các tổn thương/bệnh lý KHÁC NHAU 
+3) Ghi lại PAGE_KEY chứa mỗi tổn thương
+4) Mô tả ngắn gọn đặc điểm chính
+
+OUTPUT JSON (CHỈ JSON):
+{
+  "total_lesions": số lượng tổn thương,
+  "lesions": [
+    {
+      "name": "Tên tổn thương (VD: Nang quanh chóp)",
+      "english_name": "English name (VD: Periapical cyst)",
+      "page_keys": ["P39", "P40", "P41"],
+      "key_features": ["Có biểu mô lót", "Nguồn gốc từ Malassez", "..."],
+      "category": "Nang do răng do viêm"
+    }
+  ],
+  "suggested_comparisons": [
+    {
+      "pair": ["Nang quanh chóp", "U hạt quanh chóp"],
+      "comparison_point": "Sự hiện diện của biểu mô lót"
+    }
+  ]
+}
+"""
+
 class PDFProcessor:
     @staticmethod
     def render_page_assets(doc, page_idx, dpi_full=150, dpi_roi=200, mask_header_footer=True):
@@ -4000,6 +4127,28 @@ def view_slide_vision(data, current_user):
         # Page Range
         page_range_str = st.text_input("Phạm vi trang (Ví dụ: 1-10, 15, 20-25):", value="1-10")
         
+        # === MODE SELECTOR ===
+        st.markdown("---")
+        st.markdown("**🎯 Chế độ tạo câu hỏi:**")
+        
+        mode_cols = st.columns(2)
+        with mode_cols[0]:
+            if st.button("🔬 **Deep Dive**\n\nĐi sâu 1 tổn thương", use_container_width=True, 
+                        type="primary" if st.session_state.get('vision_mode', 'deep') == 'deep' else "secondary"):
+                st.session_state.vision_mode = 'deep'
+                st.rerun()
+        with mode_cols[1]:
+            if st.button("🔀 **DDx Focus**\n\nSo sánh nhiều tổn thương", use_container_width=True,
+                        type="primary" if st.session_state.get('vision_mode', 'deep') == 'ddx' else "secondary"):
+                st.session_state.vision_mode = 'ddx'
+                st.rerun()
+        
+        current_mode = st.session_state.get('vision_mode', 'deep')
+        if current_mode == 'deep':
+            st.info("🔬 **Deep Dive**: AI sẽ tạo câu hỏi chi tiết về từng tổn thương, phù hợp khi chọn ÍT slide.")
+        else:
+            st.success("🔀 **DDx Focus**: AI sẽ tạo câu hỏi SO SÁNH/PHÂN BIỆT giữa các tổn thương, phù hợp khi chọn NHIỀU slide.")
+        
         if uploaded_pdf and target_subject and target_topic:
             if st.button("🔍 Phân tích sơ bộ (Pass 1)", type="primary"):
                 # Parse Range
@@ -4188,6 +4337,77 @@ def view_slide_vision(data, current_user):
             st.session_state.vision_step = 3
             st.rerun()
 
+    # --- STEP 3b: DDx ANALYSIS REVIEW ---
+    elif st.session_state.vision_step == "3b":
+        st.success("🔍 **Phân tích hoàn tất!** AI đã tìm thấy các tổn thương sau:")
+        
+        ddx_data = st.session_state.get('ddx_lesions', {})
+        lesions = ddx_data.get('lesions', [])
+        
+        # Init config state if needed
+        if 'ddx_config' not in st.session_state:
+            st.session_state.ddx_config = {
+                i: {'selected': True, 'count': 2} for i in range(len(lesions))
+            }
+        
+        st.write("---")
+        st.subheader("⚙️ Cấu hình câu hỏi chi tiết")
+        st.info("Chọn tổn thương và số lượng câu hỏi cho từng loại:")
+        
+        total_q_calc = 0
+        selected_lesions_count = 0
+        
+        # Table Header
+        h1, h2, h3 = st.columns([3, 1, 1])
+        h1.markdown("**Tổn thương / Chủ đề**")
+        h2.markdown("**Số câu**")
+        h3.markdown("**Chọn**")
+        
+        updated_config = {}
+        
+        for i, l in enumerate(lesions):
+            c1, c2, c3 = st.columns([3, 1, 1])
+            
+            # Default values
+            curr_conf = st.session_state.ddx_config.get(i, {'selected': True, 'count': 2})
+            
+            # Checkbox for Selection
+            is_selected = c3.checkbox("✅", value=curr_conf['selected'], key=f"ddx_sel_{i}", label_visibility="collapsed")
+            
+            # Number Input for Count
+            # Disable if not selected
+            q_count = c2.number_input(f"sl_{i}", min_value=1, max_value=10, value=curr_conf['count'], key=f"ddx_cnt_{i}", disabled=not is_selected, label_visibility="collapsed")
+            
+            # Name Display
+            name_str = f"**{i+1}. {l.get('name', 'Unknown')}**"
+            if not is_selected:
+                name_str = f"~~{name_str}~~"
+            c1.markdown(name_str)
+            with c1.expander("Chi tiết"):
+                 st.caption(f"Slides: {', '.join(l.get('page_keys',[]))}")
+                 st.caption(f"Đặc điểm: {', '.join(l.get('key_features',[]))}")
+            
+            # Update loop vars
+            if is_selected:
+                total_q_calc += q_count
+                selected_lesions_count += 1
+            
+            updated_config[i] = {'selected': is_selected, 'count': q_count}
+        
+        # Save to session state for persistence during interaction
+        st.session_state.ddx_config = updated_config
+        
+        st.divider()
+        st.metric("Tổng số câu hỏi sẽ tạo", total_q_calc)
+        
+        if selected_lesions_count == 0:
+            st.warning("⚠️ Vui lòng chọn ít nhất 1 tổn thương.")
+        else:
+            if st.button(f"🚀 XÁC NHẬN & TẠO {total_q_calc} CÂU HỎI", type="primary"):
+                st.session_state.num_q = total_q_calc
+                st.session_state.vision_step = 3
+                st.rerun()
+
     # --- STEP 3: GENERATION (PASS 2) ---
     elif st.session_state.vision_step == 3:
         st.info("🤖 AI đang “soi” hình và soạn đề... (Vui lòng chờ 30-60s)")
@@ -4287,9 +4507,73 @@ def view_slide_vision(data, current_user):
             
             doc.close()
             
-            # 2. Prepare Prompt
+            # 2. Prepare Prompt - Chọn prompt theo mode
             subject_prompt = DataManager.resolve_system_prompt(st.session_state.target_subject)
-            full_prompt = subject_prompt + "\n\n" + VISION_ADDON_PROMPT.format(num_q=st.session_state.num_q)
+            
+            # Chọn prompt dựa trên vision_mode
+            current_vision_mode = st.session_state.get('vision_mode', 'deep')
+            
+            # === DDx Mode với 2-Pass Generation ===
+            if current_vision_mode == 'ddx':
+                # Check nếu chưa có phân tích lesions
+                if 'ddx_lesions' not in st.session_state or not st.session_state.ddx_lesions:
+                    st.info("🔍 **Pass 1**: Đang phân tích các tổn thương trong slides...")
+                    
+                    # Call AI to analyze lesions first
+                    client = genai.Client(api_key=st.session_state.api_key)
+                    
+                    analysis_contents = [DDX_ANALYSIS_PROMPT]
+                    for i, label in enumerate(ai_labels):
+                        analysis_contents.append(label)
+                        analysis_contents.append(ai_roi_images[i])
+                    
+                    analysis_response = client.models.generate_content(
+                        model=MODEL_ID,
+                        contents=analysis_contents,
+                        config={'response_mime_type': 'application/json'}
+                    )
+                    
+                    # Parse analysis result
+                    try:
+                        analysis_data = json.loads(analysis_response.text)
+                        st.session_state.ddx_lesions = analysis_data
+                        st.session_state.vision_step = "3b"  # Go to step 3b to show analysis
+                        st.rerun()
+                    except json.JSONDecodeError:
+                        st.error("Không thể phân tích slides. Thử lại với Deep Dive mode.")
+                        st.code(analysis_response.text)
+                        return
+                
+                # Nếu đã có lesions analysis -> generate với danh sách đó
+                lesions = st.session_state.ddx_lesions.get('lesions', [])
+                ddx_conf = st.session_state.get('ddx_config', {})
+                
+                distribution_req = []
+                final_lesion_names = []
+                
+                for i, l in enumerate(lesions):
+                    # Default if missing in config
+                    conf = ddx_conf.get(i, {'selected': True, 'count': 2})
+                    if str(i) in ddx_conf: # Handle string keys from session if necessary
+                        conf = ddx_conf[str(i)]
+                        
+                    if conf['selected']:
+                        name = l['name']
+                        count = conf['count']
+                        final_lesion_names.append(name)
+                        distribution_req.append(f"- {name}: {count} câu")
+                
+                lesion_list = ", ".join(final_lesion_names)
+                dist_str = "\n".join(distribution_req)
+                
+                vision_prompt = VISION_DDX_FOCUS_PROMPT.format(num_q=st.session_state.num_q)
+                vision_prompt += f"\n\n=== DANH SÁCH TỔN THƯƠNG & PHÂN BỔ CÂU HỎI (BẮT BUỘC TUÂN THỦ) ===\n{dist_str}\n\nLƯU Ý: Tạo đúng số lượng câu hỏi cho từng mục như yêu cầu trên."
+                st.success(f"🔀 **DDx Focus** - Tạo câu hỏi theo cấu hình chi tiết ({len(final_lesion_names)} tổn thương)")
+            else:
+                # Deep Dive Mode (default)
+                vision_prompt = VISION_ADDON_PROMPT.format(num_q=st.session_state.num_q)
+            
+            full_prompt = subject_prompt + "\n\n" + vision_prompt
             
             # 3. Call AI
             client = genai.Client(api_key=st.session_state.api_key)
@@ -4604,73 +4888,108 @@ def view_slide_vision(data, current_user):
         st.info(f"🔢 Đã chọn: {len(selected_from_state)} thẻ")
         
         if st.button(f"💾 Lưu {len(selected_from_state)} thẻ đã chọn", type="primary"):
-            cards_to_save = []
-            images_dir = "static/images"
-            if not os.path.exists(images_dir): os.makedirs(images_dir)
-            
-            for i in selected_from_state:
-                g_card = st.session_state.generated_cards[i]
+            try:
+                cards_to_save = []
+                images_dir = "static/images"
+                if not os.path.exists(images_dir): os.makedirs(images_dir)
                 
-                # Resolve Asset again
-                p_key = g_card.get('primary_ref_page_key')
-                if not p_key or p_key not in st.session_state.page_assets:
-                     available_keys = list(st.session_state.page_assets.keys())
-                     if available_keys: p_key = available_keys[0]
+                # Progress Bar for Saving
+                prog_bar = st.progress(0, text="Đang chuẩn bị lưu...")
+                total_selected = len(selected_from_state)
                 
-                asset = st.session_state.page_assets.get(p_key)
-                img_q_Name = ""
-                img_a_Name = ""
-                
-                if asset:
-                    # Save ROI as Question Image
-                    unique_id = uuid.uuid4().hex[:8]
-                    fname_roi = f"slide_{p_key}_roi_{unique_id}.png"
-                    asset['roi'].save(os.path.join(images_dir, fname_roi))
-                    img_q_Name = fname_roi
+                if total_selected == 0:
+                    st.warning("Vui lòng chọn ít nhất 1 thẻ để lưu.")
+                else:
+                    cards_to_save = [] # Reset list logic just in case
                     
-                    # Save Full as Answer Image (Context) - Optional but recommended
-                    fname_full = f"slide_{p_key}_full_{unique_id}.png"
-                    asset['full'].save(os.path.join(images_dir, fname_full))
-                    img_a_Name = fname_full
+                    for idx, i in enumerate(selected_from_state):
+                        prog_bar.progress((idx + 1) / total_selected, text=f"Đang lưu thẻ {idx+1}/{total_selected}")
                 
-                # Create Card Object
-                new_card = {
-                    "id": str(uuid.uuid4()),
-                    "question": g_card.get('question', ''),
-                    "options": g_card.get('options', {}),
-                    "correct_answer": g_card.get('correct_answer', ''),
-                    "explanation": g_card.get('explanation', ''),
-                    "subject": st.session_state.target_subject,
-                    "topic": st.session_state.target_topic,
-                    "mnemonic": g_card.get('mnemonic', ''),
-                    "clinical_scenario": g_card.get('clinical_scenario', ''),
-                    "image_findings": g_card.get('image_findings', []),
-                    "ref_page_keys": g_card.get('ref_page_keys', []),
-                    "is_duplicate": g_card.get('is_duplicate', False),
-                    "duplicate_of": g_card.get('duplicate_of', ''),
-                    "source": "Slide Vision AI",
-                    "image_q": img_q_Name,
-                    "image_a": img_a_Name,
-                    "tags": ["SlideVision", g_card.get('question_type', 'spot')],
-                    "review_history": [],
-                    "srs_state": {
-                        "ease_factor": 2.5,
-                        "interval": 0,
-                        "due_date": datetime.datetime.now().isoformat()
-                    }
-                }
-                cards_to_save.append(new_card)
+                        g_card = st.session_state.generated_cards[i]
+                        
+                        # Resolve Asset again
+                        p_key = g_card.get('primary_ref_page_key')
+                        if not p_key or p_key not in st.session_state.page_assets:
+                             available_keys = list(st.session_state.page_assets.keys())
+                             if available_keys: p_key = available_keys[0]
+                        
+                        asset = st.session_state.page_assets.get(p_key)
+                        img_q_Name = ""
+                        img_a_Name = ""
+                        
+                        if asset:
+                            # Save ROI as Question Image
+                            unique_id = uuid.uuid4().hex[:8]
+                            fname_roi = f"slide_{p_key}_roi_{unique_id}.png"
+                            asset['roi'].save(os.path.join(images_dir, fname_roi))
+                            img_q_Name = fname_roi
+                            
+                            # Save Full as Answer Image (Context) - Optional but recommended
+                            fname_full = f"slide_{p_key}_full_{unique_id}.png"
+                            asset['full'].save(os.path.join(images_dir, fname_full))
+                            img_a_Name = fname_full
+                        
+                        # === SMART MERGE LOGIC ===
+                        # 1. Merge Clinical Scenario into Question (Vignette Style)
+                        final_q = g_card.get('question', '')
+                        scenario = g_card.get('clinical_scenario', '')
+                        if scenario and scenario.strip():
+                            final_q = f"**📝 Tình huống:** {scenario}\n\n{final_q}"
+                        
+                        # 2. Merge Image Findings into Explanation (Learning Aid)
+                        final_expl = g_card.get('explanation', '')
+                        findings = g_card.get('image_findings', [])
+                        if findings:
+                            f_list = "\n".join([f"- {f}" for f in findings])
+                            final_expl += f"\n\n**🔍 Dấu hiệu hình ảnh:**\n{f_list}"
 
-            
-            
-            data.extend(cards_to_save)
-            DataManager.save_data(current_user, data)
-            st.success("✅ Đã lưu xong!")
-            # Reset state
-            del st.session_state.vision_step
-            if 'thumbnails' in st.session_state: del st.session_state.thumbnails
-            st.session_state.view = 'library'
-            st.rerun()
+                        # Create Card Object
+                        new_card = {
+                            "id": str(uuid.uuid4()),
+                            "question": final_q,
+                            "options": g_card.get('options', {}),
+                            "correct_answer": g_card.get('correct_answer', ''),
+                            "explanation": final_expl,
+                            "subject": st.session_state.target_subject,
+                            "topic": st.session_state.target_topic,
+                            "mnemonic": g_card.get('mnemonic', ''),
+                            "clinical_scenario": g_card.get('clinical_scenario', ''),
+                            "image_findings": g_card.get('image_findings', []),
+                            "ref_page_keys": g_card.get('ref_page_keys', []),
+                            "is_duplicate": g_card.get('is_duplicate', False),
+                            "duplicate_of": g_card.get('duplicate_of', ''),
+                            "source": "Slide Vision AI",
+                            "image_q": img_q_Name,
+                            "image_a": img_a_Name,
+                            "tags": ["SlideVision", g_card.get('question_type', 'spot')],
+                            "review_history": [],
+                            "srs_state": {
+                                "ease_factor": 2.5,
+                                "interval": 0,
+                                "due_date": datetime.datetime.now().isoformat()
+                            }
+                        }
+                        cards_to_save.append(new_card)
+
+                    prog_bar.empty()
+                    
+                    data.extend(cards_to_save)
+                    DataManager.save_data(current_user, data)
+                    
+                    st.success(f"✅ Đã lưu thành công {len(cards_to_save)} thẻ vào thư viện!")
+                    st.balloons()
+                    time.sleep(1.5) # Chờ user thấy thông báo
+                    
+                    # Reset state
+                    del st.session_state.vision_step
+                    if 'thumbnails' in st.session_state: del st.session_state.thumbnails
+                    st.session_state.view = 'library'
+                    st.rerun()
+
+            except Exception as e:
+                if 'prog_bar' in locals(): prog_bar.empty()
+                st.error(f"❌ Lỗi khi lưu thẻ: {e}")
+                st.exception(e) # Show traceback for debugging
             
         if st.button("Làm lại từ đầu"):
             st.session_state.vision_step = 1

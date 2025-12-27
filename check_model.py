@@ -8,7 +8,7 @@ try:
         config = json.load(f)
         api_key = config.get("api_key")
 except:
-    api_key = "AIzaSyBFemVLtHs3OTG-ffhkR2VtODL8SW6tlXE" # Fallback to user's hardcoded key
+    api_key = "" # Fallback to user's hardcoded key
 
 print(f"Using API Key: {api_key[:5]}...{api_key[-5:] if api_key else ''}")
 

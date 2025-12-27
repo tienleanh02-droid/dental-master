@@ -28,3 +28,9 @@ build/
 # Sensitive config files (API Keys)
 config.json
 credentials.json
+**/api_key.txt
+user_profiles/**/api_key.txt
+*.key
+*.pem
+secrets.toml
+xenon-diorama-*.json
