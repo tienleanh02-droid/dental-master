@@ -359,24 +359,204 @@
     "repetitions": 1,
     "first_learned": "2025-12-27T11:00:12.193984"
   },
-  "579081b2-deed-49e1-94b6-4db480c7931a": {
+  "9768cbdb-309a-4d79-b93a-1f19df922e0a": {
     "state": "learning",
     "step_index": 0,
-    "due": "2025-12-27T23:21:10.835689",
+    "due": "2025-12-28T01:01:12.271761",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 2,
+    "first_learned": "2025-12-28T00:57:14.661067"
+  },
+  "64909668-cc0f-45ce-b85c-5c2066527201": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T00:58:17.397306",
     "interval": 0,
     "ease": 2.3,
     "lapses": 0,
     "repetitions": 1,
-    "first_learned": "2025-12-27T23:20:10.835689"
+    "first_learned": "2025-12-28T00:57:17.397306"
+  },
+  "2f76523a-b40b-44b9-8547-5343e60ddb8e": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T00:58:37.084131",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:57:37.084131"
   },
   "4dfba961-8611-4071-8336-fd9f4f169a83": {
     "state": "learning",
     "step_index": 0,
-    "due": "2025-12-27T23:21:13.258191",
+    "due": "2025-12-28T00:58:40.466801",
     "interval": 0,
     "ease": 2.3,
     "lapses": 0,
     "repetitions": 1,
-    "first_learned": "2025-12-27T23:20:13.258191"
+    "first_learned": "2025-12-28T00:57:40.466801"
+  },
+  "116f0109-87ae-41cf-899b-50536b33015a": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T00:58:43.487465",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:57:43.487465"
+  },
+  "275e7a1f-be48-40d5-866b-916c2863ee5d": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T00:58:45.501018",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:57:45.501018"
+  },
+  "da253914-4d5b-46fb-902e-5a6920484555": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T00:58:54.480373",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:57:54.480373"
+  },
+  "b40ac0da-08e2-4d30-bb52-e99f582734f5": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T00:59:09.764814",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:58:09.764814"
+  },
+  "f03897f5-025f-4524-941c-f6979185534b": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T00:59:14.216709",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:58:14.216709"
+  },
+  "2b3269e7-b1f7-4ef3-9f70-d4fc92891688": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T00:59:18.728677",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:58:18.728677"
+  },
+  "579081b2-deed-49e1-94b6-4db480c7931a": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T00:59:21.097786",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:58:21.097786"
+  },
+  "e9be1c55-22fc-4491-8b58-c6503fcbe895": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T00:59:30.542985",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:58:30.542985"
+  },
+  "e904e7cc-d3cd-4092-8fb2-512489667697": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T00:59:43.612077",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:58:43.612077"
+  },
+  "ba38d3c0-d2e7-4ee8-8419-593c2da097eb": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T00:59:53.779042",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:58:53.779042"
+  },
+  "ee438667-e643-42a8-803b-4eb208bdf06f": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T01:00:13.028860",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:59:13.028860"
+  },
+  "535b54f2-1507-410f-be3f-ac6274cafcb3": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T01:00:15.626807",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:59:15.626807"
+  },
+  "8f6b6612-dd31-4951-b4c2-87a181609202": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T01:00:33.743950",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:59:33.743950"
+  },
+  "1550f464-5fdc-4a29-bc52-b7086da34a03": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T01:00:42.834382",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:59:42.834382"
+  },
+  "24c299d3-58be-4f74-8ca3-c9711fb206f4": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T01:00:54.306967",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T00:59:54.306967"
+  },
+  "d6dcdb7a-bd58-4a1f-8422-98e218aefd3b": {
+    "state": "learning",
+    "step_index": 0,
+    "due": "2025-12-28T01:01:08.063067",
+    "interval": 0,
+    "ease": 2.3,
+    "lapses": 0,
+    "repetitions": 1,
+    "first_learned": "2025-12-28T01:00:08.063067"
   }
 }

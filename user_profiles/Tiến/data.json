@@ -10,7 +10,7 @@
     },
     "correct_answer": "B",
     "explanation": "Kiểu hình nha chu là hình thái tổng thể bao gồm kiểu hình nướu và kiểu hình xương ổ răng. Kiểu hình có thể thay đổi theo thời gian và tác động từ bên ngoài.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "Phenotype = Gingiva + Bone",
     "subject": "Nha chu/Giải phẫu ứng dụng",
     "topic": "Kiểu hình nha chu",
@@ -30,7 +30,7 @@
     },
     "correct_answer": "B",
     "explanation": "Thuật ngữ \"Khoảng sinh học\" hiện đã được thay thế bằng \"Bám dính mô trên mào xương\", bao gồm bám dính biểu mô và bám dính mô liên kết.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "STA = JE + CTA",
     "subject": "Nha chu/Giải phẫu ứng dụng",
     "topic": "Khoảng sinh học",
@@ -50,7 +50,7 @@
     },
     "correct_answer": "B",
     "explanation": "Ở trạng thái sinh lý bình thường, mào xương ổ răng nằm cách CEJ khoảng 1 đến 2 mm về phía chóp.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "1-2mm là khoảng cách an toàn",
     "subject": "Nha chu/Giải phẫu ứng dụng",
     "topic": "Nướu sừng hóa",
@@ -70,7 +70,7 @@
     },
     "correct_answer": "C",
     "explanation": "Hở xương cửa sổ là phần chân răng lộ trần nhưng mào xương ổ còn nguyên vẹn, trong khi nẻ xương là phần lộ trần kéo dài đến tận mào xương ổ.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "Dehiscence = Destroyed crest",
     "subject": "Nha chu/Giải phẫu ứng dụng",
     "topic": "Xương ổ răng",
@@ -90,7 +90,7 @@
     },
     "correct_answer": "C",
     "explanation": "Nhóm sợi chéo chiếm khoảng 2/3 tổng số sợi, giúp răng chống chịu lực dọc và chuyển chúng thành sự căng trong xương ổ.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "Oblique = Optimal Resistance",
     "subject": "Nha chu/Giải phẫu ứng dụng",
     "topic": "Dây chằng nha chu",
@@ -110,7 +110,7 @@
     },
     "correct_answer": "C",
     "explanation": "Xê măng không sợi không tế bào thường phủ một phần nhỏ men răng dọc theo CEJ và không có chức năng bám dính.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "AAC = Afibrillar (No fibers) = No attachment",
     "subject": "Nha chu/Giải phẫu ứng dụng",
     "topic": "Xê măng",
@@ -155,7 +155,7 @@
     },
     "correct_answer": "B",
     "explanation": "Thân chân răng là phần thân chung chưa chia nhánh, tính từ CEJ đến đường phân chia các chân răng.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "Root Trunk = Common Base",
     "subject": "Nha chu/Giải phẫu ứng dụng",
     "topic": "Vùng chẽ",
@@ -175,7 +175,7 @@
     },
     "correct_answer": "C",
     "explanation": "Mối tương quan xê măng phủ lên men răng chiếm tỷ lệ cao nhất với khoảng 60-65% trường hợp.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "Overlap (60-65%) is Most Common",
     "subject": "Nha chu/Giải phẫu ứng dụng",
     "topic": "Đường nối men-xê măng",
@@ -195,7 +195,7 @@
     },
     "correct_answer": "A",
     "explanation": "Chiều cao nướu dính có xu hướng lớn nhất ở vùng răng cửa (4.04 - 4.18 mm) và giảm dần về phía răng sau.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "Incisors = Max Height",
     "subject": "Nha chu/Giải phẫu ứng dụng",
     "topic": "Nướu dính",
@@ -215,7 +215,7 @@
     },
     "correct_answer": "B",
     "explanation": "Xê măng có tế bào là loại duy nhất có khả năng sửa chữa tiêu ngót chân răng và được thành lập trước tiên trong quá trình lành thương.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "Cellular = Repair",
     "subject": "Nha chu/Giải phẫu ứng dụng",
     "topic": "Xê măng",
@@ -244,7 +244,7 @@
     },
     "correct_answer": "B",
     "explanation": "Nguồn cấp máu chính cho nướu rời là các nhánh tận cùng của động mạch trên màng xương.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "Super = Surface (Gingiva)",
     "subject": "Nha chu/Giải phẫu ứng dụng",
     "topic": "Cung cấp máu",
@@ -264,7 +264,7 @@
     },
     "correct_answer": "B",
     "explanation": "Roll test thực hiện bằng cách đẩy niêm mạc di động về phía nướu cố định để xác định ranh giới MGJ.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "Roll to find the Line (MGJ)",
     "subject": "Nha chu/Giải phẫu ứng dụng",
     "topic": "Phức hợp niêm mạc nướu",
@@ -284,7 +284,7 @@
     },
     "correct_answer": "B",
     "explanation": "Bề dày khoảng dây chằng nha chu thay đổi từ 0.1 đến 0.25 mm tùy thuộc vào tuổi và chức năng của răng.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "0.1 - 0.25 mm",
     "subject": "Nha chu/Giải phẫu ứng dụng",
     "topic": "Dây chằng nha chu",
@@ -304,7 +304,7 @@
     },
     "correct_answer": "C",
     "explanation": "Xương ổ chính danh là vách xương đặc lót trong ổ răng, còn gọi là phiến cứng (lamina dura) trên phim X-quang.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "Lamina Dura = Alveolar Bone Proper",
     "subject": "Nha chu/Giải phẫu ứng dụng",
     "topic": "Xương ổ răng",
@@ -2702,7 +2702,7 @@
     },
     "correct_answer": "B",
     "explanation": "Than phiền chính là lý do BN đến khám, phản ánh nhu cầu và kỳ vọng của họ, giúp thiết lập mục tiêu điều trị ưu tiên,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Khám lâm sàng",
     "topic": "Bệnh sử",
@@ -2722,7 +2722,7 @@
     },
     "correct_answer": "B",
     "explanation": "Glycogen trong niêm mạc tương tác với Iodine tạo màu nâu; nướu sừng hóa chứa rất ít Glycogen nên không bắt màu,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Khám lâm sàng",
     "topic": "Ranh giới MGJ",
@@ -2822,7 +2822,7 @@
     },
     "correct_answer": "B",
     "explanation": "Độ II là di động ngang > 1mm; Độ III là di động ngang > 2mm hoặc có thêm di động theo chiều dọc,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Khám lâm sàng",
     "topic": "Độ lung lay răng",
@@ -2842,7 +2842,7 @@
     },
     "correct_answer": "B",
     "explanation": "Fremitus độ 2 là khi sự di chuyển/rung động của răng bộc lộ rõ ràng dưới tác động của lực cắn khớp,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Khám lâm sàng",
     "topic": "Test Fremitus",
@@ -2862,7 +2862,7 @@
     },
     "correct_answer": "C",
     "explanation": "Hiện tượng trắng gai nướu khi kéo môi là dấu hiệu chẩn đoán thắng bám thấp, gây cản trở vệ sinh răng miệng,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Khám lâm sàng",
     "topic": "Thắng môi",
@@ -2902,7 +2902,7 @@
     },
     "correct_answer": "B",
     "explanation": "Khi nướu triển dưỡng trùm lên CEJ, mất bám dính thực tế bằng độ sâu túi trừ đi phần nướu dư trên men răng,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Khám lâm sàng",
     "topic": "Mất bám dính (CAL)",
@@ -2922,7 +2922,7 @@
     },
     "correct_answer": "B",
     "explanation": "Oral Chroma giúp xác định chính xác thành phần khí bay hơi để tìm ra nguyên nhân hôi miệng cụ thể,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Khám lâm sàng",
     "topic": "Hôi miệng",
@@ -2942,7 +2942,7 @@
     },
     "correct_answer": "B",
     "explanation": "Khác với răng cửa giữa và răng nanh (Zenith lệch xa), răng cửa bên thường có Zenith trùng với trục dọc răng,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Khám lâm sàng",
     "topic": "Thẩm mỹ nướu",
@@ -2962,7 +2962,7 @@
     },
     "correct_answer": "C",
     "explanation": "Đánh giá độ dày và diện tích mảng bám lưỡi là bước quan trọng trong khám hôi miệng và vệ sinh răng miệng",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Khám lâm sàng",
     "topic": "Mảng bám lưỡi",
@@ -4681,7 +4681,7 @@
     },
     "correct_answer": "B",
     "explanation": "58% lối vào vùng chẽ nhỏ hơn 0.75mm, trong khi đầu tác dụng của cây nạo chuẩn thường lớn hơn kích thước này, gây khó khăn cho việc làm sạch,,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "Chẽ nhỏ < 0.75 = 58%",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Giải phẫu",
@@ -4981,7 +4981,7 @@
     },
     "correct_answer": "D",
     "explanation": "81% lối vào vùng chẽ nhỏ hơn 1mm và 58% nhỏ hơn 0.75mm. Điều này giải thích tại sao XLMCR bằng dụng cụ cầm tay thường để sót cao răng tại đây,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Giải phẫu ứng dụng",
@@ -5001,7 +5001,7 @@
     },
     "correct_answer": "A",
     "explanation": "Phần chung chân răng chiếm 32%, chân ngoài gần 25%, chân trong 24% và chân ngoài xa 19%,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Giải phẫu ứng dụng",
@@ -5021,7 +5021,7 @@
     },
     "correct_answer": "B",
     "explanation": "Lối vào vùng chẽ gần nằm ở 2/3 phía trong tính từ mặt ngoài, nên tiếp cận từ phía mạc khẩu cái là chính xác nhất,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Chẩn đoán lâm sàng",
@@ -5041,7 +5041,7 @@
     },
     "correct_answer": "B",
     "explanation": "Fedi bổ sung tiêu chí dọc: Độ I là tiêu xương dọc 1-3mm; Độ II là tiêu xương dọc > 3mm nhưng chưa thông suốt ngang,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Phân loại Fedi",
@@ -5061,7 +5061,7 @@
     },
     "correct_answer": "C",
     "explanation": "Tarnow & Fletcher chia phân nhóm dọc: A (0-3mm), B (4-6mm), C (≥ 7mm),.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Phân loại Tarnow",
@@ -5081,7 +5081,7 @@
     },
     "correct_answer": "C",
     "explanation": "Sự chồng lấp hình ảnh chân trong lên phức hợp chân ngoài khiến việc quan sát tiêu xương vùng chẽ trên phim 2D bị hạn chế,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Chẩn đoán X-quang",
@@ -5101,7 +5101,7 @@
     },
     "correct_answer": "C",
     "explanation": "Loại III là mỏ men răng kéo dài trực tiếp vào trong vùng chẽ proper, gây cản trở bám dính sợi và tích tụ mảng bám,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Yếu tố thuận lợi",
@@ -5121,7 +5121,7 @@
     },
     "correct_answer": "C",
     "explanation": "STVC độ II đơn thuần là Kém, nhưng nếu kết hợp thêm chân răng sát nhau hoặc STVC độ III thì tiên lượng là Nghi ngờ,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Tiên lượng",
@@ -5141,7 +5141,7 @@
     },
     "correct_answer": "B",
     "explanation": "Cần chân răng phân kỳ để tạo không gian cho bàn chải kẽ đi qua và phần chung ngắn để lối vào đủ rộng cho vệ sinh,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Điều trị - Phẫu thuật",
@@ -5161,7 +5161,7 @@
     },
     "correct_answer": "C",
     "explanation": "Nếu chân răng định giữ lại bị tiêu ngót, sâu hoặc thủng chân răng thì không thể thực hiện cắt chân răng bảo tồn,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Điều trị - Phẫu thuật",
@@ -5181,7 +5181,7 @@
     },
     "correct_answer": "B",
     "explanation": "Nếu nguồn gốc thuần túy từ tủy, điều trị nội nha đúng sẽ làm lành thương vùng chẽ mà không cần can thiệp nha chu xâm lấn,,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Nội nha - Nha chu",
@@ -5201,7 +5201,7 @@
     },
     "correct_answer": "B",
     "explanation": "Odontoplasty giúp loại bỏ các yếu tố lưu giữ mảng bám (như CEP) và tạo dạng thuận lợi cho việc kiểm soát vệ sinh tại chỗ,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Điều trị - Tạo hình",
@@ -5221,7 +5221,7 @@
     },
     "correct_answer": "C",
     "explanation": "Loại IV là tổn thương thông suốt (đường hầm) đã bị tụt nướu làm lộ rõ lỗ thông trên lâm sàng,,.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Tiên lượng",
@@ -5241,7 +5241,7 @@
     },
     "correct_answer": "C",
     "explanation": "STVC xuyên qua hàm dưới được tính 3 điểm; trong khi hút thuốc lá tính 4 điểm (nặng nhất toàn bảng),.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Phân loại Miller 2014",
@@ -5261,7 +5261,7 @@
     },
     "correct_answer": "B",
     "explanation": "Hemisection chia đôi răng cối lớn hàm dưới thành 2 phần riêng biệt, mỗi phần được phục hồi như một răng một chân (thường là răng cối nhỏ),.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Điều trị phẫu thuật",
@@ -5281,7 +5281,7 @@
     },
     "correct_answer": "B",
     "explanation": "81% lối vào vùng chẽ nhỏ hơn 1mm và 58% nhỏ hơn 0.75mm, khiến đầu tác dụng của cây nạo chuẩn khó tiếp cận.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Chẩn đoán lâm sàng",
@@ -5301,7 +5301,7 @@
     },
     "correct_answer": "B",
     "explanation": "Vùng chẽ gần của RCL1 trên mở ra ở khoảng 2/3 về phía trong, nên phải thăm dò từ phía vòm miệng.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Kỹ thuật thăm khám",
@@ -5321,7 +5321,7 @@
     },
     "correct_answer": "B",
     "explanation": "Phần chung chân răng càng ngắn thì khoảng cách từ CEJ đến vùng chẽ càng ít, tổn thương sẽ lan vào vùng chẽ nhanh hơn.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Giải phẫu ứng dụng",
@@ -5341,7 +5341,7 @@
     },
     "correct_answer": "C",
     "explanation": "Loại IV là tổn thương thông suốt ngoài-trong (như loại III) nhưng nướu đã tụt, làm lộ rõ lỗ thông trên lâm sàng.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Phân loại Glickman",
@@ -5361,7 +5361,7 @@
     },
     "correct_answer": "C",
     "explanation": "Hamp chia theo kích thước ngang: Loại 1 (<3mm), Loại 2 (≥ 3mm nhưng không thông), Loại 3 (thông suốt).",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Phân loại Hamp",
@@ -5381,7 +5381,7 @@
     },
     "correct_answer": "B",
     "explanation": "Hạt trai men (Enamel pearl) thường gặp ở vùng chia chân răng cối lớn, là nơi tích tụ mảng bám và khó xử lý bằng dụng cụ.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Yếu tố tại chỗ",
@@ -5401,7 +5401,7 @@
     },
     "correct_answer": "B",
     "explanation": "Odontoplasty giúp loại bỏ các rãnh, hạt trai men và tạo hình thuận lợi cho việc kiểm soát mảng bám tại lối vào vùng chẽ.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Điều trị bảo tồn",
@@ -5421,7 +5421,7 @@
     },
     "correct_answer": "C",
     "explanation": "Nếu các chân răng hội tụ hoặc dính nhau, việc cắt bỏ một chân sẽ không tạo được khoảng trống để vệ sinh, gây thất bại.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Phẫu thuật cắt chân",
@@ -5441,7 +5441,7 @@
     },
     "correct_answer": "B",
     "explanation": "Hemisection thường áp dụng cho răng cối lớn hàm dưới vì có 2 chân phân kỳ rõ rệt, biến nó thành 2 răng một chân riêng biệt.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Bổ đôi răng",
@@ -5461,7 +5461,7 @@
     },
     "correct_answer": "C",
     "explanation": "Chỉ định này nhằm tạo một lỗ thông lớn để bệnh nhân có thể đưa bàn chải kẽ qua vệ sinh vùng chẽ thông suốt.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Phẫu thuật đường hầm",
@@ -5481,7 +5481,7 @@
     },
     "correct_answer": "C",
     "explanation": "Mất bám dính 50% hoặc có STVC độ II khiến việc duy trì mô nha chu trở nên khó khăn, thuộc nhóm tiên lượng Kém.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Tiên lượng răng",
@@ -5501,7 +5501,7 @@
     },
     "correct_answer": "B",
     "explanation": "Sự sụt giảm mật độ xương (thấu quang) ở vùng chia chân tạo thành hình tam giác là dấu hiệu đặc thù trên phim quanh chóp.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Chẩn đoán X-quang",
@@ -5521,7 +5521,7 @@
     },
     "correct_answer": "B",
     "explanation": "Các ống tủy phụ mở trực tiếp vào vùng chẽ cho phép nhiễm trùng tủy lan sang vùng này và ngược lại.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Nội nha - Nha chu",
@@ -5541,7 +5541,7 @@
     },
     "correct_answer": "B",
     "explanation": "Đường viền phục hình phải phẳng và không có các phần khắc/nhô ra để tránh tích tụ mảng bám tại vùng mới phẫu thuật.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Điều trị phục hồi",
@@ -5561,7 +5561,7 @@
     },
     "correct_answer": "C",
     "explanation": "Theo tiêu chuẩn độ phức tạp của AAP 2017, sự hiện diện của STVC loại 2 hoặc 3 là chỉ báo của Giai đoạn III.",
-    "source": NaN,
+    "source": "",
     "mnemonic": "",
     "subject": "Nha chu/Sang thương vùng chẽ",
     "topic": "Phân loại AAP 2017",
@@ -6771,23 +6771,6 @@
     "image_a": ""
   },
   {
-    "id": "ac5bc2ba-d329-4aa0-b441-30567f80e5ac",
-    "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
-    "topic": "_folder_placeholder",
-    "question": "[Thư mục: Nang do răng ở xương hàm]",
-    "answer": "Đây là thư mục. Hãy thêm thẻ vào đây.",
-    "options": {
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": ""
-    },
-    "correct_answer": "A",
-    "explanation": "",
-    "is_placeholder": true,
-    "chat_history": []
-  },
-  {
     "id": "9768cbdb-309a-4d79-b93a-1f19df922e0a",
     "question": "Theo học thuyết về sinh bệnh học của nang xương hàm, quá trình này được chia thành mấy giai đoạn chính?",
     "options": {
@@ -6798,36 +6781,17 @@
     },
     "correct_answer": "B",
     "explanation": "A) Dấu hiệu hình ảnh: Slide P10 và P11 mô tả rõ quy trình từ 'Epithelial rests' -> 'Epithelial proliferation' -> 'Cyst formation'.\nB) Lập luận: Văn bản tại P10 xác nhận sinh bệnh học nang chia thành 3 giai đoạn: Khởi đầu, Tạo thành nang, và Phát triển lớn lên.\nC) Bẫy: Tránh nhầm lẫn với các giai đoạn của viêm xương hay chỉ đơn thuần là sự tăng trưởng kích thước.\nD) Professor’s note: Theo Neville, giai đoạn khởi đầu thường liên quan đến sự kích hoạt các tế bào biểu mô sót (như Malassez, Serres) bởi các yếu tố kích thích (thường là viêm).",
+    "source": "Slide Vision AI",
+    "mnemonic": "Khởi - Tạo - Phát (Khởi đầu - Tạo nang - Phát triển)",
     "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
     "topic": "Visual Diagnosis",
-    "mnemonic": "Khởi - Tạo - Phát (Khởi đầu - Tạo nang - Phát triển)",
-    "clinical_scenario": "Một bệnh nhân nam 25 tuổi đi khám răng định kỳ, không có triệu chứng đau nhức. Phim X-quang panorama phát hiện một vùng thấu quang quanh thân răng 38 ngầm. Bác sĩ giải thích về quá trình hình thành thương tổn này.",
-    "image_findings": [
-      "Sơ đồ mô tả các giai đoạn phát triển của nang",
-      "Sự hiện diện của biểu mô (source of epithelium)",
-      "Quá trình tăng sinh biểu mô dưới tác động của Cytokines"
-    ],
-    "ref_page_keys": [
-      "P10",
-      "P11"
-    ],
-    "is_duplicate": false,
-    "duplicate_of": "",
-    "source": "Slide Vision AI",
-    "image_q": "",
-    "image_a": "slide_P10_full_a936d4d5.png",
     "tags": [
       "SlideVision",
       "spot"
     ],
-    "review_history": [],
-    "srs_state": {
-      "ease_factor": 2.5,
-      "interval": 0,
-      "due_date": "2025-12-27T19:04:02.903365"
-    },
     "chat_history": [],
-    "temp_delete_img": true
+    "image_q": "",
+    "image_a": "https://i.ibb.co/JRDBJh1y/slide-P10-full-a936d4d5-png.png"
   },
   {
     "id": "64909668-cc0f-45ce-b85c-5c2066527201",
@@ -6840,36 +6804,17 @@
     },
     "correct_answer": "B",
     "explanation": "A) Dấu hiệu hình ảnh: Slide P13 và P14 thể hiện rõ 'Hypertonic contents / High osmotic gradient' và 'Movement of water' vào lòng nang.\nB) Lập luận: Sự tích tụ các mảnh vụn tế bào và protein trong lòng nang tạo áp suất thẩm thấu cao, kéo nước vào làm tăng áp suất thủy tĩnh, đẩy thành nang rộng ra.\nC) Bẫy: Cần phân biệt áp suất thẩm thấu (osmotic) do nồng độ chất tan và áp suất thủy tĩnh (hydrostatic) do thể tích dịch.\nD) Professor’s note: Đây là cơ chế chính giúp nang xương hàm phát triển đồng tâm theo mọi hướng (balloon-like expansion).",
+    "source": "Slide Vision AI",
+    "mnemonic": "Ưu trương kéo nước - Nang phình to ra",
     "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
     "topic": "Visual Diagnosis",
-    "mnemonic": "Ưu trương kéo nước - Nang phình to ra",
-    "clinical_scenario": "Trong giai đoạn phát triển lớn lên của nang, áp suất thẩm thấu đóng vai trò quan trọng làm dịch chuyển chất lỏng vào trong lòng nang.",
-    "image_findings": [
-      "Hình ảnh mô tả lòng nang (Cystic lumen) chứa các thành phần ưu trương (Hypertonic contents)",
-      "Mũi tên chỉ hướng di chuyển của nước (Movement of water) từ ngoài vào trong",
-      "Sự gia tăng áp suất thủy tĩnh (Increase in hydrostatic pressure) làm giãn rộng thành nang"
-    ],
-    "ref_page_keys": [
-      "P12",
-      "P13",
-      "P14"
-    ],
-    "is_duplicate": false,
-    "duplicate_of": "",
-    "source": "Slide Vision AI",
-    "image_q": "slide_P13_roi_9434e1be.png",
-    "image_a": "slide_P13_full_9434e1be.png",
     "tags": [
       "SlideVision",
       "synthesis"
     ],
-    "review_history": [],
-    "srs_state": {
-      "ease_factor": 2.5,
-      "interval": 0,
-      "due_date": "2025-12-27T19:04:02.971855"
-    },
-    "chat_history": []
+    "chat_history": [],
+    "image_q": "https://i.ibb.co/qQBM5z8/slide-P13-roi-9434e1be-png.png",
+    "image_a": "https://i.ibb.co/9xCtF7B/slide-P13-full-9434e1be-png.png"
   },
   {
     "id": "da253914-4d5b-46fb-902e-5a6920484555",
@@ -6882,36 +6827,17 @@
     },
     "correct_answer": "C",
     "explanation": "A) Dấu hiệu hình ảnh: Slide P16 và P18 nhấn mạnh OKC tăng trưởng trong các khoang tủy theo hướng ít lực cản, lan rộng dọc xương hàm mà không làm phồng vỏ xương rõ rệt so với kích thước thấu quang.\nB) Lập luận: Trái với các nang khác phát triển kiểu áp lực thủy tĩnh (tròn đồng tâm), OKC phát triển bằng sự tăng sinh biểu mô lót tại chỗ.\nC) Bẫy: Ameloblastoma thường gây phồng vỏ xương và tiêu ngót chân răng mạnh mẽ hơn nhiều.\nD) Professor’s note: Theo WHO 2022, đặc tính 'minimal expansion' giúp phân biệt OKC với các nang/u khác cùng kích thước trên X-quang.",
+    "source": "Slide Vision AI",
+    "mnemonic": "OKC - Lan dọc - Ít phồng",
     "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
     "topic": "Visual Diagnosis",
-    "mnemonic": "OKC - Lan dọc - Ít phồng",
-    "clinical_scenario": "Trên phim Panorama, bác sĩ quan sát thấy một vùng thấu quang lớn ở xương hàm dưới nhưng ít gây phồng vỏ xương theo chiều ngoài trong, tổn thương lan rộng dọc theo chiều dài xương.",
-    "image_findings": [
-      "Sơ đồ mô tả sự tăng trưởng dọc theo các khoang tủy xương (P16)",
-      "Phim X-quang (P18) cho thấy tổn thương lan dọc xương hàm ít gây di lệch răng",
-      "Văn bản mô tả: 'Tăng trưởng... theo hướng ít lực cản nhất'"
-    ],
-    "ref_page_keys": [
-      "P16",
-      "P18"
-    ],
-    "is_duplicate": false,
-    "duplicate_of": "",
-    "source": "Slide Vision AI",
-    "image_q": "user_upload_40dd758e71bc451cbd639ece78c92177.png",
-    "image_a": "slide_P18_full_dd6efe20.png",
     "tags": [
       "SlideVision",
       "ddx"
     ],
-    "review_history": [],
-    "srs_state": {
-      "ease_factor": 2.5,
-      "interval": 0,
-      "due_date": "2025-12-27T19:04:03.012158"
-    },
     "chat_history": [],
-    "temp_delete_img": true
+    "image_q": "https://i.ibb.co/zTxY55C2/user-upload-40dd758e71bc451cbd639ece78c92177-png.png",
+    "image_a": "https://i.ibb.co/fd4sgGnh/slide-P18-full-dd6efe20-png.png"
   },
   {
     "id": "4dfba961-8611-4071-8336-fd9f4f169a83",
@@ -6924,34 +6850,17 @@
     },
     "correct_answer": "B",
     "explanation": "A) Dấu hiệu hình ảnh: P24 định nghĩa rõ 'Ping pong ball sign' là lớp vỏ xương mỏng còn nguyên, ấn lõm rồi phồng lại.\nB) Lập luận: Đây là giai đoạn trung gian khi vỏ xương chưa bị phá hủy hoàn toàn nhưng đã rất mỏng do áp lực nang.\nC) Bẫy: Phân biệt với 'Egg shell crackling' (nghe tiếng gãy vỡ của các mảnh xương nhỏ).\nD) Professor’s note: Dấu hiệu này chỉ xuất hiện khi nang đã đủ lớn để gây tiêu mòn đáng kể bản xương phía ngoài.",
+    "source": "Slide Vision AI",
+    "mnemonic": "Ấn lõm phồng lại - Bóng bàn (Ping pong)",
     "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
     "topic": "Visual Diagnosis",
-    "mnemonic": "Ấn lõm phồng lại - Bóng bàn (Ping pong)",
-    "clinical_scenario": "Bệnh nhân nữ 40 tuổi, có khối sưng ở vùng xương hàm trên. Khi bác sĩ dùng ngón tay ấn mạnh vào vùng vỏ xương mỏng, có cảm giác vỏ xương lõm xuống rồi phồng lên lại.",
-    "image_findings": [
-      "Văn bản P24: 'lớp vỏ xương mỏng còn nguyên vẹn, ấn mạnh có cảm giác lõm rồi phồng lên lại'",
-      "Hình vẽ P23: Mô tả lớp vỏ xương bị đẩy lồi ra ngoài nhưng chưa thủng"
-    ],
-    "ref_page_keys": [
-      "P24"
-    ],
-    "is_duplicate": false,
-    "duplicate_of": "",
-    "source": "Slide Vision AI",
-    "image_q": "",
-    "image_a": "slide_P24_full_264fdc29.png",
     "tags": [
       "SlideVision",
       "spot"
     ],
-    "review_history": [],
-    "srs_state": {
-      "ease_factor": 2.5,
-      "interval": 0,
-      "due_date": "2025-12-27T19:04:03.057254"
-    },
     "chat_history": [],
-    "temp_delete_img": true
+    "image_q": "",
+    "image_a": "https://i.ibb.co/3yLYWf5V/slide-P24-full-264fdc29-png.png"
   },
   {
     "id": "579081b2-deed-49e1-94b6-4db480c7931a",
@@ -6964,33 +6873,17 @@
     },
     "correct_answer": "C",
     "explanation": "A) Dấu hiệu hình ảnh: Slide P24 mô tả 'Egg shell crackling' là do một lớp xương mỏng mới hình thành, không đủ độ bền nên dễ vỡ vụn dưới áp lực ngón tay.\nB) Lập luận: Đây là dấu hiệu của việc xương cố gắng bồi đắp ở phía ngoài trong khi nang tiêu xương ở phía trong.\nC) Bẫy: Tránh nhầm với dấu hiệu 'Soft and fluctuant' (khi đã mất hoàn toàn lớp xương).\nD) Professor’s note: Khi nghe thấy dấu hiệu này, khả năng cao là nang đã gây thủng vỏ xương ở một vài điểm.",
+    "source": "Slide Vision AI",
+    "mnemonic": "Lạo xạo - Vỏ trứng (Egg shell)",
     "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
     "topic": "Visual Diagnosis",
-    "mnemonic": "Lạo xạo - Vỏ trứng (Egg shell)",
-    "clinical_scenario": "Khi thăm khám một bệnh nhân nghi ngờ có nang lớn ở xương hàm, bác sĩ sờ vùng sưng và nghe thấy tiếng lạo xạo giống như tiếng vỏ trứng bị vỡ.",
-    "image_findings": [
-      "Văn bản P24: 'Egg shell crackling: một lớp xương mỏng hình thành dưới màng xương... dễ gãy vỡ'"
-    ],
-    "ref_page_keys": [
-      "P24"
-    ],
-    "is_duplicate": false,
-    "duplicate_of": "",
-    "source": "Slide Vision AI",
-    "image_q": "",
-    "image_a": "slide_P24_full_b9355d47.png",
     "tags": [
       "SlideVision",
       "spot"
     ],
-    "review_history": [],
-    "srs_state": {
-      "ease_factor": 2.5,
-      "interval": 0,
-      "due_date": "2025-12-27T19:04:03.105510"
-    },
     "chat_history": [],
-    "temp_delete_img": true
+    "image_q": "",
+    "image_a": "https://i.ibb.co/3yLYWf5V/slide-P24-full-264fdc29-png.png"
   },
   {
     "id": "116f0109-87ae-41cf-899b-50536b33015a",
@@ -7003,35 +6896,17 @@
     },
     "correct_answer": "A",
     "explanation": "A) Dấu hiệu hình ảnh: Slide P13 (phần chú thích bên phải) và P20 xác nhận vai trò của 'Increase in inflammatory exudate, cell breakdown products' làm tăng áp suất.\nB) Lập luận: Viêm làm tăng tính thấm mao mạch và tăng nồng độ protein/mảnh vụn trong nang, đẩy mạnh quá trình kéo nước vào theo cơ chế thẩm thấu.\nC) Bẫy: Nang thường tiến triển chậm (P19), chỉ bùng phát khi có yếu tố viêm.\nD) Professor’s note: Đây là lý do tại sao một nang tiềm ẩn lâu năm có thể đột ngột gây phồng mặt sau một đợt viêm tủy/quanh chóp cấp.",
+    "source": "Slide Vision AI",
+    "mnemonic": "Viêm - Tăng rỉ dịch - Nang lớn nhanh",
     "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
     "topic": "Visual Diagnosis",
-    "mnemonic": "Viêm - Tăng rỉ dịch - Nang lớn nhanh",
-    "clinical_scenario": "Bệnh nhân có một nang chân răng nhỏ được theo dõi trong 15 tháng. Tuy nhiên, sau một đợt đau nhức cấp tính do nhiễm trùng răng nguyên nhân, khối sưng to lên rất nhanh.",
-    "image_findings": [
-      "Slide P19 cho thấy diễn tiến chậm trong 15 tháng và 5 năm",
-      "Slide P20 ghi chú: 'Lớn nhanh hơn khi có viêm, nhiễm trùng'"
-    ],
-    "ref_page_keys": [
-      "P13",
-      "P19",
-      "P20"
-    ],
-    "is_duplicate": false,
-    "duplicate_of": "",
-    "source": "Slide Vision AI",
-    "image_q": "slide_P20_roi_bd669e8d.png",
-    "image_a": "slide_P20_full_bd669e8d.png",
     "tags": [
       "SlideVision",
       "synthesis"
     ],
-    "review_history": [],
-    "srs_state": {
-      "ease_factor": 2.5,
-      "interval": 0,
-      "due_date": "2025-12-27T19:04:03.131055"
-    },
-    "chat_history": []
+    "chat_history": [],
+    "image_q": "https://i.ibb.co/x8dx0XpN/slide-P20-roi-bd669e8d-png.png",
+    "image_a": "https://i.ibb.co/xtG6yS8g/slide-P20-full-bd669e8d-png.png"
   },
   {
     "id": "2b3269e7-b1f7-4ef3-9f70-d4fc92891688",
@@ -7044,34 +6919,17 @@
     },
     "correct_answer": "B",
     "explanation": "A) Dấu hiệu hình ảnh: Slide P21 liệt kê rõ các tác động: 'đẩy lệch, tiêu ngót chân răng, đẩy lệch ống thần kinh răng dưới, nén xoang hàm...'.\nB) Lập luận: Do sự phát triển chậm và có áp lực, nang đẩy các cấu trúc mềm (thần kinh) hoặc di lệch các cấu trúc cứng (răng) trước khi gây tiêu hủy.\nC) Bẫy: Nang thường gây di lệch răng (displacement) hơn là làm cứng khớp.\nD) Professor’s note: Tiêu ngót chân răng (root resorption) thường gặp ở nang hơn là u lành tính trong một số trường hợp, nhưng cần phân biệt với Ameloblastoma.",
+    "source": "Slide Vision AI",
+    "mnemonic": "Nang lớn - Đẩy lệch - Tiêu ngót",
     "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
     "topic": "Visual Diagnosis",
-    "mnemonic": "Nang lớn - Đẩy lệch - Tiêu ngót",
-    "clinical_scenario": "Một nang xương hàm phát triển lớn ở vùng răng hàm nhỏ hàm dưới. Trên phim X-quang, bác sĩ cần đánh giá tác động của nang lên các cấu trúc lân cận.",
-    "image_findings": [
-      "Sơ đồ P21 mô tả nang đẩy lệch và tiêu ngót chân răng",
-      "Sơ đồ P21 cũng mô tả nang đẩy lệch ống thần kinh răng dưới và nén xoang hàm"
-    ],
-    "ref_page_keys": [
-      "P21"
-    ],
-    "is_duplicate": false,
-    "duplicate_of": "",
-    "source": "Slide Vision AI",
-    "image_q": "user_upload_db8ed07e2bf7475598559566de1f7651.png",
-    "image_a": "slide_P21_full_f765df23.png",
     "tags": [
       "SlideVision",
       "synthesis"
     ],
-    "review_history": [],
-    "srs_state": {
-      "ease_factor": 2.5,
-      "interval": 0,
-      "due_date": "2025-12-27T19:04:03.174254"
-    },
     "chat_history": [],
-    "temp_delete_img": true
+    "image_q": "https://i.ibb.co/z0jSMvj/user-upload-db8ed07e2bf7475598559566de1f7651-png.png",
+    "image_a": "https://i.ibb.co/7N8m9SQg/slide-P21-full-f765df23-png.png"
   },
   {
     "id": "275e7a1f-be48-40d5-866b-916c2863ee5d",
@@ -7084,33 +6942,17 @@
     },
     "correct_answer": "C",
     "explanation": "A) Dấu hiệu hình ảnh: Văn bản P24 ghi rõ 'lớp vỏ xương bị phá hủy hoàn toàn, nang nằm ngay dưới niêm mạc'.\nB) Lập luận: Khi không còn vật cản là xương, áp suất dịch trong nang truyền trực tiếp tới ngón tay người khám tạo cảm giác phập phồng.\nC) Bẫy: Đừng nhầm với dấu hiệu bóng bàn (ping pong) - lúc đó xương vẫn còn.\nD) Professor’s note: Lúc này, nếu chọc hút sẽ thu được dịch nang rất dễ dàng.",
+    "source": "Slide Vision AI",
+    "mnemonic": "Mềm phập phồng - Mất vỏ xương",
     "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
     "topic": "Visual Diagnosis",
-    "mnemonic": "Mềm phập phồng - Mất vỏ xương",
-    "clinical_scenario": "Bác sĩ lâm sàng sờ vào vùng sưng trong miệng bệnh nhân, thấy vùng đó mềm, có cảm giác phập phồng của dịch, vỏ xương phía trên không còn cảm nhận được.",
-    "image_findings": [
-      "Slide P24: 'Mềm, phập phồng - Soft and fluctuant... lớp vỏ xương bị phá hủy hoàn toàn'"
-    ],
-    "ref_page_keys": [
-      "P24"
-    ],
-    "is_duplicate": false,
-    "duplicate_of": "",
-    "source": "Slide Vision AI",
-    "image_q": "",
-    "image_a": "slide_P24_full_cace9c19.png",
     "tags": [
       "SlideVision",
       "spot"
     ],
-    "review_history": [],
-    "srs_state": {
-      "ease_factor": 2.5,
-      "interval": 0,
-      "due_date": "2025-12-27T19:04:03.218190"
-    },
     "chat_history": [],
-    "temp_delete_img": true
+    "image_q": "",
+    "image_a": "https://i.ibb.co/3yLYWf5V/slide-P24-full-264fdc29-png.png"
   },
   {
     "id": "f03897f5-025f-4524-941c-f6979185534b",
@@ -7123,32 +6965,17 @@
     },
     "correct_answer": "B",
     "explanation": "A) Dấu hiệu hình ảnh: Slide P19 nhấn mạnh 'Tiến triển chậm' và 'đa số không có bất kỳ dấu chứng/triệu chứng gì... được phát hiện tình cờ'.\nB) Lập luận: Bản chất lành tính và cơ chế áp lực thẩm thấu khiến nang lớn dần từ từ, xương hàm có thời gian để thích nghi/bồi đắp nên ít gây đau.\nC) Bẫy: Chỉ đau khi có nhiễm trùng thứ phát (P20).\nD) Professor’s note: Đây là lý do tại sao nang thường đạt kích thước rất lớn trước khi bệnh nhân tự nhận thấy.",
+    "source": "Slide Vision AI",
+    "mnemonic": "Nang xương - Chậm - Âm thầm",
     "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
     "topic": "Visual Diagnosis",
-    "mnemonic": "Nang xương - Chậm - Âm thầm",
-    "clinical_scenario": "Một nang xương hàm phát triển âm thầm. Bệnh nhân chỉ phát hiện ra khi đi chụp phim kiểm tra răng khôn.",
-    "image_findings": [
-      "Slide P19: 'không có bất kỳ dấu chứng/triệu chứng gì trong một thời gian khá dài, được phát hiện tình cờ khi chụp phim'"
-    ],
-    "ref_page_keys": [
-      "P19"
-    ],
-    "is_duplicate": false,
-    "duplicate_of": "",
-    "source": "Slide Vision AI",
-    "image_q": "slide_P19_roi_0e4ebfc5.png",
-    "image_a": "slide_P19_full_0e4ebfc5.png",
     "tags": [
       "SlideVision",
       "synthesis"
     ],
-    "review_history": [],
-    "srs_state": {
-      "ease_factor": 2.5,
-      "interval": 0,
-      "due_date": "2025-12-27T19:04:03.264400"
-    },
-    "chat_history": []
+    "chat_history": [],
+    "image_q": "https://i.ibb.co/wZLHyCcq/slide-P19-roi-0e4ebfc5-png.png",
+    "image_a": "https://i.ibb.co/60pfDj9C/slide-P19-full-0e4ebfc5-png.png"
   },
   {
     "id": "535b54f2-1507-410f-be3f-ac6274cafcb3",
@@ -7161,22 +6988,86 @@
     },
     "correct_answer": "B",
     "explanation": "A) Dấu hiệu hình ảnh: Slide P15 ghi rõ 'Do sự tăng sinh / tăng nhanh về số lượng tế bào biểu mô lót'.\nB) Lập luận: Để túi nang lớn lên mà thành nang không bị mỏng đi hay đứt đoạn, các tế bào biểu mô phải phân chia liên tục để bao phủ diện tích bề mặt mới.\nC) Bẫy: Áp lực dịch làm nang 'căng' ra, nhưng tăng sinh biểu mô mới là cơ chế giúp thành nang 'lớn' theo.\nD) Professor’s note: Trong nang sừng (OKC), hoạt động tăng sinh biểu mô này thậm chí còn mạnh mẽ hơn các nang thông thường.",
+    "source": "Slide Vision AI",
+    "mnemonic": "Biểu mô tăng sinh - Thành nang lớn theo",
     "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
     "topic": "Visual Diagnosis",
-    "mnemonic": "Biểu mô tăng sinh - Thành nang lớn theo",
-    "clinical_scenario": "Hình ảnh giải phẫu bệnh mô tả các tế bào biểu mô đang phân chia mạnh mẽ ở vùng ngoại vi của túi nang, làm diện tích bề mặt thành nang tăng lên.",
+    "tags": [
+      "SlideVision",
+      "synthesis"
+    ],
+    "chat_history": [],
+    "image_q": "https://i.ibb.co/NdyXhx8V/user-upload-a67f2476be2942df963b8bc8efcc4f4c-png.png",
+    "image_a": "https://i.ibb.co/Zzdz5xkG/slide-P15-full-a0b04c33-png.png"
+  },
+  {
+    "id": "e904e7cc-d3cd-4092-8fb2-512489667697",
+    "question": "Nguồn gốc biểu mô chính hình thành nên nang chân răng (radicular cyst) theo sinh bệnh học là gì?",
+    "options": {
+      "A": "Biểu mô men thoái hóa",
+      "B": "Tế bào sót Malassez",
+      "C": "Biểu mô niêm mạc miệng",
+      "D": "Tế bào biểu mô lá răng (Serres)"
+    },
+    "correct_answer": "B",
+    "explanation": "A) Dấu hiệu hình ảnh then chốt: Thấu quang quanh chóp răng không còn sức sống.\nB) Lập luận: Theo P39, nang chân răng xuất phát từ các tế bào biểu mô sót Malassez – là những mảnh vụn của bao biểu mô chân răng Hertwig còn sót lại trong dây chằng quanh răng.\nC) Bẫy: Biểu mô men thoái hóa thường liên quan đến nang thân răng (dentigerous cyst). Tế bào Serres liên quan đến nang nướu hoặc OKC.\nD) Professor’s note: Đây là loại nang do răng phổ biến nhất (70%), luôn đi kèm với tình trạng hoại tử tủy.",
+    "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
+    "topic": "Visual Diagnosis",
+    "mnemonic": "Malassez - Mảnh sót - Một nang chân răng",
+    "clinical_scenario": "Một bệnh nhân nam 35 tuổi đến khám định kỳ. Phim quanh chóp phát hiện một vùng thấu quang đồng nhất tại chóp răng 22. Răng này có tiền sử chấn thương và không đáp ứng với thử tủy.",
     "image_findings": [
-      "Slide P15: 'Do sự tăng sinh... biểu mô lót > diện tích bề mặt của túi nang tăng lên'",
-      "Slide P15: 'Enlargement of the cyst at the peripheries due to active division...'"
+      "Tổn thương thấu quang quanh chóp răng chết tủy (P39).",
+      "Nguồn gốc từ tế bào biểu mô sót (P39).",
+      "Biến chứng của tình trạng hoại tử tủy (P39)."
     ],
     "ref_page_keys": [
-      "P15"
+      "P39"
     ],
     "is_duplicate": false,
     "duplicate_of": "",
     "source": "Slide Vision AI",
-    "image_q": "user_upload_a67f2476be2942df963b8bc8efcc4f4c.png",
-    "image_a": "slide_P15_full_a0b04c33.png",
+    "image_q": "slide_P39_roi_71cc08d9.png",
+    "image_a": "slide_P39_full_71cc08d9.png",
+    "tags": [
+      "SlideVision",
+      "spot"
+    ],
+    "review_history": [],
+    "srs_state": {
+      "ease_factor": 2.5,
+      "interval": 0,
+      "due_date": "2025-12-28T00:57:07.247149"
+    }
+  },
+  {
+    "id": "24c299d3-58be-4f74-8ca3-c9711fb206f4",
+    "question": "Cơ chế nào giải thích sự hình thành hốc nang (lumen) từ một khối u hạt quanh chóp (periapical granuloma)?",
+    "options": {
+      "A": "Do áp lực thẩm thấu từ dịch máu chảy vào",
+      "B": "Sự tăng sinh dải biểu mô bao quanh hốc hoại tử hoặc thoái hóa tế bào biểu mô trung tâm",
+      "C": "Sự xâm nhập trực tiếp của vi khuẩn vào tế bào biểu mô",
+      "D": "Sự tiêu xương do tế bào hủy cốt bào giải phóng dịch"
+    },
+    "correct_answer": "B",
+    "explanation": "A) Lập luận: Theo P42, có 2 cơ chế: (1) Hoại tử và tạo hốc trong khối mô hạt do dải biểu mô bao quanh và (2) Biểu mô tăng sinh sau đó thoái hóa tế bào trung tâm tạo vi nang.\nB) Bẫy: Áp lực thẩm thấu là cơ chế giúp nang 'lớn lên' sau khi đã hình thành hốc, không phải cơ chế khởi đầu tạo hốc.\nC) Professor’s note: Quá trình này được kích thích bởi các cytokine viêm và độc tố từ tủy hoại tử (P41).",
+    "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
+    "topic": "Visual Diagnosis",
+    "mnemonic": "",
+    "clinical_scenario": "Quan sát hình ảnh mô bệnh học (P40, P41, P42) mô tả quá trình chuyển đổi từ u hạt quanh chóp sang nang chân răng.",
+    "image_findings": [
+      "Sự tăng sinh của các dải biểu mô trong nền mô hạt viêm (P41).",
+      "Sự thoái hóa các tế bào trung tâm của khối biểu mô (P42).",
+      "Hình thành hốc nang từ việc hoại tử mô hạt (P42)."
+    ],
+    "ref_page_keys": [
+      "P41",
+      "P42"
+    ],
+    "is_duplicate": false,
+    "duplicate_of": "",
+    "source": "Slide Vision AI",
+    "image_q": "slide_P42_roi_1e8dfcb6.png",
+    "image_a": "slide_P42_full_1e8dfcb6.png",
     "tags": [
       "SlideVision",
       "synthesis"
@@ -7185,9 +7076,321 @@
     "srs_state": {
       "ease_factor": 2.5,
       "interval": 0,
-      "due_date": "2025-12-27T19:04:03.309311"
+      "due_date": "2025-12-28T00:57:07.355236"
+    }
+  },
+  {
+    "id": "1550f464-5fdc-4a29-bc52-b7086da34a03",
+    "question": "Thuật ngữ nào dùng để chỉ loại nang mà bao biểu mô không bao bọc hoàn toàn và chóp chân răng đi vào trong lòng nang?",
+    "options": {
+      "A": "Periapical true cyst",
+      "B": "Periapical pocket cyst",
+      "C": "Lateral radicular cyst",
+      "D": "Residual cyst"
     },
-    "chat_history": [],
-    "temp_delete_img": true
+    "correct_answer": "B",
+    "explanation": "A) Lập luận: P44 định nghĩa Periapical pocket cyst (nang túi) là nang có biểu mô không bao bọc hoàn toàn, chóp răng đi vào trong và thông với ống tủy.\nB) Đối chiếu: Periapical true cyst (nang thật) có biểu mô lót hoàn toàn và tách biệt khỏi chóp răng.\nC) Professor’s note: Sự phân biệt này rất quan trọng trong nội nha vì nang túi có thể lành thương sau điều trị tủy, trong khi nang thật thường cần phẫu thuật.",
+    "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
+    "topic": "Visual Diagnosis",
+    "mnemonic": "",
+    "clinical_scenario": "Hình ảnh sơ đồ X-quang tại P44 mô tả hai biến thể của nang quanh chóp dựa trên mối tương quan với ống tủy.",
+    "image_findings": [
+      "Biến thể 1: Biểu mô không bao bọc hoàn toàn, thông với ống tủy (P44 - trái).",
+      "Biến thể 2: Biểu mô lót hoàn toàn lòng nang (P44 - phải).",
+      "Tỷ lệ biến thể 'True cyst' chỉ chiếm khoảng 10% (P44)."
+    ],
+    "ref_page_keys": [
+      "P44"
+    ],
+    "is_duplicate": false,
+    "duplicate_of": "",
+    "source": "Slide Vision AI",
+    "image_q": "slide_P44_roi_e512ee1f.png",
+    "image_a": "slide_P44_full_e512ee1f.png",
+    "tags": [
+      "SlideVision",
+      "spot"
+    ],
+    "review_history": [],
+    "srs_state": {
+      "ease_factor": 2.5,
+      "interval": 0,
+      "due_date": "2025-12-28T00:57:07.451495"
+    }
+  },
+  {
+    "id": "2f76523a-b40b-44b9-8547-5343e60ddb8e",
+    "question": "Đặc điểm lâm sàng điển hình nhất của một nang chân răng chưa nhiễm trùng là gì?",
+    "options": {
+      "A": "Sưng đau và rò mủ vùng ngách hành lang",
+      "B": "Răng liên quan lung lay độ 3",
+      "C": "Hoàn toàn không triệu chứng, phát hiện tình cờ",
+      "D": "Luôn gây phồng xương biến dạng mặt"
+    },
+    "correct_answer": "C",
+    "explanation": "A) Lập luận: Theo P45, nang chân răng thường hoàn toàn không triệu chứng và được phát hiện tình cờ.\nB) Bẫy: Sưng đau và rò mủ chỉ xảy ra khi nang bị nhiễm trùng. Phồng xương chỉ xảy ra khi nang đã đạt kích thước lớn.\nC) Professor’s note: Tỷ lệ gặp ở hàm trên (60%) cao hơn hàm dưới (40%) và vùng răng trước hàm trên là vị trí 'ái kỷ' của loại nang này.",
+    "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
+    "topic": "Visual Diagnosis",
+    "mnemonic": "",
+    "clinical_scenario": "Một bệnh nhân nữ 45 tuổi tình cờ phát hiện vùng thấu quang ở vùng răng trước hàm trên khi chụp phim Panorama. Bệnh nhân hoàn toàn không có triệu chứng lâm sàng.",
+    "image_findings": [
+      "Vị trí thường gặp nhất là răng trước hàm trên, đặc biệt răng cửa bên (P45).",
+      "Thường gặp ở độ tuổi 20 - 50 tuổi (P45).",
+      "Phát hiện tình cờ khi chụp X-quang (P45)."
+    ],
+    "ref_page_keys": [
+      "P45"
+    ],
+    "is_duplicate": false,
+    "duplicate_of": "",
+    "source": "Slide Vision AI",
+    "image_q": "slide_P45_roi_83826f89.png",
+    "image_a": "slide_P45_full_83826f89.png",
+    "tags": [
+      "SlideVision",
+      "synthesis"
+    ],
+    "review_history": [],
+    "srs_state": {
+      "ease_factor": 2.5,
+      "interval": 0,
+      "due_date": "2025-12-28T00:57:07.595379"
+    }
+  },
+  {
+    "id": "ba38d3c0-d2e7-4ee8-8419-593c2da097eb",
+    "question": "Dấu hiệu X-quang nào giúp hướng tới chẩn đoán Nang chân răng thay vì U hạt quanh chóp?",
+    "options": {
+      "A": "Vùng thấu quang không có bờ rõ rệt",
+      "B": "Đường viền cản quang mảnh, đều và rõ (corticated border)",
+      "C": "Sự hiện diện của các nốt cản quang bên trong hốc",
+      "D": "Tiêu chân răng hình răng cưa"
+    },
+    "correct_answer": "B",
+    "explanation": "A) Lập luận: P48 mô tả đặc điểm nang chân răng tồn tại lâu thường có giới hạn rõ và đường viền cản quang mảnh. U hạt thường có bờ mờ hơn.\nB) Đối chiếu: P53 nhấn mạnh hình ảnh 'Nang' có đường viền thấu quang mảnh rõ hơn 'U hạt'.\nC) Professor’s note: Tuy nhiên, X-quang không thể phân biệt chính xác 100% giữa u hạt và nang nếu kích thước nhỏ, tiêu chuẩn vàng vẫn là mô bệnh học.",
+    "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
+    "topic": "Visual Diagnosis",
+    "mnemonic": "",
+    "clinical_scenario": "Bác sĩ quan sát một phim quanh chóp (P48) thấy vùng thấu quang 2cm ở chóp răng 46.",
+    "image_findings": [
+      "Kích thước tổn thương khoảng 1,5 - 3 cm (P48).",
+      "Giới hạn rõ, đường viền cản quang mảnh liên tục với lamina dura (P48).",
+      "Thấu quang một hốc, hình tròn (P48)."
+    ],
+    "ref_page_keys": [
+      "P48",
+      "P53"
+    ],
+    "is_duplicate": false,
+    "duplicate_of": "",
+    "source": "Slide Vision AI",
+    "image_q": "slide_P48_roi_0e34bba0.png",
+    "image_a": "slide_P48_full_0e34bba0.png",
+    "tags": [
+      "SlideVision",
+      "ddx"
+    ],
+    "review_history": [],
+    "srs_state": {
+      "ease_factor": 2.5,
+      "interval": 0,
+      "due_date": "2025-12-28T00:57:07.661110"
+    }
+  },
+  {
+    "id": "b40ac0da-08e2-4d30-bb52-e99f582734f5",
+    "question": "Trong trường hợp vùng thấu quang quanh chóp các răng cửa hàm dưới mà răng vẫn còn sống, chẩn đoán phân biệt quan trọng nhất là gì?",
+    "options": {
+      "A": "Nang chân răng",
+      "B": "Loạn sản xương xê măng quanh chóp (PCOD) giai đoạn đầu",
+      "C": "U hạt quanh chóp",
+      "D": "Nang xương chấn thương"
+    },
+    "correct_answer": "B",
+    "explanation": "A) Lập luận: Theo P52, PCOD giai đoạn đầu thường xuất hiện dưới dạng thấu quang quanh chóp răng trước hàm dưới và rất dễ nhầm với nang chân răng. Điểm mấu chốt là răng trong PCOD vẫn còn sống.\nB) Bẫy thi cử: Nếu chọn nang chân răng khi răng còn sống là sai logic cơ bản của bệnh học quanh chóp do viêm.\nC) Professor’s note: PCOD là tổn thương phản ứng, không cần điều trị tủy, chỉ cần theo dõi.",
+    "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
+    "topic": "Visual Diagnosis",
+    "mnemonic": "",
+    "clinical_scenario": "Một bệnh nhân nữ, 40 tuổi, có vùng thấu quang quanh chóp các răng cửa hàm dưới (31, 32, 41, 42). Các răng này vẫn còn sống (vital).",
+    "image_findings": [
+      "Cần phân biệt nang quanh chóp với loạn sản xương xê măng quanh chóp (PCOD) (P52).",
+      "Đặc biệt lưu ý vùng răng trước hàm dưới (P52).",
+      "Răng liên quan đến nang chân răng bắt buộc phải chết tủy (P39, P45)."
+    ],
+    "ref_page_keys": [
+      "P52"
+    ],
+    "is_duplicate": false,
+    "duplicate_of": "",
+    "source": "Slide Vision AI",
+    "image_q": "slide_P52_roi_73d483bf.png",
+    "image_a": "slide_P52_full_73d483bf.png",
+    "tags": [
+      "SlideVision",
+      "ddx"
+    ],
+    "review_history": [],
+    "srs_state": {
+      "ease_factor": 2.5,
+      "interval": 0,
+      "due_date": "2025-12-28T00:57:07.774793"
+    }
+  },
+  {
+    "id": "ee438667-e643-42a8-803b-4eb208bdf06f",
+    "question": "Tiêu chuẩn 'vàng' trên mô bệnh học để xác định một tổn thương là Nang chân răng thay vì U hạt quanh chóp là gì?",
+    "options": {
+      "A": "Sự hiện diện của tương bào (plasma cells)",
+      "B": "Sự hiện diện của lớp biểu mô lót (epithelial lining)",
+      "C": "Sự hiện diện của các mạch máu tăng sinh",
+      "D": "Sự hiện diện của các tinh thể cholesterol"
+    },
+    "correct_answer": "B",
+    "explanation": "A) Lập luận: P54 nêu rõ: 'If a focal epithelial lining can be identified... a diagnosis of periapical cyst is made. If no epithelial lining is identified... classified as a periapical granuloma'.\nB) Professor’s note: Do mẫu bệnh phẩm thường bị nát (friable), đôi khi khó tìm thấy lớp biểu mô này, dẫn đến việc chẩn đoán nhầm giữa hai loại.",
+    "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
+    "topic": "Visual Diagnosis",
+    "mnemonic": "",
+    "clinical_scenario": "Khi gửi mẫu bệnh phẩm làm giải phẫu bệnh, bác sĩ nhận được kết quả mô tả cấu trúc vi thể như hình P54, P55.",
+    "image_findings": [
+      "Mô hạt viêm với lympho bào, tương bào (P54).",
+      "Nếu có lớp biểu mô lót -> Nang quanh chóp (P54).",
+      "Nếu không có lớp biểu mô lót -> U hạt quanh chóp (P54)."
+    ],
+    "ref_page_keys": [
+      "P54"
+    ],
+    "is_duplicate": false,
+    "duplicate_of": "",
+    "source": "Slide Vision AI",
+    "image_q": "slide_P54_roi_6ec08392.png",
+    "image_a": "slide_P54_full_6ec08392.png",
+    "tags": [
+      "SlideVision",
+      "spot"
+    ],
+    "review_history": [],
+    "srs_state": {
+      "ease_factor": 2.5,
+      "interval": 0,
+      "due_date": "2025-12-28T00:57:07.829311"
+    }
+  },
+  {
+    "id": "e9be1c55-22fc-4491-8b58-c6503fcbe895",
+    "question": "Hình ảnh các 'khe' hình kim (clefts) thường thấy trong nang chân răng (như ảnh P43) là do sự hiện diện của chất nào sau khi bị hòa tan trong quá trình xử lý mô?",
+    "options": {
+      "A": "Tinh thể Amelogenin",
+      "B": "Tinh thể Cholesterol",
+      "C": "Các hạt Keratin",
+      "D": "Các nốt vôi hóa xê măng"
+    },
+    "correct_answer": "B",
+    "explanation": "A) Dấu hiệu hình ảnh: Các khe hình kim trống rỗng là hình ảnh đặc trưng của tinh thể cholesterol bị hòa tan bởi xylen/cồn khi làm tiêu bản.\nB) Lập luận: Mặc dù text không ghi rõ, nhưng hình ảnh P43 là điển hình của cholesterol clefts trong nang do răng do viêm (Neville's).\nC) Professor’s note: Sự hiện diện của cholesterol thường kích thích phản ứng tế bào khổng lồ (giant cells) xung quanh.",
+    "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
+    "topic": "Visual Diagnosis",
+    "mnemonic": "",
+    "clinical_scenario": "Quan sát hình ảnh vi thể tại P43 và P56.",
+    "image_findings": [
+      "Các khe hình kim không bắt màu trong lòng nang hoặc thành nang (P43).",
+      "Tăng sinh biểu mô dạng lưới (plexiform) (P56).",
+      "Nền mô liên kết thâm nhiễm tế bào viêm mạn tính (P54)."
+    ],
+    "ref_page_keys": [
+      "P43"
+    ],
+    "is_duplicate": false,
+    "duplicate_of": "",
+    "source": "Slide Vision AI",
+    "image_q": "slide_P43_roi_ef96fc24.png",
+    "image_a": "slide_P43_full_ef96fc24.png",
+    "tags": [
+      "SlideVision",
+      "spot"
+    ],
+    "review_history": [],
+    "srs_state": {
+      "ease_factor": 2.5,
+      "interval": 0,
+      "due_date": "2025-12-28T00:57:08.172994"
+    }
+  },
+  {
+    "id": "8f6b6612-dd31-4951-b4c2-87a181609202",
+    "question": "Phát biểu nào sau đây SAI về biến chứng của nang chân răng kích thước lớn?",
+    "options": {
+      "A": "Gây sưng phồng xương hàm",
+      "B": "Làm đẩy lệch các răng kế cận",
+      "C": "Luôn luôn gây tiêu ngót chân răng của các răng sống kế cận",
+      "D": "Có thể làm xâm lấn hoặc đẩy cao sàn xoang hàm"
+    },
+    "correct_answer": "C",
+    "explanation": "A) Lập luận: Theo P48, nang có thể gây tiêu ngót chân răng (may resorb roots), nhưng không phải 'luôn luôn' (always). Các răng sống kế cận thường bị đẩy lệch nhiều hơn là tiêu ngót.\nB) Đối chiếu: Các đáp án A, B, D đều được liệt kê trực tiếp trong đặc điểm X-quang tại P48.\nC) Professor’s note: Nang chân răng là nang do viêm tiến triển chậm, sự tiêu ngót chân răng thường diễn ra từ từ.",
+    "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
+    "topic": "Visual Diagnosis",
+    "mnemonic": "",
+    "clinical_scenario": "Nang chân răng có thể gây ra những biến chứng gì khi kích thước phát triển lớn dần (P45, P48).",
+    "image_findings": [
+      "Nang lớn gây phồng xương biến dạng mặt (P45).",
+      "Có thể tiêu ngót chân răng, đẩy lệch răng (P48).",
+      "Nang ở hàm trên có thể đẩy nền xoang hàm hoặc hố mũi lên cao (P48)."
+    ],
+    "ref_page_keys": [
+      "P45",
+      "P48"
+    ],
+    "is_duplicate": false,
+    "duplicate_of": "",
+    "source": "Slide Vision AI",
+    "image_q": "slide_P48_roi_965aad43.png",
+    "image_a": "slide_P48_full_965aad43.png",
+    "tags": [
+      "SlideVision",
+      "synthesis"
+    ],
+    "review_history": [],
+    "srs_state": {
+      "ease_factor": 2.5,
+      "interval": 0,
+      "due_date": "2025-12-28T00:57:08.239082"
+    }
+  },
+  {
+    "id": "d6dcdb7a-bd58-4a1f-8422-98e218aefd3b",
+    "question": "Tổn thương nào sau đây KHÔNG nằm trong danh sách chẩn đoán phân biệt trực tiếp của nang quanh chóp tại slide P46?",
+    "options": {
+      "A": "Unicystic ameloblastoma",
+      "B": "Odontogenic keratocyst",
+      "C": "U mạch máu (Hemangioma)",
+      "D": "Adenomatoid odontogenic tumor (AOT)"
+    },
+    "correct_answer": "C",
+    "explanation": "A) Lập luận: Slide P46 liệt kê cụ thể các chẩn đoán phân biệt gồm: Unicystic ameloblastoma, OKC, Ameloblastic fibroma, Calcifying odontogenic cyst, AOT, Hyperplastic follicle.\nB) Professor’s note: Hemangioma mặc dù gây thấu quang nhưng không nằm trong danh sách các tổn thương do răng phổ biến cần phân biệt với nang chân răng tại đây.",
+    "subject": "Bệnh học miệng/Nang do răng ở xương hàm",
+    "topic": "Visual Diagnosis",
+    "mnemonic": "",
+    "clinical_scenario": "Bác sĩ cần lập danh sách chẩn đoán phân biệt cho một vùng thấu quang quanh thân răng/chân răng vùng góc hàm hàm dưới.",
+    "image_findings": [
+      "Unicystic ameloblastoma (P46).",
+      "Odontogenic keratocyst (OKC) (P46).",
+      "Ameloblastic fibroma (P46)."
+    ],
+    "ref_page_keys": [
+      "P46"
+    ],
+    "is_duplicate": false,
+    "duplicate_of": "",
+    "source": "Slide Vision AI",
+    "image_q": "slide_P46_roi_94a0b763.png",
+    "image_a": "slide_P46_full_94a0b763.png",
+    "tags": [
+      "SlideVision",
+      "ddx"
+    ],
+    "review_history": [],
+    "srs_state": {
+      "ease_factor": 2.5,
+      "interval": 0,
+      "due_date": "2025-12-28T00:57:08.316892"
+    }
   }
 ]

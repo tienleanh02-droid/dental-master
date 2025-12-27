@@ -2834,16 +2834,55 @@ def view_learning(data, progress, username):
         </div>
         """, unsafe_allow_html=True)
     
-    # Image Q Display
+    # Image Q Display with Crop Feature
     if 'image_q' in q and q['image_q']:
         img_q_val = q['image_q']
         # Check if URL or local file exists
-        if img_q_val.startswith('http') or os.path.exists(os.path.join("static", "images", img_q_val)):
+        is_url = img_q_val.startswith('http')
+        local_path = os.path.join("static", "images", img_q_val) if not is_url else None
+        
+        if is_url or (local_path and os.path.exists(local_path)):
             with st.expander("🖼️ Ảnh minh họa (Click để xem)", expanded=True):
-                # Optimize display: Don't stretch small images. Use fixed reasonable max width.
                 col_img_1, col_img_2, col_img_3 = st.columns([1, 4, 1])
                 with col_img_2:
                     display_image_smart(img_q_val, width=600)
+                
+                # Crop Feature (chỉ với ảnh local)
+                if not is_url and local_path:
+                    with st.popover("✂️ Cắt ảnh"):
+                        st.caption("Điều chỉnh crop và lưu lại")
+                        try:
+                            from PIL import Image as PILImage
+                            original_img = PILImage.open(local_path)
+                            W, H = original_img.size
+                            
+                            crop_cols = st.columns(2)
+                            with crop_cols[0]:
+                                crop_left = st.slider("Left %", 0, 50, 0, key=f"crop_l_{q['id']}")
+                                crop_top = st.slider("Top %", 0, 50, 0, key=f"crop_t_{q['id']}")
+                            with crop_cols[1]:
+                                crop_right = st.slider("Right %", 0, 50, 0, key=f"crop_r_{q['id']}")
+                                crop_bottom = st.slider("Bottom %", 0, 50, 0, key=f"crop_b_{q['id']}")
+                            
+                            # Preview
+                            x1 = int(W * crop_left / 100)
+                            y1 = int(H * crop_top / 100)
+                            x2 = int(W * (100 - crop_right) / 100)
+                            y2 = int(H * (100 - crop_bottom) / 100)
+                            
+                            if x2 > x1 and y2 > y1:
+                                cropped = original_img.crop((x1, y1, x2, y2))
+                                st.image(cropped, caption="Preview", width=300)
+                                
+                                if st.button("💾 Lưu ảnh đã cắt", key=f"save_crop_{q['id']}"):
+                                    # Save cropped image
+                                    cropped.save(local_path)
+                                    st.success("✅ Đã lưu!")
+                                    st.rerun()
+                            else:
+                                st.warning("Crop không hợp lệ")
+                        except Exception as e:
+                            st.error(f"Lỗi: {e}")
     
     # Câu trả lời - UI xanh lá thu hút
     st.markdown('''
@@ -3640,6 +3679,18 @@ Tôi gửi bạn nhiều trang, mỗi trang gồm:
 - PAGE_TEXT_CONTEXT (văn bản trích từ slide)
 - PAGE_IMAGE (ảnh ROI của slide)
 
+=== PHÂN LOẠI CÂU HỎI (RẤT QUAN TRỌNG) ===
+A) TEXT-BASED (~70-80% câu hỏi): 
+   - Trích xuất dữ kiện từ hình và VIẾT TRỰC TIẾP VÀO CÂU HỎI
+   - Ví dụ: "BN có tổn thương thấu quang ranh giới rõ, kích thước 2x3cm quanh chóp răng 46. Chẩn đoán nào phù hợp?"
+   - ĐẶC ĐIỂM: Đọc câu hỏi là đủ thông tin để trả lời, KHÔNG CẦN XEM HÌNH
+
+B) VISUAL-BASED (~20-30% câu hỏi): 
+   - CHỈ dùng khi PHẢI nhìn hình để trả lời (pattern recognition, morphology đặc trưng)
+   - Ví dụ: "Quan sát hình ảnh X-quang sau, tổn thương này gợi ý chẩn đoán nào?"
+   - ĐẶC ĐIỂM: PHẢI nhìn hình mới trả lời được
+
+
 YÊU CẦU CỐT LÕI:
 1) Mỗi câu hỏi phải dựa trên PAGE_IMAGE là chính. PAGE_TEXT_CONTEXT chỉ dùng để:
    - bổ sung triệu chứng/tiền sử/diễn tiến
@@ -3651,11 +3702,47 @@ YÊU CẦU CỐT LÕI:
    - confidence < 0.5
    - không bịa bệnh cụ thể.
 
+=== QUAN TRỌNG: CÂU HỎI PHẢI TỰ ĐỦ NGỮ CẢNH ===
+4) NẾU CROP CÓ NHIỀU HÌNH hoặc nhiều vùng:
+   - MÔ TẢ CỤ THỂ hình/vùng nào đang hỏi (ví dụ: "hình bên trái", "hình X-quang phía trên", "tổn thương vùng góc hàm")
+   - KHÔNG được hỏi chung chung mà người đọc không biết đang hỏi hình nào
+
+5) CÂU HỎI PHẢI TỰ ĐỦ NGHĨA:
+   - KHÔNG được dùng đại từ mơ hồ như "trường hợp này", "hình này", "tổn thương này" mà không mô tả trước
+   - PHẢI mô tả đủ trong câu hỏi để người đọc hiểu HỎI VỀ CÁI GÌ
+   - SAI: "Trong trường hợp này, chẩn đoán gì?" 
+   - ĐÚNG: "Bệnh nhân có tổn thương thấu quang 2cm quanh chóp răng 36. Chẩn đoán phù hợp nhất?"
+
+6) NẾU SLIDE CHỈ CÓ TEXT (không có hình lâm sàng):
+   - Tạo câu hỏi dựa trên kiến thức trong text
+   - Mô tả rõ ngữ cảnh trong câu hỏi
+   - KHÔNG yêu cầu "nhìn hình" nếu không có hình clinical để nhìn
+
 BẮT BUỘC tạo đúng {num_q} câu MCQ tiếng Việt.
 Phân bổ ưu tiên (có thể điều chỉnh):
 - Spot: 40%
 - Synthesis (>=2 trang): 40%
 - DDx: 20%
+
+=== HƯỚNG DẪN TẠO CÂU HỎI KHI NHIỀU SLIDE ===
+
+NẾU NGƯỜI DÙNG CHỌN NHIỀU SLIDE CÓ CÁC TỔN THƯƠNG KHÁC NHAU:
+1) TẠO CÂU HỎI SO SÁNH/PHÂN BIỆT giữa các tổn thương
+   Ví dụ: "Điểm khác biệt CHÍNH giữa Nang quanh chóp (P39) và U hạt quanh chóp (P45) trên X-quang là gì?"
+
+2) TẠO CÂU HỎI TỔNG HỢP KIẾN THỨC từ nhiều slide
+   Ví dụ: "Trong các loại nang xương hàm (P39-P55), loại nào có tiềm năng tái phát cao nhất?"
+
+3) TẠO CÂU HỎI "NẾU...THÌ" để phân biệt
+   Ví dụ: "Nếu tổn thương thấu quang quanh chóp có đường viền cản quang rõ và kích thước >1.5cm, nghĩ đến chẩn đoán nào hơn?"
+
+SYNTHESIS QUESTION:
+- PHẢI tham chiếu >=2 PAGE_KEY trong ref_page_keys
+- Mô tả rõ đang so sánh/tổng hợp từ những slide nào
+
+DDx QUESTION:
+- Mô tả dữ kiện lâm sàng/X-quang
+- Các đáp án là các chẩn đoán phân biệt từ các slide khác nhau
 
 BẮT BUỘC “CHAINED OUTPUT”:
 Trước khi viết câu hỏi, bạn phải tạo ra 2 phần:
@@ -3670,9 +3757,10 @@ OUTPUT JSON (chỉ JSON):
 [
   {{
     "question_type": "spot|synthesis|ddx",
+    "question_category": "text_based|visual_based",
     "clinical_scenario": "...",
     "image_findings": ["...","...","..."],
-    "question": "...",
+    "question": "... (với text_based: phải chứa đủ dữ kiện từ hình ảnh)",
     "options": {{"A":"...","B":"...","C":"...","D":"..."}},
     "correct_answer": "A|B|C|D",
     "explanation": "A) Dấu hiệu hình ảnh then chốt: ...\\nB) Lập luận chọn đáp án đúng: ...\\nC) Bẫy & vì sao 1–2 đáp án nhiễu sai: ...\\nD) Professor’s note (WHO/NCCN/molecular/marker nếu liên quan thật): ...",
@@ -4262,9 +4350,66 @@ def view_slide_vision(data, current_user):
                 # No need for hq_images_map anymore, we have page_assets[KEY]
                 st.session_state.vision_step = 4
                 st.rerun()
-            except json.JSONDecodeError:
-                st.error("AI trả về định dạng không hợp lệ. Hãy thử lại.")
-                st.code(response.text)
+            except json.JSONDecodeError as je:
+                # TRY TO REPAIR TRUNCATED JSON
+                st.warning("JSON bị cắt giữa chừng, đang thử sửa...")
+                
+                repaired = False
+                try:
+                    # Tìm vị trí object cuối cùng hoàn chỉnh
+                    # JSON array: [..., {...}, {...incomplete
+                    # Cần tìm }, cuối cùng và thêm ]
+                    
+                    # Cách 1: Tìm },\n  { cuối cùng (object hoàn chỉnh cuối)
+                    last_complete = raw_json.rfind('},')
+                    if last_complete > 0:
+                        # Cắt từ đầu đến }, rồi thêm ]
+                        fixed_json = raw_json[:last_complete+1] + ']'
+                        generated_cards = json.loads(fixed_json)
+                        repaired = True
+                        st.success(f"✅ Đã sửa JSON, lấy được {len(generated_cards)} thẻ hoàn chỉnh!")
+                    
+                    if not repaired:
+                        # Cách 2: Tìm "}" cuối cùng và check nếu có thể đóng array
+                        last_brace = raw_json.rfind('}')
+                        if last_brace > 0:
+                            fixed_json = raw_json[:last_brace+1] + ']'
+                            try:
+                                generated_cards = json.loads(fixed_json)
+                                repaired = True
+                                st.success(f"✅ Đã sửa JSON (cách 2), lấy được {len(generated_cards)} thẻ!")
+                            except:
+                                pass
+                                
+                except Exception as repair_err:
+                    st.error(f"Không thể sửa JSON: {repair_err}")
+                
+                if repaired and generated_cards:
+                    # Continue with deduplication and saving
+                    from difflib import SequenceMatcher
+                    for card in generated_cards:
+                        q_new = card.get('question', '')
+                        best_sim = 0.0
+                        best_match_q = ""
+                        for existing_card in data:
+                            q_old = existing_card.get('question', '')
+                            if abs(len(q_new) - len(q_old)) > len(q_new)*0.5:
+                                continue
+                            sim = SequenceMatcher(None, q_new, q_old).ratio()
+                            if sim > best_sim:
+                                best_sim = sim
+                                best_match_q = q_old
+                        if best_sim > 0.88:
+                            card['is_duplicate'] = True
+                            card['duplicate_score'] = best_sim
+                            card['duplicate_of'] = best_match_q
+                    
+                    st.session_state.generated_cards = generated_cards
+                    st.session_state.vision_step = 4
+                    st.rerun()
+                else:
+                    st.error("AI trả về định dạng không hợp lệ. Hãy thử lại với ÍT câu hỏi hơn.")
+                    st.code(response.text)
                 
         except Exception as e:
              st.error(f"Lỗi Generation: {e}")
@@ -4439,17 +4584,31 @@ def view_slide_vision(data, current_user):
                         if g_card.get('mnemonic'):
                             st.write(f"**🧠 Mnemonic:** {g_card['mnemonic']}")
                 
-                # Checkbox (Default False if Duplicate)
+                # Checkbox - sử dụng key nhất quán
                 is_dup = g_card.get('is_duplicate', False)
-                if st.checkbox("Lưu thẻ này", value=(not is_dup), key=f"save_g_{i}"):
+                checkbox_key = f"vision_save_{i}"
+                
+                # Khởi tạo session state cho checkbox nếu chưa có
+                if checkbox_key not in st.session_state:
+                    st.session_state[checkbox_key] = (not is_dup)
+                
+                # Checkbox với key trực tiếp
+                checked = st.checkbox("Lưu thẻ này", key=checkbox_key)
+                if checked:
                     selected_cards_indices.append(i)
 
-        if st.button(f"💾 Lưu {len(selected_cards_indices)} thẻ đã chọn", type="primary"):
+        # Đọc lại từ session state (dùng key của checkbox widget)
+        selected_from_state = [i for i in range(len(st.session_state.generated_cards)) 
+                               if st.session_state.get(f"vision_save_{i}", False)]
+        
+        st.info(f"🔢 Đã chọn: {len(selected_from_state)} thẻ")
+        
+        if st.button(f"💾 Lưu {len(selected_from_state)} thẻ đã chọn", type="primary"):
             cards_to_save = []
             images_dir = "static/images"
             if not os.path.exists(images_dir): os.makedirs(images_dir)
             
-            for i in selected_cards_indices:
+            for i in selected_from_state:
                 g_card = st.session_state.generated_cards[i]
                 
                 # Resolve Asset again

@@ -11,15 +11,27 @@ import streamlit as st
 class ImgBBManager:
     """Quản lý upload ảnh lên ImgBB"""
     
-    # API Key miễn phí tại: https://api.imgbb.com/
-    DEFAULT_API_KEY = "f1a662a042c19324d6ea311fcee5fac4"
-    
     @staticmethod
     def get_api_key():
-        """Lấy API key từ session hoặc mặc định"""
+        """Lấy API key từ session, secrets, hoặc env var"""
+        # 1. Session state (user có thể nhập trong app)
         if 'imgbb_api_key' in st.session_state and st.session_state.imgbb_api_key:
             return st.session_state.imgbb_api_key
-        return ImgBBManager.DEFAULT_API_KEY
+        
+        # 2. Streamlit secrets (cho cloud deployment)
+        try:
+            if "imgbb_api_key" in st.secrets:
+                return st.secrets["imgbb_api_key"]
+        except:
+            pass
+        
+        # 3. Environment variable
+        env_key = os.environ.get("IMGBB_API_KEY", "")
+        if env_key:
+            return env_key
+        
+        # 4. Không có key -> return None
+        return None
     
     @staticmethod
     def upload_image(local_path, image_name=None):
