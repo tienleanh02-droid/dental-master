@@ -694,11 +694,7 @@ class DataManager:
                 json.dump(data, f, indent=2, ensure_ascii=False)
         except: pass
 
-        # 2. Lưu Cloud (KHÔNG DÙNG THREAD để tránh lỗi Cloud)
-        try:
-            if GoogleSheetsManager.get_client():
-                GoogleSheetsManager.save_user_data_cloud(username, data)
-        except: pass
+        # 2. Cloud - KHÔNG TỰ ĐỘNG SYNC NỮA (User bấm nút Sync khi muốn)
             
             
     @staticmethod
@@ -730,12 +726,7 @@ class DataManager:
                         progress = json.load(f)
                 except: progress = {}
 
-        # Auto-Migrate (không dùng thread)
-        if is_cloud_active and not st.session_state.get(f"migrated_progress_{username}") and progress:
-            st.session_state[f"migrated_progress_{username}"] = True
-            try:
-                GoogleSheetsManager.save_progress_cloud(username, progress)
-            except: pass
+        # Auto-Migrate - BỎ ĐI (User sẽ bấm nút Sync thủ công)
         
         # LƯU VÀO SESSION STATE
         st.session_state[cache_key] = progress
@@ -754,11 +745,28 @@ class DataManager:
                 json.dump(progress, f, indent=2, ensure_ascii=False)
         except: pass
 
-        # 2. Cloud (KHÔNG DÙNG THREAD để tránh lỗi Cloud)
+        # 2. Cloud - KHÔNG TỰ ĐỘNG SYNC (User bấm nút Sync khi muốn)
+    
+    @staticmethod
+    def sync_to_cloud(username):
+        """ĐỒNG BỘ THỦ CÔNG - Gọi khi user bấm nút Sync"""
         try:
-            if GoogleSheetsManager.get_client():
+            if not GoogleSheetsManager.get_client():
+                return False, "Không kết nối được Cloud"
+            
+            # Sync Data
+            data = st.session_state.get(f"cached_data_{username}", [])
+            if data:
+                GoogleSheetsManager.save_user_data_cloud(username, data)
+            
+            # Sync Progress
+            progress = st.session_state.get(f"cached_progress_{username}", {})
+            if progress:
                 GoogleSheetsManager.save_progress_cloud(username, progress)
-        except: pass
+            
+            return True, "Đồng bộ thành công!"
+        except Exception as e:
+            return False, f"Lỗi: {e}"
 
     @staticmethod
     @st.cache_data
@@ -1035,6 +1043,20 @@ def main():
         if st.button("👁️ Slide Vision", use_container_width=True):
             st.session_state.view = 'vision'
             st.rerun()
+        
+        # --- CLOUD SYNC BUTTON ---
+        st.markdown("---")
+        st.markdown("**☁️ Cloud Sync**")
+        if GoogleSheetsManager.get_client():
+            if st.button("🔄 Đồng bộ lên Cloud", use_container_width=True, type="primary"):
+                with st.spinner("Đang đồng bộ..."):
+                    success, msg = DataManager.sync_to_cloud(username)
+                    if success:
+                        st.success(msg)
+                    else:
+                        st.error(msg)
+        else:
+            st.caption("⚠️ Cloud chưa kết nối")
 
 # --- AI ASSISTANT (New SDK) ---
 def ask_professor(api_key, context, user_question, chat_history=[]):
@@ -3300,7 +3322,7 @@ def view_profile_selector():
     """, unsafe_allow_html=True)
     
     st.title("👋 Xin chào!")
-    st.caption("Version: Premium_UI_v14")
+    st.caption("Version: Manual_Sync_v15")
     st.subheader("Chọn người học để bắt đầu:")
 
     # Cloud Check
