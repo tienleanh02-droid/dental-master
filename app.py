@@ -754,17 +754,27 @@ class DataManager:
             if not GoogleSheetsManager.get_client():
                 return False, "Không kết nối được Cloud"
             
-            # Sync Data
-            data = st.session_state.get(f"cached_data_{username}", [])
+            # Sync Data - Đọc từ session hoặc file local
+            data = st.session_state.get(f"cached_data_{username}", None)
+            if data is None:
+                # Fallback: Đọc từ file local
+                data = DataManager.load_data(username)
+            
             if data:
                 GoogleSheetsManager.save_user_data_cloud(username, data)
             
-            # Sync Progress
-            progress = st.session_state.get(f"cached_progress_{username}", {})
+            # Sync Progress - Đọc từ session hoặc file local  
+            progress = st.session_state.get(f"cached_progress_{username}", None)
+            if progress is None:
+                # Fallback: Đọc từ file local
+                progress = DataManager.load_progress(username)
+            
             if progress:
                 GoogleSheetsManager.save_progress_cloud(username, progress)
             
-            return True, "Đồng bộ thành công!"
+            cards_count = len(data) if data else 0
+            progress_count = len(progress) if progress else 0
+            return True, f"Đồng bộ thành công! ({cards_count} thẻ, {progress_count} records)"
         except Exception as e:
             return False, f"Lỗi: {e}"
 
