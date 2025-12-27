@@ -3433,6 +3433,21 @@ def main():
                 st.rerun()
         
         st.divider()
+        
+        # --- CLOUD SYNC BUTTON ---
+        st.markdown("**☁️ Cloud Sync**")
+        if GoogleSheetsManager.get_client():
+            if st.button("🔄 Đồng bộ lên Cloud", use_container_width=True, type="primary"):
+                with st.spinner("Đang đồng bộ..."):
+                    success, msg = DataManager.sync_to_cloud(current_user)
+                    if success:
+                        st.success(msg)
+                    else:
+                        st.error(msg)
+        else:
+            st.caption("⚠️ Cloud chưa kết nối")
+        
+        st.divider()
 
     # 4. Chạy logic hiển thị chính (Sidebar & Views)
     run_app_dispatch(current_user)
