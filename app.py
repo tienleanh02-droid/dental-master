@@ -737,15 +737,14 @@ class DataManager:
         # 0. CẬP NHẬT SESSION CACHE
         cache_key = f"cached_progress_{username}"
         st.session_state[cache_key] = progress
-        
-        # 1. Local (Nhanh)
+        # 1. Local (Nhanh - Backup)
         _, prog_file = DataManager.get_files(username)
         try:
             with open(prog_file, 'w', encoding='utf-8') as f:
                 json.dump(progress, f, indent=2, ensure_ascii=False)
         except: pass
 
-        # 2. Cloud - KHÔNG TỰ ĐỘNG SYNC (User bấm nút Sync khi muốn)
+        # 2. Cloud - KHÔNG TỰ ĐỘNG (lưu khi đổi user hoặc bấm Sync)
     
     @staticmethod
     def sync_to_cloud(username):
@@ -3491,6 +3490,12 @@ def main():
         st.info(f"Đang dùng hồ sơ: **{current_user}**")
         
         if st.button("🔄 Đổi người dùng"):
+            # AUTO-SAVE progress trước khi đổi user (tránh mất dữ liệu)
+            try:
+                if GoogleSheetsManager.get_client():
+                    DataManager.sync_progress_only(current_user)
+            except: pass
+            
             st.session_state.logged_in = False
             st.session_state.username = ""
             # Clear API key khi đổi user
