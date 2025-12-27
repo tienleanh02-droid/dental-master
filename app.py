@@ -771,13 +771,36 @@ class DataManager:
     @staticmethod
     @st.cache_data
     def load_config():
-        # Config (API Key) vẫn có thể dùng chung hoặc riêng. 
-        # Để tiện lợi, ta giữ file config.json ở thư mục gốc (Dùng chung API Key)
+        # Config chung (legacy - không dùng cho API key nữa)
         if not os.path.exists('config.json'): return {}
         try:
             with open('config.json', 'r', encoding='utf-8') as f:
                 return json.load(f)
         except: return {}
+
+    @staticmethod
+    def load_user_api_key(username):
+        """Load API key riêng cho từng profile - PERSISTENT"""
+        key_file = os.path.join("user_profiles", username, "api_key.txt")
+        if os.path.exists(key_file):
+            try:
+                with open(key_file, 'r', encoding='utf-8') as f:
+                    return f.read().strip()
+            except: pass
+        return ""
+    
+    @staticmethod
+    def save_user_api_key(username, api_key):
+        """Lưu API key riêng cho từng profile - PERSISTENT"""
+        user_dir = os.path.join("user_profiles", username)
+        os.makedirs(user_dir, exist_ok=True)
+        key_file = os.path.join(user_dir, "api_key.txt")
+        try:
+            with open(key_file, 'w', encoding='utf-8') as f:
+                f.write(api_key)
+            return True
+        except:
+            return False
 
     @staticmethod
     def resolve_system_prompt(subject):
@@ -3322,7 +3345,7 @@ def view_profile_selector():
     """, unsafe_allow_html=True)
     
     st.title("👋 Xin chào!")
-    st.caption("Version: Manual_Sync_v15")
+    st.caption("Version: Per_Profile_API_v16")
     st.subheader("Chọn người học để bắt đầu:")
 
     # Cloud Check
@@ -3409,9 +3432,9 @@ def main():
     # Load Persistent Config
     config = DataManager.load_config()
     
-    # Initialize Session State API Key from Config if not already set
+    # Initialize Session State API Key from PROFILE (không dùng chung nữa)
     if 'api_key' not in st.session_state:
-        st.session_state.api_key = config.get('api_key', '')
+        st.session_state.api_key = DataManager.load_user_api_key(current_user)
 
     with st.sidebar:
         st.title("🦷 Dental Master")
@@ -3420,16 +3443,19 @@ def main():
         if st.button("🔄 Đổi người dùng"):
             st.session_state.logged_in = False
             st.session_state.username = ""
+            # Clear API key khi đổi user
+            if 'api_key' in st.session_state:
+                del st.session_state['api_key']
             st.rerun()
         
-        # --- API KEY MANAGE ---
+        # --- API KEY MANAGE (Per-Profile) ---
         with st.expander("🔑 Cấu hình API Key", expanded=not st.session_state.api_key):
+            st.caption("API Key được lưu riêng cho profile này")
             new_key = st.text_input("Gemini API Key", value=st.session_state.api_key, type="password")
             if st.button("Lưu Key"):
                 st.session_state.api_key = new_key
-                config['api_key'] = new_key
-                DataManager.save_config(config)
-                st.success("Đã lưu API Key!")
+                DataManager.save_user_api_key(current_user, new_key)
+                st.success("Đã lưu API Key cho profile này!")
                 st.rerun()
         
         st.divider()
