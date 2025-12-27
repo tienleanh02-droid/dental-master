@@ -777,6 +777,46 @@ class DataManager:
             return True, f"Đồng bộ thành công! ({cards_count} thẻ, {progress_count} records)"
         except Exception as e:
             return False, f"Lỗi: {e}"
+    
+    @staticmethod
+    def sync_cards_only(username):
+        """CHỈ SYNC THẺ - KHÔNG ĐỘNG ĐẾN PROGRESS"""
+        try:
+            if not GoogleSheetsManager.get_client():
+                return False, "Không kết nối được Cloud"
+            
+            # Chỉ Sync Data
+            data = st.session_state.get(f"cached_data_{username}", None)
+            if data is None:
+                data = DataManager.load_data(username)
+            
+            if data:
+                GoogleSheetsManager.save_user_data_cloud(username, data)
+                return True, f"Đồng bộ thẻ thành công! ({len(data)} thẻ)"
+            else:
+                return False, "Không có thẻ để đồng bộ"
+        except Exception as e:
+            return False, f"Lỗi: {e}"
+    
+    @staticmethod
+    def sync_progress_only(username):
+        """CHỈ SYNC PROGRESS - KHÔNG ĐỘNG ĐẾN THẺ"""
+        try:
+            if not GoogleSheetsManager.get_client():
+                return False, "Không kết nối được Cloud"
+            
+            # Chỉ Sync Progress
+            progress = st.session_state.get(f"cached_progress_{username}", None)
+            if progress is None:
+                progress = DataManager.load_progress(username)
+            
+            if progress:
+                GoogleSheetsManager.save_progress_cloud(username, progress)
+                return True, f"Đồng bộ lịch sử thành công! ({len(progress)} records)"
+            else:
+                return False, "Không có lịch sử để đồng bộ"
+        except Exception as e:
+            return False, f"Lỗi: {e}"
 
     @staticmethod
     @st.cache_data
@@ -3355,7 +3395,7 @@ def view_profile_selector():
     """, unsafe_allow_html=True)
     
     st.title("👋 Xin chào!")
-    st.caption("Version: Per_Profile_API_v16")
+    st.caption("Version: Safe_Sync_v17")
     st.subheader("Chọn người học để bắt đầu:")
 
     # Cloud Check
@@ -3470,18 +3510,43 @@ def main():
         
         st.divider()
         
-        # --- CLOUD SYNC BUTTON ---
-        st.markdown("**☁️ Cloud Sync**")
-        if GoogleSheetsManager.get_client():
-            if st.button("🔄 Đồng bộ lên Cloud", use_container_width=True, type="primary"):
-                with st.spinner("Đang đồng bộ..."):
-                    success, msg = DataManager.sync_to_cloud(current_user)
-                    if success:
-                        st.success(msg)
-                    else:
-                        st.error(msg)
-        else:
-            st.caption("⚠️ Cloud chưa kết nối")
+        # --- CLOUD SYNC BUTTONS ---
+        with st.expander("☁️ Cloud Sync", expanded=False):
+            if GoogleSheetsManager.get_client():
+                st.caption("⚠️ Cẩn thận: Sync sẽ GHI ĐÈ dữ liệu trên Cloud!")
+                
+                # Sync Cards Only (AN TOÀN cho progress)
+                if st.button("📚 Chỉ Sync Thẻ", use_container_width=True, type="primary", help="An toàn - không ghi đè lịch sử học"):
+                    with st.spinner("Đang đồng bộ thẻ..."):
+                        success, msg = DataManager.sync_cards_only(current_user)
+                        if success:
+                            st.success(msg)
+                        else:
+                            st.error(msg)
+                
+                st.markdown("---")
+                
+                # Sync Progress Only
+                if st.button("📊 Chỉ Sync Lịch sử", use_container_width=True, help="Cẩn thận - sẽ ghi đè lịch sử trên Cloud"):
+                    with st.spinner("Đang đồng bộ lịch sử..."):
+                        success, msg = DataManager.sync_progress_only(current_user)
+                        if success:
+                            st.success(msg)
+                        else:
+                            st.error(msg)
+                
+                st.markdown("---")
+                
+                # Sync All (Nguy hiểm)
+                if st.button("⚡ Sync Tất Cả", use_container_width=True, help="GHI ĐÈ cả thẻ và lịch sử"):
+                    with st.spinner("Đang đồng bộ tất cả..."):
+                        success, msg = DataManager.sync_to_cloud(current_user)
+                        if success:
+                            st.success(msg)
+                        else:
+                            st.error(msg)
+            else:
+                st.caption("⚠️ Cloud chưa kết nối")
         
         st.divider()
 
